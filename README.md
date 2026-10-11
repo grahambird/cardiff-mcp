@@ -59,7 +59,15 @@ The smoke test starts the production build, discovers both MCP tools, performs a
    npm run smoke:client -- https://<project>.vercel.app
    ```
 
-5. In the Vercel Firewall/WAF settings, add a rate-limit rule for `/mcp` of about 120 requests per IP per minute. Review this if an MCP host's shared outbound addresses cause false positives.
+5. In **Project → Firewall → Configure**, create and publish this WAF rule:
+   - condition: request path equals `/mcp`;
+   - action: **Rate Limit**;
+   - algorithm: **Fixed Window**;
+   - limit: **120 requests in 60 seconds**;
+   - counting key: **IP address**;
+   - response: default HTTP `429`.
+
+This is a deliberately generous starting limit for an MCP client. Review it if ChatGPT or another MCP host uses shared outbound addresses and legitimate requests receive `429` responses. The firewall is configured in Vercel rather than in this repository; Vercel Hobby currently permits one custom firewall rule.
 
 The code also applies an eight-second FSA timeout, permits no more than 20 records per page, caps pages at 10, and caches successful upstream responses for five minutes in warm instances. Cache and rate limiting are deliberately modest for a first public prototype.
 
@@ -91,6 +99,12 @@ An empty search is a successful result with `businesses: []`. It is different fr
 - `outside_cardiff`: the ID exists but belongs to another local authority.
 
 The FSA changes its unpublished throttling rules according to operating conditions. Retry later rather than automatically making many requests.
+
+## Logging and monitoring
+
+Each tool call writes a single structured JSON event to Vercel Runtime Logs. It records the tool name, success or error outcome, duration, result count where useful, and a safe error code/upstream status. It deliberately does **not** log tool arguments, search text, establishment IDs, prompts, IP addresses, or user-agent strings.
+
+To inspect events, open the Vercel project and choose **Logs**, then search for `mcp_tool_call`, a tool name, or an error code such as `throttled`. On the Hobby plan, Runtime Log retention is currently one hour, so this provides immediate troubleshooting rather than long-term analytics. Persistent log drains and longer-term alerting are deferred until traffic justifies a paid plan or external service.
 
 ## Security and privacy
 

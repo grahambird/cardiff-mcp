@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { findFoodBusinesses, FsaError, getFoodBusiness } from "@/fsa/client";
 import { BUSINESS_TYPES } from "@/fsa/types";
+import { logEvent } from "@/lib/logger";
 
 export const findFoodBusinessesInput = z.object({
   name: z.string().trim().min(1).max(100).optional().describe("Terms to search within the business name."),
@@ -24,8 +25,11 @@ function success(value: unknown) {
   };
 }
 
-function failure(error: unknown) {
-  const fsaError = error instanceof FsaError ? error : new FsaError("upstream", "An unexpected error occurred while reading FSA data.");
+function normalizeError(error: unknown): FsaError {
+  return error instanceof FsaError ? error : new FsaError("upstream", "An unexpected error occurred while reading FSA data.");
+}
+
+function failure(fsaError: FsaError) {
   return {
     isError: true,
     content: [{ type: "text" as const, text: JSON.stringify({ error: fsaError.code, message: fsaError.message }) }],
@@ -34,19 +38,51 @@ function failure(error: unknown) {
 }
 
 export async function runFindFoodBusinesses(input: z.infer<typeof findFoodBusinessesInput>) {
+  const startedAt = performance.now();
   try {
-    return success(await findFoodBusinesses(findFoodBusinessesInput.parse(input)));
+    const result = await findFoodBusinesses(findFoodBusinessesInput.parse(input));
+    logEvent("info", "mcp_tool_call", {
+      tool: "find_food_businesses",
+      outcome: "success",
+      duration_ms: Math.round(performance.now() - startedAt),
+      result_count: result.businesses.length,
+      has_more: result.has_more,
+    });
+    return success(result);
   } catch (error) {
-    return failure(error);
+    const fsaError = normalizeError(error);
+    logEvent(fsaError.code === "upstream" || fsaError.code === "malformed" ? "error" : "warn", "mcp_tool_call", {
+      tool: "find_food_businesses",
+      outcome: "error",
+      error_code: fsaError.code,
+      upstream_status: fsaError.status,
+      duration_ms: Math.round(performance.now() - startedAt),
+    });
+    return failure(fsaError);
   }
 }
 
 export async function runGetFoodBusiness(input: z.infer<typeof getFoodBusinessInput>) {
+  const startedAt = performance.now();
   try {
     const parsed = getFoodBusinessInput.parse(input);
-    return success(await getFoodBusiness(parsed.establishment_id));
+    const result = await getFoodBusiness(parsed.establishment_id);
+    logEvent("info", "mcp_tool_call", {
+      tool: "get_food_business",
+      outcome: "success",
+      duration_ms: Math.round(performance.now() - startedAt),
+    });
+    return success(result);
   } catch (error) {
-    return failure(error);
+    const fsaError = normalizeError(error);
+    logEvent(fsaError.code === "upstream" || fsaError.code === "malformed" ? "error" : "warn", "mcp_tool_call", {
+      tool: "get_food_business",
+      outcome: "error",
+      error_code: fsaError.code,
+      upstream_status: fsaError.status,
+      duration_ms: Math.round(performance.now() - startedAt),
+    });
+    return failure(fsaError);
   }
 }
 
