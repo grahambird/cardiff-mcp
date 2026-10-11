@@ -1,0 +1,43 @@
+{
+  "name": "cardiff-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A read-only MCP server for useful public data about Cardiff, Wales.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "smoke:client": "node scripts/test-client.mjs",
+    "test:smoke": "start-server-and-test start http://127.0.0.1:3000 smoke:client",
+    "check": "npm run lint && npm run type-check && npm test && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.3.1",
+    "mcp-handler": "^2.3.0",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@modelcontextprotocol/client": "^2.3.1",
+    "@types/node": "^22.15.8",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "eslint": "^9.0.0",
+    "start-server-and-test": "^2.0.13",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.46.1",
+    "vitest": "^5.0.3"
+  }
+}
