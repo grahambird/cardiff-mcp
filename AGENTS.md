@@ -1,6 +1,6 @@
 # Guidance for coding agents
 
-Read `README.md`, `DATA_SOURCES.md`, and `QUALITY.md` before changing MCP tools, data connectors, or tests.
+Read `README.md`, `DATA_SOURCES.md`, `ROADMAP.md` and `QUALITY.md` before changing MCP tools, data connectors, or tests.
 
 - Preserve the read-only, public-data-only scope and keep source connectors separate from MCP tool definitions.
 - Treat mocked contract tests as the persistent truth for behaviour controlled by this project; treat live FSA values as changeable.

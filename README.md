@@ -6,10 +6,13 @@ Cardiff MCP is a small, open-source, read-only [Model Context Protocol](https://
 ChatGPT or another MCP client → Streamable HTTP /mcp → Next.js on Vercel → FSA API v2
 ```
 
-The server has no database, accounts, authentication, Redis, LLM calls, or OpenAI API key. It exposes two tools:
+The server has no database, accounts, authentication, Redis, LLM calls, or OpenAI API key. This version exposes three tools (after deployment):
 
 - `find_food_businesses` searches within Cardiff by business name, broad FSA business type, and minimum numeric hygiene rating.
 - `get_food_business` gets one Cardiff establishment using its FSA `FHRSID`.
+- `find_schools` searches a bundled Welsh Government directory of Cardiff maintained schools by name, phase and language group.
+
+An implementation spike for Cardiff Council waste collections is present but gated off by default while data-reuse terms and Vercel-origin access are confirmed. It adds no production tools unless `CARDIFF_WASTE_TOOLS_ENABLED=true` is set.
 
 ## What the data means
 
@@ -46,7 +49,7 @@ npm run build
 npm run test:smoke
 ```
 
-The smoke test starts the production build, discovers both MCP tools, performs a live rating-5 Cardiff search, and retrieves the first returned establishment. It therefore requires internet access and a responsive FSA service. Unit tests use mocked responses and remain deterministic.
+The smoke test starts the production build, discovers all three MCP tools, checks the school directory, performs a live rating-5 Cardiff search, and retrieves the first returned establishment. It therefore requires internet access and a responsive FSA service. Unit tests use mocked responses and remain deterministic.
 
 The production endpoint is also checked daily by GitHub Actions using stable behavioural invariants rather than fixed establishment data. See [QUALITY.md](QUALITY.md) for the quality strategy and deliberately deferred improvements.
 
@@ -54,7 +57,7 @@ The production endpoint is also checked daily by GitHub Actions using stable beh
 
 1. Push this repository to GitHub.
 2. In Vercel, choose **Add New → Project**, import the repository, and accept the detected Next.js settings.
-3. Deploy without environment variables. New Vercel projects use Fluid Compute by default.
+3. Deploy without environment variables. New Vercel projects use Fluid Compute by default. Do not enable the waste feature in production until the release gate below is cleared.
 4. Visit `https://<project>.vercel.app` and run the smoke client against production:
 
    ```bash
@@ -80,7 +83,7 @@ Availability is account- and workspace-dependent. It was observed on the project
 1. Use ChatGPT on the web and confirm **Plugins → Add Custom MCP Server** is available.
 2. Enter a name such as `Cardiff MCP` and the full `https://<project>.vercel.app/mcp` URL.
 3. Choose no authentication, review the risk warning, create the connection, and install it.
-4. Confirm the discovered tools are `find_food_businesses` and `get_food_business`.
+4. Confirm the discovered tools are `find_food_businesses`, `get_food_business` and `find_schools`.
 5. Try:
    - “Find cafés in Cardiff with a food hygiene rating of 5.”
    - “What is the hygiene rating and inspection date for this Cardiff restaurant?”
@@ -106,20 +109,53 @@ The FSA changes its unpublished throttling rules according to operating conditio
 
 Each tool call writes a single structured JSON event to Vercel Runtime Logs. It records the tool name, success or error outcome, duration, result count where useful, and a safe error code/upstream status. It deliberately does **not** log tool arguments, search text, establishment IDs, prompts, IP addresses, or user-agent strings.
 
+The gated waste connector additionally logs `upstream_request` and `upstream_cache` events containing only provider, operation, duration, outcome, status category, retry count, and cache hit/miss. It never logs addresses, postcodes, UPRNs, JWTs, or request bodies.
+
 To inspect events, open the Vercel project and choose **Logs**, then search for `mcp_tool_call`, a tool name, or an error code such as `throttled`. On the Hobby plan, Runtime Log retention is currently one hour, so this provides immediate troubleshooting rather than long-term analytics. Persistent log drains and longer-term alerting are deferred until traffic justifies a paid plan or external service.
 
 ## Security and privacy
 
-`/mcp` is intentionally public and unauthenticated. Both tools are read-only and accept narrow, validated inputs. The service does not request, store, or transmit user credentials, private ChatGPT data, or personal account data. Do not add secrets to the repository; use Vercel environment variables if a future source needs credentials.
+`/mcp` is intentionally public and unauthenticated. All tools are read-only and accept narrow, validated inputs. The service does not request, store, or transmit user credentials, private ChatGPT data, or personal account data. Do not add secrets to the repository; use Vercel environment variables if a future source needs credentials.
 
 Remote MCP servers can receive prompt-derived tool arguments. Only connect servers you trust and avoid placing sensitive information in searches.
+
+## Waste collection spike
+
+The spike implements two optional tools:
+
+- `find_waste_collection_addresses` accepts a postcode, optional house number, and limit. It returns bounded matches but never chooses a property.
+- `get_waste_collections` accepts the selected UPRN as a string and returns only dates supplied by Cardiff Council.
+
+To exercise them in a local or Vercel preview environment:
+
+```bash
+CARDIFF_WASTE_TOOLS_ENABLED=true npm run dev
+```
+
+After building, `CARDIFF_WASTE_TOOLS_ENABLED=true npm run test:smoke` verifies that MCP discovery includes all five tools while retaining the existing live FSA checks. Waste execution remains covered by mocked deterministic tests until a private property is supplied for the gated acceptance check.
+
+The connector uses a five-minute address cache, a fifteen-minute collection cache, short-lived JWT caching, single-flight request deduplication, and at most two outgoing Cardiff requests per warm instance. It retries transient network, `429`, and `5xx` failures once; it does not retry `400`, `401`, or `403`. Cache keys are SHA-256 hashes rather than raw location identifiers. These controls are per Vercel instance, not deployment-wide.
+
+Do not enable the tools in production until Cardiff Council confirms third-party reuse and attribution, private address-selection checks pass, and the flow succeeds from a Vercel preview. Record those checks in [ACCEPTANCE.md](ACCEPTANCE.md).
+
+Collection dates are schedules, not proof of collection. The server does not infer future dates and does not treat missing data as “no collection.” Short-notice changes should be checked using the official lookup and collection-updates pages.
 
 ## Cost and limitations
 
 The expected incremental cost for low-volume development is £0: the FSA API is free, public GitHub repositories are free, and this service should fit comfortably within Vercel Hobby limits. Usage limits and product availability can change.
 
-Not included in this milestone: Welsh responses, location/distance search, other datasets, persistent analytics or caching, authentication, maps, menus, opening hours, bookings, alerts, MCP widgets, or public directory submission.
+Not included in this milestone: Welsh responses, location/distance search, school statistics/inspections/performance, persistent analytics or caching, authentication, maps, menus, opening hours, bookings, alerts, MCP widgets, or public directory submission.
 
 ## Licence
 
-Project code is MIT-licensed. FSA data has its own OGL v3 terms and attribution; see [DATA_SOURCES.md](DATA_SOURCES.md).
+Project code is MIT-licensed. FSA and Welsh Government school data have their own OGL v3 terms and attribution; see [DATA_SOURCES.md](DATA_SOURCES.md).
+
+## School directory
+
+`find_schools` accepts optional `name`, `phase` (`nursery`, `primary`, `middle`, `secondary`, `special`) and `language_group` (`english_medium`, `welsh_medium`, `dual_language`, `not_applicable`, `unknown`). Filters combine with AND; name matching is case-insensitive. Results are alphabetical, with `page` (positive integer, default 1) and `limit` (1–20, default 10). An empty search returns `schools: []` successfully. Invalid parameters return `invalid_input`.
+
+Try “Find Cardiff High School” or “Which Cardiff secondary schools offer Welsh-medium education?” Results retain published language labels, including transitional provision. They include school numbers as strings, contact details, the official source URL, publication date and snapshot import date. Independent schools and pupil referral units are excluded. These are published directory details, not live school status, pupil statistics, distances, catchments, inspections or performance results.
+
+The initial snapshot contains 126 maintained schools, from the register published 23 April 2026 and imported on 11 October 2026. Searches make no external requests and need no additional cache or service. The directory is refreshed manually; see DATA_SOURCES.md for the procedure.
+
+Contains public sector information licensed under the Open Government Licence v3.0. Source: Welsh Government.

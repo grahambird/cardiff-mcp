@@ -8,16 +8,17 @@ Cardiff MCP uses the smallest quality system that provides useful confidence. Te
 
 GitHub Actions runs linting, type-checking, unit tests, and a production build on each push and pull request. Mocked FSA fixtures cover filtering, response mapping, non-numeric and pending ratings, sentinel dates, Cardiff enforcement, upstream failures, and validation boundaries.
 
-These tests are the persistent source of truth for behaviour that Cardiff MCP controls.
+These tests are the persistent source of truth for behaviour that Cardiff MCP controls. The gated waste spike additionally covers postcode normalization, ambiguous and empty address results, string UPRNs, bounded results, unusual stream/status values, empty and malformed schedules, throttling/access failures, cache behaviour, simultaneous-request deduplication, and privacy-safe logging. Live residential details are never fixtures.
 
 ### Daily production canary
 
 `.github/workflows/production-smoke.yml` calls the deployed Streamable HTTP endpoint once each day. It checks that:
 
-- exactly the two expected tools are discoverable and advertised as read-only;
+- exactly the three expected tools after the school-directory release are discoverable and advertised as read-only;
 - a bounded rating-5 Cardiff search succeeds with valid metadata, attribution, and FSA source links;
 - every returned result satisfies stable shape and rating invariants;
-- a detail lookup agrees with the selected search result.
+- a detail lookup agrees with the selected search result;
+- a bounded school search returns valid Cardiff identifiers, directory fields, publication/import dates and attribution, without fixed school names or counts.
 
 The canary deliberately selects a result dynamically. Do not assert that a particular establishment will retain a fixed rating or remain open: FSA data is live and can change legitimately.
 
@@ -37,6 +38,9 @@ Keep these deferred until their trigger occurs:
 - **Automated model-based evals:** consider only when prompt behaviour changes frequently enough to justify API cost and grader maintenance. Keep deterministic checks as the primary gate and calibrate model graders with human review.
 - **Persistent monitoring and alerting:** add when traffic or reliability expectations make Vercel's short Hobby log retention insufficient.
 - **Distributed caching or analytics:** add only when measured traffic, latency, or FSA limits require them.
+- **Waste production release:** enable only after Cardiff Council's reuse and attribution guidance and a Vercel-origin check are recorded. Until then, keep its environment gate off and exclude it from the production canary.
 - **Automated ChatGPT UI testing:** defer while account-specific manual release acceptance remains quick and reliable.
 
 Avoid introducing an eval platform, database, OpenAI API key, or paid monitoring service solely in anticipation of future scale.
+
+School-directory contract tests use mocked records for filtering, pagination, Cardiff scope and language grouping. A separate bundled-snapshot check validates unique string IDs, required fields and provenance. Searches make no upstream requests.

@@ -36,7 +36,11 @@ try {
   await client.connect(new StreamableHTTPClientTransport(endpoint));
   const { tools } = await client.listTools();
   const names = tools.map((tool) => tool.name).sort();
-  const expected = ["find_food_businesses", "get_food_business"];
+  const expected = ["find_food_businesses", "find_schools", "get_food_business"];
+  if (process.env.CARDIFF_WASTE_TOOLS_ENABLED === "true") {
+    expected.push("find_waste_collection_addresses", "get_waste_collections");
+    expected.sort();
+  }
   if (JSON.stringify(names) !== JSON.stringify(expected)) {
     throw new Error(`Expected tools ${expected.join(", ")}; received ${names.join(", ")}`);
   }
@@ -44,6 +48,23 @@ try {
     assert(tool.annotations?.readOnlyHint === true, `${tool.name} is not advertised as read-only.`);
     assert(tool.annotations?.destructiveHint === false, `${tool.name} is incorrectly advertised as destructive.`);
     assert(typeof tool.description === "string" && tool.description.length > 0, `${tool.name} has no description.`);
+  }
+
+  const schools = await client.callTool({ name: "find_schools", arguments: { limit: 3 } });
+  assert(!schools.isError, "School directory search failed.");
+  const directory = schools.structuredContent?.result;
+  assert(Array.isArray(directory?.schools) && directory.schools.length > 0 && directory.schools.length <= 3, "Invalid school results.");
+  assert(Number.isInteger(directory.total_count) && directory.total_count >= directory.schools.length, "Invalid school total.");
+  assert(directory.page === 1 && typeof directory.has_more === "boolean", "Invalid school pagination.");
+  assert(directory.source_url === "https://www.gov.wales/addresses-and-phone-numbers-schools-and-pupil-referral-units", "Invalid school source URL.");
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(directory.source_published_at), "Missing school publication date.");
+  assert(isIsoTimestamp(directory.snapshot_imported_at), "Missing school import date.");
+  assert(directory.attribution === "Contains public sector information licensed under the Open Government Licence v3.0. Source: Welsh Government.", "Missing school attribution.");
+  for (const school of directory.schools) {
+    assert(/^681\d{4}$/.test(school.school_id) && school.local_authority_code === "681", "School is outside Cardiff or has an invalid ID.");
+    for (const field of ["name", "sector", "school_type", "governance", "language_category", "language_group", "address", "postcode", "telephone"]) {
+      assert(typeof school[field] === "string" && school[field].length > 0, `Missing school ${field}.`);
+    }
   }
 
   const search = await client.callTool({
