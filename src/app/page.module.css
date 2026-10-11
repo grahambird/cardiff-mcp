@@ -1,0 +1,37 @@
+.page { max-width: 1040px; margin: 0 auto; padding: 64px 28px 28px; color: #18332e; line-height: 1.65; }
+.page h1, .page h2, .page h3 { line-height: 1.2; letter-spacing: -0.025em; }
+.page h1 { margin: 12px 0 20px; font-size: clamp(2.8rem, 7vw, 4.5rem); }
+.page h2 { margin: 0 0 16px; font-size: clamp(1.5rem, 4vw, 2rem); }
+.page h3 { margin: 0 0 16px; font-size: 1.4rem; }
+.page p { margin: 0 0 18px; }
+.page a { color: #16654f; text-underline-offset: 4px; }
+.page a:hover { text-decoration-thickness: 2px; }
+.page a:focus-visible { outline: 3px solid #965116; outline-offset: 5px; border-radius: 3px; }
+.page code { font-size: 0.9em; overflow-wrap: anywhere; }
+.hero { padding-bottom: 52px; }
+.eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.intro { font-size: clamp(1.3rem, 4vw, 1.8rem); }
+.summary { max-width: 660px; font-size: 1.1rem; color: #425b53; }
+.actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; margin-top: 28px; }
+.page .primaryLink { background: #185b48; color: #fff; border-radius: 8px; padding: 12px 18px; text-decoration: none; font-weight: 600; }
+.page .primaryLink:hover { background: #114535; }
+.section { padding: 36px 0; border-top: 1px solid #cedbd3; scroll-margin-top: 24px; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px; }
+.card { border: 1px solid #cedbd3; border-radius: 14px; padding: 28px; background: #fff; }
+.prompts { list-style: none; margin: 24px 0; padding: 0; }
+.prompts li { background: #f0f5ef; border-left: 3px solid #76a18e; border-radius: 0 6px 6px 0; padding: 14px 16px; margin-top: 12px; user-select: text; }
+.page .note { font-size: 0.9rem; color: #4d625a; margin-bottom: 0; }
+.connect { background: #e8f0e9; padding: 32px; border: 1px solid #cedbd3; border-radius: 14px; margin: 12px 0 36px; }
+.endpoint { display: block; width: fit-content; max-width: 100%; margin: 24px 0; font-weight: 600; font-size: 1.15rem; }
+.tools { margin: 24px 0 0; }
+.tools > div { display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid #e0e7e1; }
+.tools dt { font-weight: 600; }
+.tools dd { margin: 0; }
+.footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding: 24px 0 0; border-top: 1px solid #cedbd3; font-size: 0.85rem; color: #4d625a; }
+@media (max-width: 680px) {
+  .page { padding: 36px 20px 24px; }
+  .hero { padding-bottom: 36px; }
+  .cards { grid-template-columns: 1fr; }
+  .card, .connect { padding: 24px; }
+  .tools > div { grid-template-columns: 1fr; gap: 6px; }
+}
