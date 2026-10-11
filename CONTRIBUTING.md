@@ -15,6 +15,8 @@ Changes to existing MCP tool names or required inputs are breaking changes for c
 
 Use mocked FSA responses for deterministic unit tests. Cover successful mapping, empty results, unusual values, validation boundaries, timeouts, throttling, upstream failure, malformed data, and geographic scoping. Use `npm run test:smoke` separately for a live end-to-end check.
 
+Read [QUALITY.md](QUALITY.md) before changing the smoke test or introducing eval or monitoring infrastructure. Live checks must assert stable invariants, not fixed ratings or continued existence of a particular establishment.
+
 Never commit credentials, private user data, copied production logs, or `.env` files.
 
 ## Adding a data source

@@ -48,6 +48,8 @@ npm run test:smoke
 
 The smoke test starts the production build, discovers both MCP tools, performs a live rating-5 Cardiff search, and retrieves the first returned establishment. It therefore requires internet access and a responsive FSA service. Unit tests use mocked responses and remain deterministic.
 
+The production endpoint is also checked daily by GitHub Actions using stable behavioural invariants rather than fixed establishment data. See [QUALITY.md](QUALITY.md) for the quality strategy and deliberately deferred improvements.
+
 ## Deploy to Vercel
 
 1. Push this repository to GitHub.
