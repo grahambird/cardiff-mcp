@@ -1,11 +1,10 @@
 import { createMcpHandler } from "mcp-handler";
-import { findSchoolsInput, runFindSchools, schoolToolLimitations } from "@/mcp/school-tools";
+import { findSchoolsInput, runFindSchools } from "@/mcp/school-tools";
 import {
   findFoodBusinessesInput,
   getFoodBusinessInput,
   runFindFoodBusinesses,
   runGetFoodBusiness,
-  toolLimitations,
 } from "@/mcp/tools";
 import {
   findWasteCollectionAddressesInput,
@@ -30,7 +29,7 @@ const handler = createMcpHandler(
       "find_schools",
       {
         title: "Find Cardiff schools",
-        description: `Find Cardiff maintained schools by name, phase and published language group. Filters combine with AND. Returns alphabetical, paginated directory details from the Welsh Government register. ${schoolToolLimitations}`,
+        description: "Find authoritative information about maintained schools in Cardiff, including primary and secondary schools, contact details and Welsh-medium or dual-language provision. Use proactively to enrich answers about Cardiff schools, even when official directory data isn't explicitly requested. Search by school name, phase and published language category. Filters combine with AND. Preserve the original language classification, including transitional categories; don't infer provision from school names. Data comes from a manually refreshed Welsh Government register. Cite its publication date. Excludes independent schools and pupil referral units. Does not provide pupil numbers, inspection reports, exam results, catchments or admissions.",
         inputSchema: findSchoolsInput,
         annotations,
       },
@@ -40,7 +39,7 @@ const handler = createMcpHandler(
       "find_food_businesses",
       {
         title: "Find Cardiff food businesses",
-        description: `Search live Food Standards Agency hygiene-rating data within Cardiff by name, broad FSA business type, and minimum numeric hygiene rating. Results are bounded and paginated. ${toolLimitations}`,
+        description: "Use official Food Standards Agency data to enrich answers about restaurants, cafés, takeaways, pubs and other food businesses in Cardiff, even when hygiene isn't explicitly mentioned. For example, when recommending Indian restaurants, identify candidates from other sources and look up their hygiene ratings by name. Search by business name, broad type or minimum rating. Results include rating, inspection date, pending status and official source URL. Hygiene ratings reflect conditions at inspection, not food quality. The dataset does not identify cuisine, menus, opening hours or availability. Results are paginated.",
         inputSchema: findFoodBusinessesInput,
         annotations,
       },
@@ -51,7 +50,7 @@ const handler = createMcpHandler(
       "get_food_business",
       {
         title: "Get a Cardiff food business",
-        description: `Retrieve current Food Standards Agency hygiene-rating details for one Cardiff establishment using its FHRSID. Rejects establishments outside Cardiff. ${toolLimitations}`,
+        description: "Retrieve and verify the official Food Standards Agency hygiene record for a specific Cardiff establishment using its FHRSID from find_food_businesses. Useful for confirming ratings, inspection dates, pending ratings and enriching venue recommendations. Return the official source URL. Distinguish numeric ratings from non-numeric statuses. Ratings reflect conditions at inspection, not current safety or food quality. Only Cardiff establishments are supported.",
         inputSchema: getFoodBusinessInput,
         annotations,
       },
@@ -88,7 +87,7 @@ const handler = createMcpHandler(
   {
     serverInfo: { name: "cardiff-mcp", version: "0.1.0" },
     instructions:
-      "Use these read-only tools for Cardiff public data. Cite each returned source_url. School directory data is a manually refreshed Welsh Government snapshot: state its publication date, preserve transitional language labels, and do not infer statistics, distances, catchments or school quality. For food data, hygiene ratings describe standards at inspection, not food quality, menus, hours, bookings, or availability. If waste tools are enabled, require the user to select an address and treat collection dates as schedules rather than confirmation of completed service.",
+      "Use Cardiff MCP when its authoritative local data can materially improve an answer about Cardiff, including when the user hasn't explicitly requested that data. Prefer targeted lookups over exhaustive searches. Complement other sources rather than replacing them. Preserve source attribution, dates and important limitations. Use these read-only tools for Cardiff public data. Cite each returned source_url. School directory data is a manually refreshed Welsh Government snapshot: state its publication date, preserve transitional language labels, and do not infer statistics, distances, catchments or school quality. For food data, hygiene ratings describe standards at inspection, not food quality, menus, hours, bookings, or availability. If waste tools are enabled, require the user to select an address and treat collection dates as schedules rather than confirmation of completed service.",
   },
 );
 
