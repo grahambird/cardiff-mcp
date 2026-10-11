@@ -19,7 +19,7 @@ Contains public sector information licensed under the Open Government Licence v3
 
 ## Local setup
 
-Prerequisites: Node.js 20.9 or later and npm. The lockfile records the exact tested versions. The initial Next.js 15.2/Vitest 3 compatibility baseline was upgraded to current compatible releases after npm reported security advisories; this public server should not preserve vulnerable version pins.
+Prerequisites: Node.js 24 or later and npm. The lockfile records the exact tested versions. The initial Next.js 15.2/Vitest 3 compatibility baseline was upgraded to current compatible releases after npm reported security advisories; this public server should not preserve vulnerable version pins.
 
 ```bash
 npm install

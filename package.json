@@ -6,7 +6,7 @@
   "description": "A read-only MCP server for useful public data about Cardiff, Wales.",
   "license": "MIT",
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "scripts": {
     "dev": "next dev",
