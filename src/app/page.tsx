@@ -13,8 +13,8 @@ const capabilities = [
   },
   {
     title: "Schools",
-    description: "Explore Cardiff schools by name, school phase or language provision. Get a school profile with contact details, pupil numbers, year groups and free-school-meal eligibility.",
-    prompts: ["Find Welsh-medium primary schools in Cardiff", "Tell me about Cardiff High School", "List Cardiff secondary schools"],
+    description: "Explore Cardiff schools by name, size, school phase or language provision. Get a school profile with contact details, pupil numbers, year groups and free-school-meal eligibility.",
+    prompts: ["Find Welsh-medium primary schools in Cardiff", "What's the largest school in Cardiff?", "How does one school compare to another?"],
     note: "Welsh-medium and dual-language groups include transitional provision; results retain the published labels.",
   },
 ];
