@@ -144,7 +144,7 @@ async function getToken(): Promise<string> {
 }
 
 function commonHeaders(extra: Record<string, string> = {}): Record<string, string> {
-  return { Origin: "https://www.cardiff.gov.uk", Referer: "https://www.cardiff.gov.uk/", "User-Agent": "cardiff-mcp/0.1", ...extra };
+  return { Origin: "https://www.cardiff.gov.uk", Referer: "https://www.cardiff.gov.uk/", "User-Agent": "mcp-wales/0.1", ...extra };
 }
 
 function handleStatus(response: Response): void {

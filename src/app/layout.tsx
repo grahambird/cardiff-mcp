@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Cardiff MCP",
-  description: "Connect your AI assistant to public food hygiene ratings and maintained-school directory information for Cardiff, Wales.",
+  title: "MCP Wales",
+  description: "Trusted local and public data in Wales, starting with Cardiff food hygiene ratings and maintained-school profiles.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

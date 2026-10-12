@@ -1,6 +1,8 @@
-# Cardiff MCP
+# MCP Wales
 
-Cardiff MCP is a small, open-source, read-only [Model Context Protocol](https://modelcontextprotocol.io/) server for useful public data about Cardiff, Wales. It connects AI assistants to live Food Standards Agency (FSA) food-hygiene ratings and maintained-school profiles with StatsWales pupil and FSM statistics. The production information page is at <https://mcp.wales>; connect an MCP client using `https://mcp.wales/mcp`.
+MCP Wales is a small, open-source, read-only [Model Context Protocol](https://modelcontextprotocol.io/) server for trusted local and public data in Wales, starting with Cardiff. It connects AI assistants to live Food Standards Agency (FSA) food-hygiene ratings and maintained-school profiles with StatsWales pupil and FSM statistics. The production information page is at <https://mcp.wales>; connect an MCP client using `https://mcp.wales/mcp`.
+
+Cardiff is the initial supported area. The longer-term ambition is wider Welsh coverage as trusted sources become available; the current tools and data remain Cardiff-only.
 
 ```text
 ChatGPT or another MCP client → Streamable HTTP /mcp → Next.js on Vercel → FSA API v2
@@ -54,6 +56,10 @@ The smoke test starts the production build, discovers all four MCP tools, checks
 
 The production endpoint is also checked daily by GitHub Actions using stable behavioural invariants rather than fixed establishment data. See [QUALITY.md](QUALITY.md) for the quality strategy and deliberately deferred improvements.
 
+## Project rename
+
+See [MIGRATION.md](MIGRATION.md) for the GitHub rename steps, Vercel integration checks and retained compatibility references.
+
 ## Deploy to Vercel
 
 1. Push this repository to GitHub.
@@ -82,7 +88,7 @@ The code also applies an eight-second FSA timeout, permits no more than 20 recor
 Availability is account- and workspace-dependent. It was observed on the project owner's ChatGPT Plus account, but this is not a guarantee for every Plus account.
 
 1. Use ChatGPT on the web and confirm **Plugins → Add Custom MCP Server** is available.
-2. Enter a name such as `Cardiff MCP` and the full `https://mcp.wales/mcp` URL.
+2. Enter a name such as `MCP Wales` and the full `https://mcp.wales/mcp` URL.
 3. Choose no authentication, review the risk warning, create the connection, and install it.
 4. Confirm the discovered tools are `find_food_businesses`, `get_food_business`, `find_schools` and `get_school`.
 5. Try:

@@ -21,7 +21,8 @@ describe("MCP discovery metadata over HTTP", () => {
     const { result } = await rpc("initialize", {
       protocolVersion: "2025-03-26", capabilities: {}, clientInfo: { name: "metadata-test", version: "1.0" },
     });
-    expect(result.instructions).toContain("Use Cardiff MCP when its authoritative local data can materially improve an answer about Cardiff, including when the user hasn't explicitly requested that data. Prefer targeted lookups over exhaustive searches. Complement other sources rather than replacing them. Preserve source attribution, dates and important limitations.");
+    expect(result.serverInfo).toEqual({ name: "mcp-wales", version: "0.1.0" });
+    expect(result.instructions).toContain("Use MCP Wales when its authoritative local data can materially improve an answer about Cardiff, including when the user hasn't explicitly requested that data. Prefer targeted lookups over exhaustive searches. Complement other sources rather than replacing them. Preserve source attribution, dates and important limitations.");
     expect(result.instructions).toContain("If waste tools are enabled, require the user to select an address");
   });
 

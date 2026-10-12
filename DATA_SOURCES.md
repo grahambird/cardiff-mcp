@@ -38,7 +38,7 @@ These are identifiers in the FSA system and must not be described as ONS area co
 
 Ratings describe hygiene standards found at the inspection date. They are not reviews of food quality and do not contain menus, opening hours, bookings, or availability. Ratings can change. Results therefore include the inspection date, the FSA extract time when the endpoint supplies it, the retrieval time, and a canonical FSA business link.
 
-The API sometimes supplies `1901-01-01` when no meaningful rating date exists. Cardiff MCP returns `null` instead. Numeric values `0` to `5` remain numbers; `AwaitingInspection`, `AwaitingPublication`, `Exempt`, unknown text, and `NewRatingPending` remain explicit states rather than being converted into scores.
+The API sometimes supplies `1901-01-01` when no meaningful rating date exists. MCP Wales returns `null` instead. Numeric values `0` to `5` remain numbers; `AwaitingInspection`, `AwaitingPublication`, `Exempt`, unknown text, and `NewRatingPending` remain explicit states rather than being converted into scores.
 
 ### Attribution and branding
 
@@ -66,7 +66,7 @@ Bounded checks confirmed token acquisition, HTTP 204 for both an invalid address
 
 The community connectors are MIT-licensed, but their code licences do not license Cardiff Council's data. The implementation is therefore disabled by default. It neither downloads a city-wide address dataset nor performs arbitrary address searches. User-supplied postcodes, addresses, UPRNs and access tokens must not be persisted or logged.
 
-Retrieval time records when Cardiff MCP fetched a response. It is not the publisher's update time. Scheduled dates are not confirmation that collection occurred, missing data is not proof that no service exists, and future dates must not be calculated from an assumed pattern.
+Retrieval time records when MCP Wales fetched a response. It is not the publisher's update time. Scheduled dates are not confirmation that collection occurred, missing data is not proof that no service exists, and future dates must not be calculated from an assumed pattern.
 
 ## Welsh Government school register — Cardiff maintained schools
 

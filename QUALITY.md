@@ -1,6 +1,6 @@
 # Quality strategy
 
-Cardiff MCP uses the smallest quality system that provides useful confidence. Tests should distinguish stable product behaviour from live public data that can legitimately change.
+MCP Wales uses the smallest quality system that provides useful confidence. Tests should distinguish stable product behaviour from live public data that can legitimately change.
 
 ## Current safeguards
 
@@ -8,7 +8,7 @@ Cardiff MCP uses the smallest quality system that provides useful confidence. Te
 
 GitHub Actions runs linting, type-checking, unit tests, and a production build on each push and pull request. Mocked FSA fixtures cover filtering, response mapping, non-numeric and pending ratings, sentinel dates, Cardiff enforcement, upstream failures, and validation boundaries.
 
-These tests are the persistent source of truth for behaviour that Cardiff MCP controls. The gated waste spike additionally covers postcode normalization, ambiguous and empty address results, string UPRNs, bounded results, unusual stream/status values, empty and malformed schedules, throttling/access failures, cache behaviour, simultaneous-request deduplication, and privacy-safe logging. Live residential details are never fixtures.
+These tests are the persistent source of truth for behaviour that MCP Wales controls. The gated waste spike additionally covers postcode normalization, ambiguous and empty address results, string UPRNs, bounded results, unusual stream/status values, empty and malformed schedules, throttling/access failures, cache behaviour, simultaneous-request deduplication, and privacy-safe logging. Live residential details are never fixtures.
 
 ### Daily production canary
 
@@ -28,7 +28,7 @@ The canary deliberately selects a result dynamically. Do not assert that a parti
 
 ## How to handle failures
 
-First classify a failure as a Cardiff MCP regression, an upstream FSA availability/data change, a Vercel problem, or an MCP-host behaviour change. Do not weaken an invariant merely to make a failing check green. When a real defect or production edge case is found, add a deterministic regression fixture and test before or alongside the fix.
+First classify a failure as a MCP Wales regression, an upstream FSA availability/data change, a Vercel problem, or an MCP-host behaviour change. Do not weaken an invariant merely to make a failing check green. When a real defect or production edge case is found, add a deterministic regression fixture and test before or alongside the fix.
 
 ## Deferred improvements and adoption triggers
 

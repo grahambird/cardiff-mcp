@@ -90,7 +90,7 @@ async function requestJson(url: URL): Promise<unknown> {
         "x-api-version": "2",
         Accept: "application/json",
         "Accept-Language": "en-GB",
-        "User-Agent": "cardiff-mcp/0.1 (+https://github.com/)",
+        "User-Agent": "mcp-wales/0.1 (+https://github.com/)",
       },
       signal: AbortSignal.timeout(TIMEOUT_MS),
     });

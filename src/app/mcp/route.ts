@@ -95,9 +95,9 @@ const handler = createMcpHandler(
     }
   },
   {
-    serverInfo: { name: "cardiff-mcp", version: "0.1.0" },
+    serverInfo: { name: "mcp-wales", version: "0.1.0" },
     instructions:
-      "Use Cardiff MCP when its authoritative local data can materially improve an answer about Cardiff, including when the user hasn't explicitly requested that data. Prefer targeted lookups over exhaustive searches. Complement other sources rather than replacing them. Preserve source attribution, dates and important limitations. Use these read-only tools for Cardiff public data. Cite each returned source_url. School directory data is a manually refreshed Welsh Government snapshot: state its publication date, preserve transitional language labels, and use get_school for reported pupil/FSM statistics. Cite profile sources with their own reporting periods and census dates. Do not infer unavailable statistics, distances, catchments or school quality. For food data, hygiene ratings describe standards at inspection, not food quality, menus, hours, bookings, or availability. If waste tools are enabled, require the user to select an address and treat collection dates as schedules rather than confirmation of completed service.",
+      "Use MCP Wales when its authoritative local data can materially improve an answer about Cardiff, including when the user hasn't explicitly requested that data. Prefer targeted lookups over exhaustive searches. Complement other sources rather than replacing them. Preserve source attribution, dates and important limitations. Use these read-only tools for Cardiff public data. Cite each returned source_url. School directory data is a manually refreshed Welsh Government snapshot: state its publication date, preserve transitional language labels, and use get_school for reported pupil/FSM statistics. Cite profile sources with their own reporting periods and census dates. Do not infer unavailable statistics, distances, catchments or school quality. For food data, hygiene ratings describe standards at inspection, not food quality, menus, hours, bookings, or availability. If waste tools are enabled, require the user to select an address and treat collection dates as schedules rather than confirmation of completed service.",
   },
 );
 

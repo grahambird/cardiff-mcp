@@ -2,7 +2,7 @@ import { Client, StreamableHTTPClientTransport } from "@modelcontextprotocol/cli
 
 const origin = process.argv.slice(2).find((argument) => argument !== "--") || "http://127.0.0.1:3000";
 const endpoint = new URL("/mcp", `${origin}/`);
-const client = new Client({ name: "cardiff-mcp-smoke-test", version: "0.1.0" });
+const client = new Client({ name: "mcp-wales-smoke-test", version: "0.1.0" });
 const expectedAttribution =
   "Contains public sector information licensed under the Open Government Licence v3.0. Source: Food Standards Agency.";
 

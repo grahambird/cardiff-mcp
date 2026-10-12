@@ -1,9 +1,9 @@
 {
-  "name": "cardiff-mcp",
+  "name": "mcp-wales",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "A read-only MCP server for useful public data about Cardiff, Wales.",
+  "description": "An open-source MCP server for trusted local and public data in Wales, starting with Cardiff.",
   "license": "MIT",
   "engines": {
     "node": ">=24"

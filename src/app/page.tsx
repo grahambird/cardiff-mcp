@@ -28,13 +28,13 @@ export default function Home() {
         <p className={styles.eyebrow}>ChatGPT Plugin</p>
         <h1 className={styles.brand}>
           <Image className={styles.logo} src={logo} alt="" />
-          <span>Cardiff MCP</span>
+          <span>MCP Wales</span>
         </h1>
         <p className={styles.intro}>Give your AI assistant local knowledge.</p>
-        <p className={styles.summary}>An open-source, read-only connector that gives compatible AI assistants access to detailed information about Cardiff, Wales.</p>
+        <p className={styles.summary}>An open-source, read-only connector for trusted local and public data in Wales, starting with Cardiff. Wider Welsh coverage is a future ambition; current tools cover Cardiff.</p>
         <nav className={styles.actions} aria-label="Useful links">
           <a className={styles.primaryLink} href="#connect">Connect your assistant <span aria-hidden="true">↓</span></a>
-          <a href="https://github.com/grahambird/cardiff-mcp">View on GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/grahambird/mcp-wales">View on GitHub <span aria-hidden="true">↗</span></a>
         </nav>
       </header>
       <section className={`${styles.section} ${styles.askSection}`} aria-labelledby="prompts-heading">
@@ -74,8 +74,8 @@ export default function Home() {
         <p className={styles.note}>Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>. Sources: Food Standards Agency and Welsh Government.</p>
       </section>
       <footer className={styles.footer}>
-        <span>Cardiff MCP · Open source · Read only</span>
-        <a href="https://github.com/grahambird/cardiff-mcp">Code and documentation on GitHub</a>
+        <span>MCP Wales · Open source · Read only</span>
+        <a href="https://github.com/grahambird/mcp-wales">Code and documentation on GitHub</a>
       </footer>
     </main>
     </div>
