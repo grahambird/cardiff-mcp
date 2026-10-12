@@ -22,6 +22,8 @@ interface FindSchoolsInput {
   name?: string;
   phase?: typeof PHASES[number];
   language_group?: typeof LANGUAGE_GROUPS[number];
+  sort_by?: "name";
+  sort_order?: "asc" | "desc";
   page: number;
   limit: number;
 }
@@ -34,7 +36,7 @@ export function findSchools(input: FindSchoolsInput) {
       (!input.name || school.name.toLocaleLowerCase("en-GB").includes(input.name.trim().toLocaleLowerCase("en-GB"))) &&
       (!input.phase || school.sector.toLowerCase() === input.phase) &&
       (!input.language_group || school.language_group === input.language_group))
-    .sort((a, b) => a.name.localeCompare(b.name, "en-GB") || a.school_id.localeCompare(b.school_id));
+    .sort((a, b) => (input.sort_order === "desc" ? -1 : 1) * a.name.localeCompare(b.name, "en-GB") || a.school_id.localeCompare(b.school_id));
   const start = (input.page - 1) * input.limit;
   return {
     schools: schools.slice(start, start + input.limit),

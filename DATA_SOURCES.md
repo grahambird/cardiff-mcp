@@ -104,3 +104,9 @@ Import time is not the publisher's update time. The data is a snapshot, not a gu
 4. Run `npm run check`, review the JSON diff, and deploy the reviewed update. A failed import must not replace the previous snapshot.
 
 The importer selects only the `Maintained` sheet and Cardiff LA code; it neither adds application dependencies nor performs network requests. Runtime searches use bundled JSON.
+
+## FSA sorting capability — checked 12 October 2026
+
+The live API v2 `/SortOptions` lookup confirms name A–Z (`alpha`), name Z–A (`desc_alpha`), rating highest first (`rating`) and rating lowest first (`desc_rating`). These rating keys are counterintuitive and must be mapped explicitly. The lookup also provides relevance and distance; these are not exposed in this change. No inspection-date option is supplied.
+
+The connector sends the chosen sort with existing filters and bounded pagination in one request. It preserves returned ordering without sorting individual pages or downloading all matches. FSA does not document a secondary tie-breaker or guarantee an unchanged dataset between page requests. Non-numeric rating placement is upstream-controlled.

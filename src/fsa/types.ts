@@ -16,6 +16,8 @@ export interface FindBusinessesInput {
   name?: string;
   business_type?: BusinessType;
   minimum_rating?: 0 | 1 | 2 | 3 | 4 | 5;
+  sort_by?: "name" | "rating";
+  sort_order?: "asc" | "desc";
   page: number;
   limit: number;
 }

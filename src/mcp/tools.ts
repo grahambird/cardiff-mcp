@@ -7,6 +7,8 @@ export const findFoodBusinessesInput = z.object({
   name: z.string().trim().min(1).max(100).optional().describe("Terms to search within the business name."),
   business_type: z.enum(Object.keys(BUSINESS_TYPES) as [keyof typeof BUSINESS_TYPES, ...(keyof typeof BUSINESS_TYPES)[]]).optional(),
   minimum_rating: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]).optional(),
+  sort_by: z.enum(["name", "rating"]).optional().describe("Server-side sort of all matches; defaults to name. Inspection-date sorting is unavailable."),
+  sort_order: z.enum(["asc", "desc"]).optional().describe("Defaults to asc. Non-numeric rating placement and ties are controlled by FSA."),
   page: z.number().int().min(1).max(10).default(1),
   limit: z.number().int().min(1).max(20).default(10),
 });
@@ -26,6 +28,7 @@ function success(value: unknown) {
 }
 
 function normalizeError(error: unknown): FsaError {
+  if (error instanceof z.ZodError) return new FsaError("invalid_input", "Invalid food business parameters.");
   return error instanceof FsaError ? error : new FsaError("upstream", "An unexpected error occurred while reading FSA data.");
 }
 

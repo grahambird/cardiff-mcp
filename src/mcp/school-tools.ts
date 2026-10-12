@@ -6,6 +6,8 @@ export const findSchoolsInput = z.object({
   name: z.string().trim().min(1).max(100).optional().describe("Case-insensitive text within the school name."),
   phase: z.enum(PHASES).optional(),
   language_group: z.enum(LANGUAGE_GROUPS).optional().describe("Published provision group; Welsh-medium and dual-language include transitional provision."),
+  sort_by: z.literal("name").optional().describe("Sort the complete matching directory by name; defaults to name."),
+  sort_order: z.enum(["asc", "desc"]).optional().describe("Defaults to asc; applies before pagination."),
   page: z.number().int().min(1).default(1),
   limit: z.number().int().min(1).max(20).default(10),
 });

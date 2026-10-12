@@ -159,3 +159,14 @@ Try “Find Cardiff High School” or “Which Cardiff secondary schools offer W
 The initial snapshot contains 126 maintained schools, from the register published 23 April 2026 and imported on 11 October 2026. Searches make no external requests and need no additional cache or service. The directory is refreshed manually; see DATA_SOURCES.md for the procedure.
 
 Contains public sector information licensed under the Open Government Licence v3.0. Source: Welsh Government.
+
+## Discovery sorting and pagination
+
+Both discovery tools accept optional `sort_by` and `sort_order` (`asc` or `desc`). Omitted values mean name ascending; supplying only `sort_order` changes the name direction. Existing filters, `page` and `limit` defaults and bounds are unchanged. Unsupported sort values return `invalid_input`.
+
+- `find_schools`: `sort_by="name"`; filters and sorts the complete matching snapshot before pagination. Equal names use ascending school ID in either direction, giving stable pages within an unchanged snapshot.
+- `find_food_businesses`: `sort_by="name"` or `"rating"`; FSA filters and sorts before returning the requested page. Inspection-date sorting is unavailable. Non-numeric ratings retain their explicit states, and missing or sentinel inspection dates remain null. FSA controls their placement and tied results; stable ties and snapshot consistency across live pages are not guaranteed.
+
+For the first five schools Z–A: `{"sort_by":"name","sort_order":"desc","limit":5,"page":1}`.
+For the five lowest-rated food businesses: `{"sort_by":"rating","sort_order":"asc","limit":5,"page":1}`.
+Keep the same filters, sort and limit when requesting the next page.

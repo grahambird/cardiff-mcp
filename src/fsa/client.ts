@@ -46,7 +46,7 @@ const searchSchema = z.object({
 
 type Establishment = z.infer<typeof establishmentSchema>;
 
-export type FsaErrorCode = "timeout" | "throttled" | "upstream" | "malformed" | "not_found" | "outside_cardiff";
+export type FsaErrorCode = "invalid_input" | "timeout" | "throttled" | "upstream" | "malformed" | "not_found" | "outside_cardiff";
 
 export class FsaError extends Error {
   constructor(public readonly code: FsaErrorCode, message: string, public readonly status?: number) {
@@ -65,7 +65,12 @@ export function buildSearchUrl(input: FindBusinessesInput): URL {
   const url = new URL("/Establishments", baseUrl());
   url.searchParams.set("localAuthorityId", String(CARDIFF_LOCAL_AUTHORITY_ID));
   url.searchParams.set("schemeTypeKey", "FHRS");
-  url.searchParams.set("sortOptionKey", "alpha");
+  const sortKeys = {
+    name: { asc: "alpha", desc: "desc_alpha" },
+    // FSA names these keys counterintuitively; verified via /SortOptions.
+    rating: { asc: "desc_rating", desc: "rating" },
+  } as const;
+  url.searchParams.set("sortOptionKey", sortKeys[input.sort_by ?? "name"][input.sort_order ?? "asc"]);
   url.searchParams.set("pageNumber", String(input.page));
   url.searchParams.set("pageSize", String(input.limit));
   if (input.name) url.searchParams.set("name", input.name.trim());

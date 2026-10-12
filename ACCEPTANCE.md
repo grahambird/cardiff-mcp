@@ -73,3 +73,15 @@ Preview and ChatGPT checks remain pending until a preview is deployed and the co
 - Unauthenticated production MCP smoke client discovered all three default read-only tools: [x]
 - School directory invariants and live FSA search/detail checks passed: [x]
 - Earlier records retain the deployment URLs used for those checks.
+
+## Sorting release — manual ChatGPT checks pending
+
+After deploying and refreshing the ChatGPT connection, start a new conversation:
+
+- “Find the first five Cardiff schools in reverse alphabetical order (Z–A).” Selects `find_schools` with `sort_by=name`, `sort_order=desc`, `limit=5`, `page=1`: [ ]
+- “Show me the next five in the same order.” Retains filters, sort and limit, uses `page=2`: [ ]
+- “Find the five lowest-rated food businesses in Cardiff.” Selects `find_food_businesses` with `sort_by=rating`, `sort_order=asc`, `limit=5`, `page=1`: [ ]
+- “Find the five most recently inspected food businesses in Cardiff.” Explains that inspection-date sorting is unavailable rather than claiming a globally sorted result from one page: [ ]
+- Answers preserve sources, school snapshot dates and non-numeric rating distinctions: [ ]
+
+Local deterministic tests establish tool behaviour, not ChatGPT argument selection. These checks remain pending until performed in ChatGPT.

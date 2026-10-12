@@ -60,6 +60,50 @@ describe("FSA client", () => {
     });
   });
 
+  it.each([
+    ["name", "asc", "alpha"], ["name", "desc", "desc_alpha"],
+    ["rating", "asc", "desc_rating"], ["rating", "desc", "rating"],
+  ] as const)("requests first five sorted by %s %s with all filters", (sort_by, sort_order, key) => {
+    const url = buildSearchUrl({ sort_by, sort_order, name: " cafe ", business_type: "restaurant_cafe_canteen", minimum_rating: 0, page: 1, limit: 5 });
+    expect(Object.fromEntries(url.searchParams)).toEqual({
+      localAuthorityId: "339", schemeTypeKey: "FHRS", sortOptionKey: key,
+      pageNumber: "1", pageSize: "5", name: "cafe", businessTypeId: "1",
+      ratingKey: "0", ratingOperatorKey: "GreaterThanOrEqual",
+    });
+    expect(buildSearchUrl({ sort_order: "desc", page: 1, limit: 5 }).searchParams.get("sortOptionKey")).toBe("desc_alpha");
+  });
+
+  it("preserves upstream pages and missing values, with bounded requests and distinct sort caches", async () => {
+    const records = Array.from({ length: 10 }, (_, i) => ({
+      ...record, FHRSID: i + 1, BusinessName: `Business ${10 - i}`,
+      RatingValue: i === 1 ? "Exempt" : i === 2 ? "AwaitingInspection" : String(i % 6),
+      RatingDate: i === 1 ? null : i === 2 ? "1901-01-01T00:00:00" : record.RatingDate,
+    }));
+    const fetchMock = vi.fn(async (url: URL) => {
+      const page = Number(url.searchParams.get("pageNumber"));
+      return jsonResponse({ establishments: records.slice((page - 1) * 5, page * 5),
+        meta: { totalCount: 10, totalPages: 2, pageNumber: page, extractDate: null } });
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    const input = { sort_by: "rating" as const, sort_order: "asc" as const, page: 1, limit: 5 };
+    const first = await findFoodBusinesses(input);
+    const second = await findFoodBusinesses({ ...input, page: 2 });
+    expect(first).toMatchObject({ total_count: 10, page: 1, has_more: true });
+    expect(second).toMatchObject({ page: 2, has_more: false });
+    expect([...first.businesses, ...second.businesses].map((b) => b.establishment_id)).toEqual(records.map((r) => r.FHRSID));
+    expect(first.businesses[1]).toMatchObject({ rating: "Exempt", inspection_date: null });
+    expect(first.businesses[2]).toMatchObject({ rating: "AwaitingInspection", inspection_date: null });
+    expect(await findFoodBusinesses(input)).toEqual(first);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    for (const order of [
+      { sort_by: "rating", sort_order: "desc" },
+      { sort_by: "name", sort_order: "asc" },
+      { sort_by: "name", sort_order: "desc" },
+    ] as const) await findFoodBusinesses({ ...input, ...order });
+    expect(fetchMock).toHaveBeenCalledTimes(5);
+    expect(fetchMock.mock.calls.every(([url]) => url.searchParams.get("pageSize") === "5")).toBe(true);
+  });
+
   it("maps search records and distinguishes empty results", async () => {
     const fetchMock = vi.fn().mockResolvedValueOnce(
       jsonResponse({

@@ -7,7 +7,7 @@ describe("school MCP tool", () => {
   it("applies paging defaults and trims names", () => {
     expect(findSchoolsInput.parse({ name: " High " })).toEqual({ name: "High", page: 1, limit: 10 });
   });
-  it.each([{ name: " " }, { name: "x".repeat(101) }, { page: 0 }, { page: 1.5 }, { limit: 21 }, { limit: 0 }, { phase: "college" }, { language_group: "Welsh" }])("rejects invalid input %#", (input) => {
+  it.each([{ sort_by: "rating" }, { sort_order: "sideways" }, { name: " " }, { name: "x".repeat(101) }, { page: 0 }, { page: 1.5 }, { limit: 21 }, { limit: 0 }, { phase: "college" }, { language_group: "Welsh" }])("rejects invalid input %#", (input) => {
     expect(findSchoolsInput.safeParse(input).success).toBe(false);
   });
   it("returns the standard envelope without logging search arguments or making requests", async () => {

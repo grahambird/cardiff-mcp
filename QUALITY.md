@@ -44,3 +44,9 @@ Keep these deferred until their trigger occurs:
 Avoid introducing an eval platform, database, OpenAI API key, or paid monitoring service solely in anticipation of future scale.
 
 School-directory contract tests use mocked records for filtering, pagination, Cardiff scope and language grouping. A separate bundled-snapshot check validates unique string IDs, required fields and provenance. Searches make no upstream requests.
+
+## Discovery design principle
+
+Expose useful sorting supported by the consumed source using `sort_by`, `sort_order` and bounded `limit`. Filter and sort the complete matching dataset before pagination: locally for bundled data, server-side for live APIs. Never sort an already paginated subset or make exhaustive upstream requests to simulate unsupported sorting. Preserve defaults and document source limitations; keep each connector simple.
+
+Deterministic sorting tests cover first-five requests, school ties and adjacent pages, all four FSA sort mappings, bounded requests, cache separation, invalid inputs and preservation of missing dates/non-numeric ratings. Live canaries continue to use stable invariants.
