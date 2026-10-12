@@ -1,0 +1,2038 @@
+{
+  "source": {
+    "provider": "Welsh Government",
+    "publishing_service": "StatsWales",
+    "dataset": "Pupils in maintained schools by school, local authority, sector, type, school governance and school language, 2025/26",
+    "dataset_id": "2018f447-f4c0-438d-bb88-2a72af967724",
+    "revision_id": "ce5d4b3e-bb2a-44e8-8349-9a2700f901ef",
+    "source_url": "https://stats.gov.wales/en-GB/2018f447-f4c0-438d-bb88-2a72af967724",
+    "download_url": "https://api.stats.gov.wales/v2/2018f447-f4c0-438d-bb88-2a72af967724/data?format=csv&language=en-gb",
+    "publication_date": "2026-08-05",
+    "reporting_period": "2025/26",
+    "census_date": "2026-01-20",
+    "snapshot_imported_at": "2026-10-12T20:27:52.555790+00:00",
+    "input_sha256": "21020a2d85d63dd6158cb5e35ac8823d25736f2285261c75f04fde5f7805007e",
+    "metadata_sha256": "6a66471acb9625010fe3c5847bf80f7c2cd460f64fd4f6fcd677d99ad823706c",
+    "definition": "PLASC pupil headcounts, including published nursery and post-16 provision; subsidiary pupils excluded. Not FTE, capacity or live enrolment.",
+    "rounding": "none",
+    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Welsh Government (StatsWales)."
+  },
+  "schools": {
+    "6811003": {
+      "school_id": "6811003",
+      "source_name": "Grangetown Nursery School",
+      "total": {
+        "value": 118,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Grangetown Nursery School",
+        "sector": "Nursery schools",
+        "school_type": "Nursery",
+        "governance": "Nursery school",
+        "language_category": "Not applicable",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6811017": {
+      "school_id": "6811017",
+      "source_name": "Tremorfa Nursery School",
+      "total": {
+        "value": 53,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Tremorfa Nursery School",
+        "sector": "Nursery schools",
+        "school_type": "Nursery",
+        "governance": "Nursery school",
+        "language_category": "Not applicable",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6811018": {
+      "school_id": "6811018",
+      "source_name": "Ely and Caerau Children's Centre",
+      "total": {
+        "value": 80,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ely and Caerau Children's Centre",
+        "sector": "Nursery schools",
+        "school_type": "Nursery",
+        "governance": "Nursery school",
+        "language_category": "Not applicable",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812001": {
+      "school_id": "6812001",
+      "source_name": "MILLBANK PRIMARY SCHOOL",
+      "total": {
+        "value": 240,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "MILLBANK PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812003": {
+      "school_id": "6812003",
+      "source_name": "Adamsdown Primary School",
+      "total": {
+        "value": 339,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Adamsdown Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812005": {
+      "school_id": "6812005",
+      "source_name": "Albany Primary School",
+      "total": {
+        "value": 359,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Albany Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812009": {
+      "school_id": "6812009",
+      "source_name": "BADEN POWELL PRIMARY SCHOOL",
+      "total": {
+        "value": 276,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "BADEN POWELL PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812011": {
+      "school_id": "6812011",
+      "source_name": "Birchgrove Primary School",
+      "total": {
+        "value": 369,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Birchgrove Primary School",
+        "sector": "Primary schools",
+        "school_type": "Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812015": {
+      "school_id": "6812015",
+      "source_name": "Trelai Primary School",
+      "total": {
+        "value": 308,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Trelai Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812017": {
+      "school_id": "6812017",
+      "source_name": "Fairwater Primary School",
+      "total": {
+        "value": 144,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Fairwater Primary School",
+        "sector": "Primary schools",
+        "school_type": "Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812019": {
+      "school_id": "6812019",
+      "source_name": "Gabalfa Primary School",
+      "total": {
+        "value": 222,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Gabalfa Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812031": {
+      "school_id": "6812031",
+      "source_name": "Kitchener Primary School",
+      "total": {
+        "value": 439,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Kitchener Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812033": {
+      "school_id": "6812033",
+      "source_name": "Lansdowne Primary School",
+      "total": {
+        "value": 272,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Lansdowne Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812037": {
+      "school_id": "6812037",
+      "source_name": "Moorland Primary School",
+      "total": {
+        "value": 391,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Moorland Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812039": {
+      "school_id": "6812039",
+      "source_name": "Radnor Primary School",
+      "total": {
+        "value": 214,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Radnor Primary School",
+        "sector": "Primary schools",
+        "school_type": "Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812041": {
+      "school_id": "6812041",
+      "source_name": "Rhydypenau Primary School",
+      "total": {
+        "value": 474,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Rhydypenau Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812043": {
+      "school_id": "6812043",
+      "source_name": "Roath Park Primary School",
+      "total": {
+        "value": 449,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Roath Park Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812045": {
+      "school_id": "6812045",
+      "source_name": "Greenway Primary School",
+      "total": {
+        "value": 251,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Greenway Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812050": {
+      "school_id": "6812050",
+      "source_name": "Stacey Primary School",
+      "total": {
+        "value": 163,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Stacey Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812052": {
+      "school_id": "6812052",
+      "source_name": "Ton-Yr-Ywen Primary School",
+      "total": {
+        "value": 426,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ton-Yr-Ywen Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812061": {
+      "school_id": "6812061",
+      "source_name": "PETER LEA PRIMARY SCHOOL",
+      "total": {
+        "value": 289,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "PETER LEA PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812065": {
+      "school_id": "6812065",
+      "source_name": "Bryn Hafod Primary School",
+      "total": {
+        "value": 364,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Bryn Hafod Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812069": {
+      "school_id": "6812069",
+      "source_name": "Pen-Y-Bryn Primary School",
+      "total": {
+        "value": 239,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Pen-Y-Bryn Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812072": {
+      "school_id": "6812072",
+      "source_name": "Coed Glas Primary School",
+      "total": {
+        "value": 449,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Coed Glas Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812074": {
+      "school_id": "6812074",
+      "source_name": "Lakeside Primary School",
+      "total": {
+        "value": 493,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Lakeside Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812075": {
+      "school_id": "6812075",
+      "source_name": "PENTREBANE PRIMARY SCHOOL",
+      "total": {
+        "value": 200,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "PENTREBANE PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812084": {
+      "school_id": "6812084",
+      "source_name": "Mount Stuart Primary",
+      "total": {
+        "value": 418,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Mount Stuart Primary",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812090": {
+      "school_id": "6812090",
+      "source_name": "LLANISHEN FACH PRIMARY SCHOOL",
+      "total": {
+        "value": 506,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "LLANISHEN FACH PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812092": {
+      "school_id": "6812092",
+      "source_name": "RHIWBEINA PRIMARY SCHOOL",
+      "total": {
+        "value": 671,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "RHIWBEINA PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812094": {
+      "school_id": "6812094",
+      "source_name": "Llanedeyrn Primary School",
+      "total": {
+        "value": 224,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Llanedeyrn Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812096": {
+      "school_id": "6812096",
+      "source_name": "Springwood Primary School",
+      "total": {
+        "value": 275,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Springwood Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812101": {
+      "school_id": "6812101",
+      "source_name": "Ninian Park Primary School",
+      "total": {
+        "value": 541,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ninian Park Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812104": {
+      "school_id": "6812104",
+      "source_name": "Coryton Primary School",
+      "total": {
+        "value": 158,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Coryton Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812107": {
+      "school_id": "6812107",
+      "source_name": "BRYN CELYN PRIMARY SCHOOL",
+      "total": {
+        "value": 187,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "BRYN CELYN PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812111": {
+      "school_id": "6812111",
+      "source_name": "Ysgol Gynradd Gwaelod-Y-Garth",
+      "total": {
+        "value": 232,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Gynradd Gwaelod-Y-Garth",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Dual language school / provision (Welsh and English) (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812132": {
+      "school_id": "6812132",
+      "source_name": "Radyr Primary School",
+      "total": {
+        "value": 444,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Radyr Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812137": {
+      "school_id": "6812137",
+      "source_name": "Tongwynlais Primary School",
+      "total": {
+        "value": 179,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Tongwynlais Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812147": {
+      "school_id": "6812147",
+      "source_name": "Llysfaen Primary School",
+      "total": {
+        "value": 455,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Llysfaen Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812153": {
+      "school_id": "6812153",
+      "source_name": "Bryn Deri Primary School",
+      "total": {
+        "value": 213,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Bryn Deri Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812164": {
+      "school_id": "6812164",
+      "source_name": "Oakfield Primary School",
+      "total": {
+        "value": 456,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Oakfield Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812166": {
+      "school_id": "6812166",
+      "source_name": "Ysgol Gymraeg Melin Gruffydd",
+      "total": {
+        "value": 462,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Gymraeg Melin Gruffydd",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812169": {
+      "school_id": "6812169",
+      "source_name": "Ysgol Y Wern",
+      "total": {
+        "value": 663,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Y Wern",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812170": {
+      "school_id": "6812170",
+      "source_name": "YSGOL GYMRAEG COED Y GOF",
+      "total": {
+        "value": 184,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "YSGOL GYMRAEG COED Y GOF",
+        "sector": "Primary schools",
+        "school_type": "Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812171": {
+      "school_id": "6812171",
+      "source_name": "Ysgol Bro Eirwg",
+      "total": {
+        "value": 350,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Bro Eirwg",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812173": {
+      "school_id": "6812173",
+      "source_name": "Ysgol Gymraeg Treganna",
+      "total": {
+        "value": 659,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Gymraeg Treganna",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812174": {
+      "school_id": "6812174",
+      "source_name": "Willowbrook Primary School",
+      "total": {
+        "value": 416,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Willowbrook Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812175": {
+      "school_id": "6812175",
+      "source_name": "Pentyrch Primary School",
+      "total": {
+        "value": 184,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Pentyrch Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812176": {
+      "school_id": "6812176",
+      "source_name": "Thornhill Primary School",
+      "total": {
+        "value": 412,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Thornhill Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812177": {
+      "school_id": "6812177",
+      "source_name": "Ysgol Pencae",
+      "total": {
+        "value": 205,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Pencae",
+        "sector": "Primary schools",
+        "school_type": "Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812179": {
+      "school_id": "6812179",
+      "source_name": "Meadowlane Primary School",
+      "total": {
+        "value": 290,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Meadowlane Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812180": {
+      "school_id": "6812180",
+      "source_name": "Ysgol Mynydd Bychan",
+      "total": {
+        "value": 281,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Mynydd Bychan",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812305": {
+      "school_id": "6812305",
+      "source_name": "CREIGIAU PRIMARY SCHOOL",
+      "total": {
+        "value": 353,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "CREIGIAU PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Dual language school / provision (Welsh and English) (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812306": {
+      "school_id": "6812306",
+      "source_name": "YSGOL GYMRAEG PWLL COCH",
+      "total": {
+        "value": 331,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "YSGOL GYMRAEG PWLL COCH",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812308": {
+      "school_id": "6812308",
+      "source_name": "Ysgol Y Berllan Deg",
+      "total": {
+        "value": 403,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Y Berllan Deg",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812310": {
+      "school_id": "6812310",
+      "source_name": "Glan-Yr-Afon Primary",
+      "total": {
+        "value": 140,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Glan-Yr-Afon Primary",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812311": {
+      "school_id": "6812311",
+      "source_name": "Grange Town Primary",
+      "total": {
+        "value": 364,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Grange Town Primary",
+        "sector": "Primary schools",
+        "school_type": "Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812312": {
+      "school_id": "6812312",
+      "source_name": "Herbert Thompson Primary",
+      "total": {
+        "value": 407,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Herbert Thompson Primary",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812313": {
+      "school_id": "6812313",
+      "source_name": "Ysgol Glan Morfa",
+      "total": {
+        "value": 229,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Glan Morfa",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812314": {
+      "school_id": "6812314",
+      "source_name": "Ysgol Pen Y Pil",
+      "total": {
+        "value": 169,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Pen Y Pil",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812315": {
+      "school_id": "6812315",
+      "source_name": "Ysgol Gymraeg Nant Caerau",
+      "total": {
+        "value": 221,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Gymraeg Nant Caerau",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812317": {
+      "school_id": "6812317",
+      "source_name": "Rumney Primary School",
+      "total": {
+        "value": 435,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Rumney Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812318": {
+      "school_id": "6812318",
+      "source_name": "Windsor Clive Primary School",
+      "total": {
+        "value": 458,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Windsor Clive Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812319": {
+      "school_id": "6812319",
+      "source_name": "Severn Primary",
+      "total": {
+        "value": 422,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Severn Primary",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812320": {
+      "school_id": "6812320",
+      "source_name": "Hawthorn Primary School",
+      "total": {
+        "value": 199,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Hawthorn Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812321": {
+      "school_id": "6812321",
+      "source_name": "Danescourt Primary",
+      "total": {
+        "value": 413,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Danescourt Primary",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812322": {
+      "school_id": "6812322",
+      "source_name": "Hywel Dda Primary School",
+      "total": {
+        "value": 373,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Hywel Dda Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812323": {
+      "school_id": "6812323",
+      "source_name": "Ysgol Gynradd Gymraeg Pen-Y-Groes",
+      "total": {
+        "value": 101,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Gynradd Gymraeg Pen-Y-Groes",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812324": {
+      "school_id": "6812324",
+      "source_name": "Trowbridge Primary School",
+      "total": {
+        "value": 188,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Trowbridge Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812325": {
+      "school_id": "6812325",
+      "source_name": "Ysgol Glan Ceubal",
+      "total": {
+        "value": 194,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Glan Ceubal",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812326": {
+      "school_id": "6812326",
+      "source_name": "Marlborough Primary",
+      "total": {
+        "value": 486,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Marlborough Primary",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812327": {
+      "school_id": "6812327",
+      "source_name": "Pencaerau Primary school",
+      "total": {
+        "value": 248,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Pencaerau Primary school",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812328": {
+      "school_id": "6812328",
+      "source_name": "Glyncoed Primary School",
+      "total": {
+        "value": 274,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Glyncoed Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812329": {
+      "school_id": "6812329",
+      "source_name": "Whitchurch Primary School",
+      "total": {
+        "value": 663,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Whitchurch Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812330": {
+      "school_id": "6812330",
+      "source_name": "Pontprennau Primary School",
+      "total": {
+        "value": 497,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Pontprennau Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812331": {
+      "school_id": "6812331",
+      "source_name": "Howardian Primary School",
+      "total": {
+        "value": 430,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Howardian Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812332": {
+      "school_id": "6812332",
+      "source_name": "Ysgol Gynradd Gymraeg Hamadryad",
+      "total": {
+        "value": 380,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Gynradd Gymraeg Hamadryad",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812333": {
+      "school_id": "6812333",
+      "source_name": "Ysgol Gynradd Groes-Wen Primary",
+      "total": {
+        "value": 180,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Gynradd Groes-Wen Primary",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "Dual language school / provision (Welsh and English) (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6812334": {
+      "school_id": "6812334",
+      "source_name": "Fairoak Primary School",
+      "total": {
+        "value": 321,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Fairoak Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813000": {
+      "school_id": "6813000",
+      "source_name": "St Mellons C.I.W. Primary School",
+      "total": {
+        "value": 245,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Mellons C.I.W. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813321": {
+      "school_id": "6813321",
+      "source_name": "St Albans RC Primary School",
+      "total": {
+        "value": 146,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Albans RC Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813323": {
+      "school_id": "6813323",
+      "source_name": "St Cuthbert's R.C. Primary School",
+      "total": {
+        "value": 107,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Cuthbert's R.C. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813328": {
+      "school_id": "6813328",
+      "source_name": "St. Joseph's RC School",
+      "total": {
+        "value": 212,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St. Joseph's RC School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813330": {
+      "school_id": "6813330",
+      "source_name": "ST. MARY'S R.C. PRIMARY SCHOOL",
+      "total": {
+        "value": 199,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "ST. MARY'S R.C. PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813332": {
+      "school_id": "6813332",
+      "source_name": "St Patrick's R.C. Primary School",
+      "total": {
+        "value": 276,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Patrick's R.C. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813334": {
+      "school_id": "6813334",
+      "source_name": "St Peter's RC Primary School",
+      "total": {
+        "value": 421,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Peter's RC Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813336": {
+      "school_id": "6813336",
+      "source_name": "St Cadoc's Catholic Primary",
+      "total": {
+        "value": 332,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Cadoc's Catholic Primary",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813341": {
+      "school_id": "6813341",
+      "source_name": "St Monica's C.I.W. Primary School",
+      "total": {
+        "value": 131,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Monica's C.I.W. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Foundation",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813343": {
+      "school_id": "6813343",
+      "source_name": "ST.PAUL'S C/W PRIMARY SCHOOL",
+      "total": {
+        "value": 221,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "ST.PAUL'S C/W PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813344": {
+      "school_id": "6813344",
+      "source_name": "TREDEGARVILLE C/W PRIMARY",
+      "total": {
+        "value": 231,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "TREDEGARVILLE C/W PRIMARY",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813346": {
+      "school_id": "6813346",
+      "source_name": "Llandaff City C.I.W. Primary School",
+      "total": {
+        "value": 396,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Llandaff City C.I.W. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813351": {
+      "school_id": "6813351",
+      "source_name": "CHRIST THE KING PRIMARY SCHOOL",
+      "total": {
+        "value": 238,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "CHRIST THE KING PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813353": {
+      "school_id": "6813353",
+      "source_name": "St John Lloyd R.C. Primary School",
+      "total": {
+        "value": 345,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St John Lloyd R.C. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813354": {
+      "school_id": "6813354",
+      "source_name": "Holy Family R.C. Primary School",
+      "total": {
+        "value": 135,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Holy Family R.C. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813355": {
+      "school_id": "6813355",
+      "source_name": "St Mary The Virgin C.I.W. Primary School",
+      "total": {
+        "value": 195,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Mary The Virgin C.I.W. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813357": {
+      "school_id": "6813357",
+      "source_name": "All Saints C.I.W. Primary School",
+      "total": {
+        "value": 128,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "All Saints C.I.W. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813366": {
+      "school_id": "6813366",
+      "source_name": "ST FAGANS CHURCH IN WALES",
+      "total": {
+        "value": 193,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "ST FAGANS CHURCH IN WALES",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813370": {
+      "school_id": "6813370",
+      "source_name": "ST BERNADETTES PRIMARY SCHOOL",
+      "total": {
+        "value": 242,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "ST BERNADETTES PRIMARY SCHOOL",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813371": {
+      "school_id": "6813371",
+      "source_name": "St David's C.I.W. Primary School",
+      "total": {
+        "value": 195,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St David's C.I.W. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813373": {
+      "school_id": "6813373",
+      "source_name": "BISHOP CHILDS C/W PRIMARY",
+      "total": {
+        "value": 199,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "BISHOP CHILDS C/W PRIMARY",
+        "sector": "Primary schools",
+        "school_type": "Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813374": {
+      "school_id": "6813374",
+      "source_name": "St Phillip Evans R.C. Primary School",
+      "total": {
+        "value": 377,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Phillip Evans R.C. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6813375": {
+      "school_id": "6813375",
+      "source_name": "St Francis V.A. Primary School",
+      "total": {
+        "value": 325,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Francis V.A. Primary School",
+        "sector": "Primary schools",
+        "school_type": "Nursery, Infants & Juniors",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814039": {
+      "school_id": "6814039",
+      "source_name": "CARDIFF HIGH SCHOOL",
+      "total": {
+        "value": 1795,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "CARDIFF HIGH SCHOOL",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814041": {
+      "school_id": "6814041",
+      "source_name": "Willows High School",
+      "total": {
+        "value": 760,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Willows High School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-16)",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814042": {
+      "school_id": "6814042",
+      "source_name": "Fitzalan High School",
+      "total": {
+        "value": 1880,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Fitzalan High School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814049": {
+      "school_id": "6814049",
+      "source_name": "Cantonian High School",
+      "total": {
+        "value": 998,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Cantonian High School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Voluntary controlled",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814051": {
+      "school_id": "6814051",
+      "source_name": "Llanishen High School",
+      "total": {
+        "value": 1759,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Llanishen High School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814054": {
+      "school_id": "6814054",
+      "source_name": "Cathays High School",
+      "total": {
+        "value": 1283,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Cathays High School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814070": {
+      "school_id": "6814070",
+      "source_name": "Radyr Comprehensive School",
+      "total": {
+        "value": 1437,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Radyr Comprehensive School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814071": {
+      "school_id": "6814071",
+      "source_name": "Ysgol Gyfun Gymraeg Glantaf",
+      "total": {
+        "value": 1528,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Gyfun Gymraeg Glantaf",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814072": {
+      "school_id": "6814072",
+      "source_name": "Ysgol Gyfun Gymraeg Plasmawr",
+      "total": {
+        "value": 1209,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Gyfun Gymraeg Plasmawr",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814074": {
+      "school_id": "6814074",
+      "source_name": "Ysgol Gyfun Gymraeg Bro Edern",
+      "total": {
+        "value": 917,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Gyfun Gymraeg Bro Edern",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Community",
+        "language_category": "Welsh medium school / provision (including transitional)",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814075": {
+      "school_id": "6814075",
+      "source_name": "Cardiff West Community High School",
+      "total": {
+        "value": 954,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Cardiff West Community High School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814076": {
+      "school_id": "6814076",
+      "source_name": "Eastern High",
+      "total": {
+        "value": 1150,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Eastern High",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-16)",
+        "governance": "Community",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814600": {
+      "school_id": "6814600",
+      "source_name": "St Illtyd's Catholic High School",
+      "total": {
+        "value": 1002,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Illtyd's Catholic High School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-16)",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814607": {
+      "school_id": "6814607",
+      "source_name": "Mary Immaculate High School",
+      "total": {
+        "value": 865,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Mary Immaculate High School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-16)",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814608": {
+      "school_id": "6814608",
+      "source_name": "The Bishop of Llandaff CiW High School",
+      "total": {
+        "value": 1286,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "The Bishop of Llandaff CiW High School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814609": {
+      "school_id": "6814609",
+      "source_name": "St Teilo's C-in-W High School",
+      "total": {
+        "value": 1397,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "St Teilo's C-in-W High School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6814611": {
+      "school_id": "6814611",
+      "source_name": "CORPUS CHRISTI CATHOLIC HIGH SCHOOL",
+      "total": {
+        "value": 1143,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "CORPUS CHRISTI CATHOLIC HIGH SCHOOL",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-16)",
+        "governance": "Voluntary aided",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6815403": {
+      "school_id": "6815403",
+      "source_name": "Whitchurch High School",
+      "total": {
+        "value": 2468,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Whitchurch High School",
+        "sector": "Secondary schools",
+        "school_type": "Secondary (ages 11-19)",
+        "governance": "Foundation",
+        "language_category": "English medium school / provision",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6817001": {
+      "school_id": "6817001",
+      "source_name": "Greenhill Special School",
+      "total": {
+        "value": 93,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Greenhill Special School",
+        "sector": "Special schools",
+        "school_type": "Special (with post-16 provision)",
+        "governance": "Special school",
+        "language_category": "Not applicable",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6817005": {
+      "school_id": "6817005",
+      "source_name": "Ysgol Cynefin",
+      "total": {
+        "value": 42,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ysgol Cynefin",
+        "sector": "Special schools",
+        "school_type": "Special (without post-16 provision)",
+        "governance": "Special school",
+        "language_category": "Not applicable",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6817006": {
+      "school_id": "6817006",
+      "source_name": "Woodlands High School",
+      "total": {
+        "value": 191,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Woodlands High School",
+        "sector": "Special schools",
+        "school_type": "Special (with post-16 provision)",
+        "governance": "Special school",
+        "language_category": "Not applicable",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6817008": {
+      "school_id": "6817008",
+      "source_name": "Riverbank Special School",
+      "total": {
+        "value": 79,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Riverbank Special School",
+        "sector": "Special schools",
+        "school_type": "Special (without post-16 provision)",
+        "governance": "Special school",
+        "language_category": "Not applicable",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6817011": {
+      "school_id": "6817011",
+      "source_name": "Ty Gwyn Special School",
+      "total": {
+        "value": 262,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Ty Gwyn Special School",
+        "sector": "Special schools",
+        "school_type": "Special (with post-16 provision)",
+        "governance": "Special school",
+        "language_category": "Not applicable",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6817019": {
+      "school_id": "6817019",
+      "source_name": "The Hollies Special School",
+      "total": {
+        "value": 155,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "The Hollies Special School",
+        "sector": "Special schools",
+        "school_type": "Special (without post-16 provision)",
+        "governance": "Special school",
+        "language_category": "Not applicable",
+        "local_authority": "Cardiff"
+      }
+    },
+    "6817021": {
+      "school_id": "6817021",
+      "source_name": "Meadowbank Special School",
+      "total": {
+        "value": 113,
+        "status": "reported"
+      },
+      "characteristics": {
+        "name": "Meadowbank Special School",
+        "sector": "Special schools",
+        "school_type": "Special (without post-16 provision)",
+        "governance": "Special school",
+        "language_category": "Not applicable",
+        "local_authority": "Cardiff"
+      }
+    }
+  }
+}

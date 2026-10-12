@@ -1,0 +1,3550 @@
+{
+  "source": {
+    "provider": "Welsh Government",
+    "publishing_service": "StatsWales",
+    "dataset": "Pupils in maintained schools eligible for free school meals by school, 2025/26",
+    "dataset_id": "996385d1-061e-4835-8c92-60d232277216",
+    "revision_id": "ac794ecf-8931-4dee-a053-2aa04daec4c3",
+    "source_url": "https://stats.gov.wales/en-GB/996385d1-061e-4835-8c92-60d232277216",
+    "download_url": "https://api.stats.gov.wales/v2/996385d1-061e-4835-8c92-60d232277216/data?format=csv&language=en-gb",
+    "publication_date": "2026-08-05",
+    "reporting_period": "2025/26",
+    "census_date": "2026-01-20",
+    "snapshot_imported_at": "2026-10-12T20:27:52.837071+00:00",
+    "input_sha256": "ecf828e9823779c80b8dd744158cf232502a339a08b45a8e131b659e0301cde8",
+    "metadata_sha256": "8076f9c4f749c1665787cda503ee114d54c201060c6c11f6dad4bb345a12275e",
+    "definition": "Means-tested FSM eligibility, separately from eligibility or transitional protection. Excludes meals received solely through universal primary provision. Counts rounded to nearest 5; use published percentages, never reconstruct confidential figures.",
+    "rounding": "nearest_5_counts",
+    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Welsh Government (StatsWales)."
+  },
+  "schools": {
+    "6811003": {
+      "school_id": "6811003",
+      "source_name": "Grangetown Nursery School",
+      "eligible": {
+        "count": {
+          "value": 0,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 0,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 0,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 0,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 120,
+        "status": "reported"
+      }
+    },
+    "6811017": {
+      "school_id": "6811017",
+      "source_name": "Tremorfa Nursery School",
+      "eligible": {
+        "count": {
+          "value": 0,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 0,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 0,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 0,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 55,
+        "status": "reported"
+      }
+    },
+    "6811018": {
+      "school_id": "6811018",
+      "source_name": "Ely and Caerau Children's Centre",
+      "eligible": {
+        "count": {
+          "value": 0,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 0,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 0,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 0,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 80,
+        "status": "reported"
+      }
+    },
+    "6812001": {
+      "school_id": "6812001",
+      "source_name": "MILLBANK PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 60,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 24.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 75,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 31.3,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 240,
+        "status": "reported"
+      }
+    },
+    "6812003": {
+      "school_id": "6812003",
+      "source_name": "Adamsdown Primary School",
+      "eligible": {
+        "count": {
+          "value": 145,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 43.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 165,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 48.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 340,
+        "status": "reported"
+      }
+    },
+    "6812005": {
+      "school_id": "6812005",
+      "source_name": "Albany Primary School",
+      "eligible": {
+        "count": {
+          "value": 95,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 26.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 125,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 34.3,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 360,
+        "status": "reported"
+      }
+    },
+    "6812009": {
+      "school_id": "6812009",
+      "source_name": "BADEN POWELL PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 110,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 39.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 140,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 50,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 275,
+        "status": "reported"
+      }
+    },
+    "6812011": {
+      "school_id": "6812011",
+      "source_name": "Birchgrove Primary School",
+      "eligible": {
+        "count": {
+          "value": 25,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 6.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 8.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 370,
+        "status": "reported"
+      }
+    },
+    "6812015": {
+      "school_id": "6812015",
+      "source_name": "Trelai Primary School",
+      "eligible": {
+        "count": {
+          "value": 160,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 51.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 185,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 60.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 310,
+        "status": "reported"
+      }
+    },
+    "6812017": {
+      "school_id": "6812017",
+      "source_name": "Fairwater Primary School",
+      "eligible": {
+        "count": {
+          "value": 60,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 41.7,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 65,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 45.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 145,
+        "status": "reported"
+      }
+    },
+    "6812019": {
+      "school_id": "6812019",
+      "source_name": "Gabalfa Primary School",
+      "eligible": {
+        "count": {
+          "value": 80,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 35.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 90,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 41.4,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 220,
+        "status": "reported"
+      }
+    },
+    "6812031": {
+      "school_id": "6812031",
+      "source_name": "Kitchener Primary School",
+      "eligible": {
+        "count": {
+          "value": 75,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 16.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 105,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 24.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 440,
+        "status": "reported"
+      }
+    },
+    "6812033": {
+      "school_id": "6812033",
+      "source_name": "Lansdowne Primary School",
+      "eligible": {
+        "count": {
+          "value": 65,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 23.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 100,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 36,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 270,
+        "status": "reported"
+      }
+    },
+    "6812037": {
+      "school_id": "6812037",
+      "source_name": "Moorland Primary School",
+      "eligible": {
+        "count": {
+          "value": 130,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 33.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 170,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 43.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 390,
+        "status": "reported"
+      }
+    },
+    "6812039": {
+      "school_id": "6812039",
+      "source_name": "Radnor Primary School",
+      "eligible": {
+        "count": {
+          "value": 20,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 9.8,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 14.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 215,
+        "status": "reported"
+      }
+    },
+    "6812041": {
+      "school_id": "6812041",
+      "source_name": "Rhydypenau Primary School",
+      "eligible": {
+        "count": {
+          "value": 5,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 1.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 1.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 475,
+        "status": "reported"
+      }
+    },
+    "6812043": {
+      "school_id": "6812043",
+      "source_name": "Roath Park Primary School",
+      "eligible": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 6.7,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 45,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 10.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 450,
+        "status": "reported"
+      }
+    },
+    "6812045": {
+      "school_id": "6812045",
+      "source_name": "Greenway Primary School",
+      "eligible": {
+        "count": {
+          "value": 95,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 37.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 115,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 46.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 250,
+        "status": "reported"
+      }
+    },
+    "6812050": {
+      "school_id": "6812050",
+      "source_name": "Stacey Primary School",
+      "eligible": {
+        "count": {
+          "value": 50,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 30.7,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 65,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 38.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 165,
+        "status": "reported"
+      }
+    },
+    "6812052": {
+      "school_id": "6812052",
+      "source_name": "Ton-Yr-Ywen Primary School",
+      "eligible": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 7.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 40,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 9.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 425,
+        "status": "reported"
+      }
+    },
+    "6812061": {
+      "school_id": "6812061",
+      "source_name": "PETER LEA PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 85,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 29.4,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 105,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 35.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 290,
+        "status": "reported"
+      }
+    },
+    "6812065": {
+      "school_id": "6812065",
+      "source_name": "Bryn Hafod Primary School",
+      "eligible": {
+        "count": {
+          "value": 135,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 36.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 170,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 46.4,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 365,
+        "status": "reported"
+      }
+    },
+    "6812069": {
+      "school_id": "6812069",
+      "source_name": "Pen-Y-Bryn Primary School",
+      "eligible": {
+        "count": {
+          "value": 70,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 28.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 80,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 33.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 240,
+        "status": "reported"
+      }
+    },
+    "6812072": {
+      "school_id": "6812072",
+      "source_name": "Coed Glas Primary School",
+      "eligible": {
+        "count": {
+          "value": 115,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 25.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 150,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 33.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 450,
+        "status": "reported"
+      }
+    },
+    "6812074": {
+      "school_id": "6812074",
+      "source_name": "Lakeside Primary School",
+      "eligible": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 2.4,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 20,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 4.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 495,
+        "status": "reported"
+      }
+    },
+    "6812075": {
+      "school_id": "6812075",
+      "source_name": "PENTREBANE PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 80,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 41,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 100,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 49.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 200,
+        "status": "reported"
+      }
+    },
+    "6812084": {
+      "school_id": "6812084",
+      "source_name": "Mount Stuart Primary",
+      "eligible": {
+        "count": {
+          "value": 115,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 27.8,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 145,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 34.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 420,
+        "status": "reported"
+      }
+    },
+    "6812090": {
+      "school_id": "6812090",
+      "source_name": "LLANISHEN FACH PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 6.7,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 50,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 9.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 505,
+        "status": "reported"
+      }
+    },
+    "6812092": {
+      "school_id": "6812092",
+      "source_name": "RHIWBEINA PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 1.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 20,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 2.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 670,
+        "status": "reported"
+      }
+    },
+    "6812094": {
+      "school_id": "6812094",
+      "source_name": "Llanedeyrn Primary School",
+      "eligible": {
+        "count": {
+          "value": 75,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 33.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 100,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 45.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 225,
+        "status": "reported"
+      }
+    },
+    "6812096": {
+      "school_id": "6812096",
+      "source_name": "Springwood Primary School",
+      "eligible": {
+        "count": {
+          "value": 120,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 43.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 120,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 44,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 275,
+        "status": "reported"
+      }
+    },
+    "6812101": {
+      "school_id": "6812101",
+      "source_name": "Ninian Park Primary School",
+      "eligible": {
+        "count": {
+          "value": 140,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 26.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 190,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 34.8,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 540,
+        "status": "reported"
+      }
+    },
+    "6812104": {
+      "school_id": "6812104",
+      "source_name": "Coryton Primary School",
+      "eligible": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 23.4,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 45,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 27.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 160,
+        "status": "reported"
+      }
+    },
+    "6812107": {
+      "school_id": "6812107",
+      "source_name": "BRYN CELYN PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 100,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 54.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 115,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 61.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 185,
+        "status": "reported"
+      }
+    },
+    "6812111": {
+      "school_id": "6812111",
+      "source_name": "Ysgol Gynradd Gwaelod-Y-Garth",
+      "eligible": {
+        "count": {
+          "value": 5,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 2.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 15,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 230,
+        "status": "reported"
+      }
+    },
+    "6812132": {
+      "school_id": "6812132",
+      "source_name": "Radyr Primary School",
+      "eligible": {
+        "count": {
+          "value": 15,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 2.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 70,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 15.8,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 445,
+        "status": "reported"
+      }
+    },
+    "6812137": {
+      "school_id": "6812137",
+      "source_name": "Tongwynlais Primary School",
+      "eligible": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 19,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 45,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 24.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 180,
+        "status": "reported"
+      }
+    },
+    "6812147": {
+      "school_id": "6812147",
+      "source_name": "Llysfaen Primary School",
+      "eligible": {
+        "count": {
+          "value": 5,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 1.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 2.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 455,
+        "status": "reported"
+      }
+    },
+    "6812153": {
+      "school_id": "6812153",
+      "source_name": "Bryn Deri Primary School",
+      "eligible": {
+        "count": {
+          "value": 15,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 8,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 20,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 9.4,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 215,
+        "status": "reported"
+      }
+    },
+    "6812164": {
+      "school_id": "6812164",
+      "source_name": "Oakfield Primary School",
+      "eligible": {
+        "count": {
+          "value": 165,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 36,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 205,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 45.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 455,
+        "status": "reported"
+      }
+    },
+    "6812166": {
+      "school_id": "6812166",
+      "source_name": "Ysgol Gymraeg Melin Gruffydd",
+      "eligible": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 1.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 2.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 460,
+        "status": "reported"
+      }
+    },
+    "6812169": {
+      "school_id": "6812169",
+      "source_name": "Ysgol Y Wern",
+      "eligible": {
+        "count": {
+          "value": 20,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 2.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 4.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 665,
+        "status": "reported"
+      }
+    },
+    "6812170": {
+      "school_id": "6812170",
+      "source_name": "YSGOL GYMRAEG COED Y GOF",
+      "eligible": {
+        "count": {
+          "value": 75,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 41.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 90,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 50,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 185,
+        "status": "reported"
+      }
+    },
+    "6812171": {
+      "school_id": "6812171",
+      "source_name": "Ysgol Bro Eirwg",
+      "eligible": {
+        "count": {
+          "value": 45,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 13.4,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 70,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 19.4,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 350,
+        "status": "reported"
+      }
+    },
+    "6812173": {
+      "school_id": "6812173",
+      "source_name": "Ysgol Gymraeg Treganna",
+      "eligible": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 4.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 5.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 660,
+        "status": "reported"
+      }
+    },
+    "6812174": {
+      "school_id": "6812174",
+      "source_name": "Willowbrook Primary School",
+      "eligible": {
+        "count": {
+          "value": 120,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 29.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 155,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 36.8,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 415,
+        "status": "reported"
+      }
+    },
+    "6812175": {
+      "school_id": "6812175",
+      "source_name": "Pentyrch Primary School",
+      "eligible": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 15.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 17.4,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 185,
+        "status": "reported"
+      }
+    },
+    "6812176": {
+      "school_id": "6812176",
+      "source_name": "Thornhill Primary School",
+      "eligible": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 8.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 55,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 12.9,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 410,
+        "status": "reported"
+      }
+    },
+    "6812177": {
+      "school_id": "6812177",
+      "source_name": "Ysgol Pencae",
+      "eligible": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 4.4,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 5.9,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 205,
+        "status": "reported"
+      }
+    },
+    "6812179": {
+      "school_id": "6812179",
+      "source_name": "Meadowlane Primary School",
+      "eligible": {
+        "count": {
+          "value": 165,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 56.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 185,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 63.4,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 290,
+        "status": "reported"
+      }
+    },
+    "6812180": {
+      "school_id": "6812180",
+      "source_name": "Ysgol Mynydd Bychan",
+      "eligible": {
+        "count": {
+          "value": 5,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 2.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 3.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 280,
+        "status": "reported"
+      }
+    },
+    "6812305": {
+      "school_id": "6812305",
+      "source_name": "CREIGIAU PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 10.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 40,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 11.9,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 355,
+        "status": "reported"
+      }
+    },
+    "6812306": {
+      "school_id": "6812306",
+      "source_name": "YSGOL GYMRAEG PWLL COCH",
+      "eligible": {
+        "count": {
+          "value": 15,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 3.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 25,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 8.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 330,
+        "status": "reported"
+      }
+    },
+    "6812308": {
+      "school_id": "6812308",
+      "source_name": "Ysgol Y Berllan Deg",
+      "eligible": {
+        "count": {
+          "value": 15,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 4,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 20,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 5.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 405,
+        "status": "reported"
+      }
+    },
+    "6812310": {
+      "school_id": "6812310",
+      "source_name": "Glan-Yr-Afon Primary",
+      "eligible": {
+        "count": {
+          "value": 85,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 59.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 100,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 71.4,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 140,
+        "status": "reported"
+      }
+    },
+    "6812311": {
+      "school_id": "6812311",
+      "source_name": "Grange Town Primary",
+      "eligible": {
+        "count": {
+          "value": 115,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 32.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 150,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 40.9,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 365,
+        "status": "reported"
+      }
+    },
+    "6812312": {
+      "school_id": "6812312",
+      "source_name": "Herbert Thompson Primary",
+      "eligible": {
+        "count": {
+          "value": 175,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 42.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 215,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 52.3,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 405,
+        "status": "reported"
+      }
+    },
+    "6812313": {
+      "school_id": "6812313",
+      "source_name": "Ysgol Glan Morfa",
+      "eligible": {
+        "count": {
+          "value": 40,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 17,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 60,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 26.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 230,
+        "status": "reported"
+      }
+    },
+    "6812314": {
+      "school_id": "6812314",
+      "source_name": "Ysgol Pen Y Pil",
+      "eligible": {
+        "count": {
+          "value": 55,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 32.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 65,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 38.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 170,
+        "status": "reported"
+      }
+    },
+    "6812315": {
+      "school_id": "6812315",
+      "source_name": "Ysgol Gymraeg Nant Caerau",
+      "eligible": {
+        "count": {
+          "value": 75,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 33.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 95,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 43,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 220,
+        "status": "reported"
+      }
+    },
+    "6812317": {
+      "school_id": "6812317",
+      "source_name": "Rumney Primary School",
+      "eligible": {
+        "count": {
+          "value": 65,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 15.4,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 90,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 20.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 435,
+        "status": "reported"
+      }
+    },
+    "6812318": {
+      "school_id": "6812318",
+      "source_name": "Windsor Clive Primary School",
+      "eligible": {
+        "count": {
+          "value": 250,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 54.4,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 280,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 61.4,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 460,
+        "status": "reported"
+      }
+    },
+    "6812319": {
+      "school_id": "6812319",
+      "source_name": "Severn Primary",
+      "eligible": {
+        "count": {
+          "value": 110,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 25.8,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 130,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 31.3,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 420,
+        "status": "reported"
+      }
+    },
+    "6812320": {
+      "school_id": "6812320",
+      "source_name": "Hawthorn Primary School",
+      "eligible": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 17.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 40,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 21.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 200,
+        "status": "reported"
+      }
+    },
+    "6812321": {
+      "school_id": "6812321",
+      "source_name": "Danescourt Primary",
+      "eligible": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 8.7,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 50,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 11.9,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 415,
+        "status": "reported"
+      }
+    },
+    "6812322": {
+      "school_id": "6812322",
+      "source_name": "Hywel Dda Primary School",
+      "eligible": {
+        "count": {
+          "value": 175,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 47.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 210,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 56.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 375,
+        "status": "reported"
+      }
+    },
+    "6812323": {
+      "school_id": "6812323",
+      "source_name": "Ysgol Gynradd Gymraeg Pen-Y-Groes",
+      "eligible": {
+        "count": {
+          "value": 15,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 15.8,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 20,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 17.8,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 100,
+        "status": "reported"
+      }
+    },
+    "6812324": {
+      "school_id": "6812324",
+      "source_name": "Trowbridge Primary School",
+      "eligible": {
+        "count": {
+          "value": 95,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 49.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 110,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 58,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 190,
+        "status": "reported"
+      }
+    },
+    "6812325": {
+      "school_id": "6812325",
+      "source_name": "Ysgol Glan Ceubal",
+      "eligible": {
+        "count": {
+          "value": 20,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 11.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 15.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 195,
+        "status": "reported"
+      }
+    },
+    "6812326": {
+      "school_id": "6812326",
+      "source_name": "Marlborough Primary",
+      "eligible": {
+        "count": {
+          "value": 45,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 9.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 50,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 10.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 485,
+        "status": "reported"
+      }
+    },
+    "6812327": {
+      "school_id": "6812327",
+      "source_name": "Pencaerau Primary school",
+      "eligible": {
+        "count": {
+          "value": 85,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 33.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 115,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 46.4,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 250,
+        "status": "reported"
+      }
+    },
+    "6812328": {
+      "school_id": "6812328",
+      "source_name": "Glyncoed Primary School",
+      "eligible": {
+        "count": {
+          "value": 60,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 22.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 90,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 32.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 275,
+        "status": "reported"
+      }
+    },
+    "6812329": {
+      "school_id": "6812329",
+      "source_name": "Whitchurch Primary School",
+      "eligible": {
+        "count": {
+          "value": 50,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 7.8,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 70,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 10.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 665,
+        "status": "reported"
+      }
+    },
+    "6812330": {
+      "school_id": "6812330",
+      "source_name": "Pontprennau Primary School",
+      "eligible": {
+        "count": {
+          "value": 55,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 10.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 65,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 13.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 495,
+        "status": "reported"
+      }
+    },
+    "6812331": {
+      "school_id": "6812331",
+      "source_name": "Howardian Primary School",
+      "eligible": {
+        "count": {
+          "value": 45,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 10,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 60,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 13.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 430,
+        "status": "reported"
+      }
+    },
+    "6812332": {
+      "school_id": "6812332",
+      "source_name": "Ysgol Gynradd Gymraeg Hamadryad",
+      "eligible": {
+        "count": {
+          "value": 40,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 10.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 50,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 13.4,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 380,
+        "status": "reported"
+      }
+    },
+    "6812333": {
+      "school_id": "6812333",
+      "source_name": "Ysgol Gynradd Groes-Wen Primary",
+      "eligible": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 6.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 6.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 180,
+        "status": "reported"
+      }
+    },
+    "6812334": {
+      "school_id": "6812334",
+      "source_name": "Fairoak Primary School",
+      "eligible": {
+        "count": {
+          "value": 70,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 22.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 80,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 25.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 320,
+        "status": "reported"
+      }
+    },
+    "6813000": {
+      "school_id": "6813000",
+      "source_name": "St Mellons C.I.W. Primary School",
+      "eligible": {
+        "count": {
+          "value": 50,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 19.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 50,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 20,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 245,
+        "status": "reported"
+      }
+    },
+    "6813321": {
+      "school_id": "6813321",
+      "source_name": "St Albans RC Primary School",
+      "eligible": {
+        "count": {
+          "value": 75,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 50,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 90,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 62.3,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 145,
+        "status": "reported"
+      }
+    },
+    "6813323": {
+      "school_id": "6813323",
+      "source_name": "St Cuthbert's R.C. Primary School",
+      "eligible": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 33.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 60,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 54.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 105,
+        "status": "reported"
+      }
+    },
+    "6813328": {
+      "school_id": "6813328",
+      "source_name": "St. Joseph's RC School",
+      "eligible": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 17,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 45,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 20.8,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 210,
+        "status": "reported"
+      }
+    },
+    "6813330": {
+      "school_id": "6813330",
+      "source_name": "ST. MARY'S R.C. PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 15.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 55,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 27.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 200,
+        "status": "reported"
+      }
+    },
+    "6813332": {
+      "school_id": "6813332",
+      "source_name": "St Patrick's R.C. Primary School",
+      "eligible": {
+        "count": {
+          "value": 95,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 35.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 110,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 40.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 275,
+        "status": "reported"
+      }
+    },
+    "6813334": {
+      "school_id": "6813334",
+      "source_name": "St Peter's RC Primary School",
+      "eligible": {
+        "count": {
+          "value": 95,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 22.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 110,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 25.9,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 420,
+        "status": "reported"
+      }
+    },
+    "6813336": {
+      "school_id": "6813336",
+      "source_name": "St Cadoc's Catholic Primary",
+      "eligible": {
+        "count": {
+          "value": 110,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 33.7,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 135,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 40.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 330,
+        "status": "reported"
+      }
+    },
+    "6813341": {
+      "school_id": "6813341",
+      "source_name": "St Monica's C.I.W. Primary School",
+      "eligible": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 22.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 40,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 29.8,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 130,
+        "status": "reported"
+      }
+    },
+    "6813343": {
+      "school_id": "6813343",
+      "source_name": "ST.PAUL'S C/W PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 55,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 25.8,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 70,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 31.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 220,
+        "status": "reported"
+      }
+    },
+    "6813344": {
+      "school_id": "6813344",
+      "source_name": "TREDEGARVILLE C/W PRIMARY",
+      "eligible": {
+        "count": {
+          "value": 95,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 41.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 125,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 53.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 230,
+        "status": "reported"
+      }
+    },
+    "6813346": {
+      "school_id": "6813346",
+      "source_name": "Llandaff City C.I.W. Primary School",
+      "eligible": {
+        "count": {
+          "value": 15,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 3.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 20,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 5.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 395,
+        "status": "reported"
+      }
+    },
+    "6813351": {
+      "school_id": "6813351",
+      "source_name": "CHRIST THE KING PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 10,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 4.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 15,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 5.9,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 240,
+        "status": "reported"
+      }
+    },
+    "6813353": {
+      "school_id": "6813353",
+      "source_name": "St John Lloyd R.C. Primary School",
+      "eligible": {
+        "count": {
+          "value": 115,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 33,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 135,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 38.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 345,
+        "status": "reported"
+      }
+    },
+    "6813354": {
+      "school_id": "6813354",
+      "source_name": "Holy Family R.C. Primary School",
+      "eligible": {
+        "count": {
+          "value": 40,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 28.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 55,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 39.3,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 135,
+        "status": "reported"
+      }
+    },
+    "6813355": {
+      "school_id": "6813355",
+      "source_name": "St Mary The Virgin C.I.W. Primary School",
+      "eligible": {
+        "count": {
+          "value": 55,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 28.7,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 75,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 37.9,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 195,
+        "status": "reported"
+      }
+    },
+    "6813357": {
+      "school_id": "6813357",
+      "source_name": "All Saints C.I.W. Primary School",
+      "eligible": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 23.4,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 28.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 130,
+        "status": "reported"
+      }
+    },
+    "6813366": {
+      "school_id": "6813366",
+      "source_name": "ST FAGANS CHURCH IN WALES",
+      "eligible": {
+        "count": {
+          "value": 25,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 14,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 17.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 195,
+        "status": "reported"
+      }
+    },
+    "6813370": {
+      "school_id": "6813370",
+      "source_name": "ST BERNADETTES PRIMARY SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 25,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 9.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 30,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 13.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 240,
+        "status": "reported"
+      }
+    },
+    "6813371": {
+      "school_id": "6813371",
+      "source_name": "St David's C.I.W. Primary School",
+      "eligible": {
+        "count": {
+          "value": 40,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 20,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 50,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 25.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 195,
+        "status": "reported"
+      }
+    },
+    "6813373": {
+      "school_id": "6813373",
+      "source_name": "BISHOP CHILDS C/W PRIMARY",
+      "eligible": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 17.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 45,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 23.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 200,
+        "status": "reported"
+      }
+    },
+    "6813374": {
+      "school_id": "6813374",
+      "source_name": "St Phillip Evans R.C. Primary School",
+      "eligible": {
+        "count": {
+          "value": 70,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 19.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 95,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 25.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 375,
+        "status": "reported"
+      }
+    },
+    "6813375": {
+      "school_id": "6813375",
+      "source_name": "St Francis V.A. Primary School",
+      "eligible": {
+        "count": {
+          "value": 155,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 48.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 200,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 61.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 325,
+        "status": "reported"
+      }
+    },
+    "6814039": {
+      "school_id": "6814039",
+      "source_name": "CARDIFF HIGH SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 95,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 5.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 155,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 8.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1795,
+        "status": "reported"
+      }
+    },
+    "6814041": {
+      "school_id": "6814041",
+      "source_name": "Willows High School",
+      "eligible": {
+        "count": {
+          "value": 380,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 50.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 430,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 56.3,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 760,
+        "status": "reported"
+      }
+    },
+    "6814042": {
+      "school_id": "6814042",
+      "source_name": "Fitzalan High School",
+      "eligible": {
+        "count": {
+          "value": 565,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 30.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 730,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 38.9,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1880,
+        "status": "reported"
+      }
+    },
+    "6814049": {
+      "school_id": "6814049",
+      "source_name": "Cantonian High School",
+      "eligible": {
+        "count": {
+          "value": 360,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 36.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 450,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 45.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1000,
+        "status": "reported"
+      }
+    },
+    "6814051": {
+      "school_id": "6814051",
+      "source_name": "Llanishen High School",
+      "eligible": {
+        "count": {
+          "value": 305,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 17.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 415,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 23.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1760,
+        "status": "reported"
+      }
+    },
+    "6814054": {
+      "school_id": "6814054",
+      "source_name": "Cathays High School",
+      "eligible": {
+        "count": {
+          "value": 395,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 30.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 485,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 37.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1285,
+        "status": "reported"
+      }
+    },
+    "6814070": {
+      "school_id": "6814070",
+      "source_name": "Radyr Comprehensive School",
+      "eligible": {
+        "count": {
+          "value": 145,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 10,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 195,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 13.6,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1435,
+        "status": "reported"
+      }
+    },
+    "6814071": {
+      "school_id": "6814071",
+      "source_name": "Ysgol Gyfun Gymraeg Glantaf",
+      "eligible": {
+        "count": {
+          "value": 80,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 5.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 110,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 7.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1530,
+        "status": "reported"
+      }
+    },
+    "6814072": {
+      "school_id": "6814072",
+      "source_name": "Ysgol Gyfun Gymraeg Plasmawr",
+      "eligible": {
+        "count": {
+          "value": 125,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 10.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 170,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 14,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1210,
+        "status": "reported"
+      }
+    },
+    "6814074": {
+      "school_id": "6814074",
+      "source_name": "Ysgol Gyfun Gymraeg Bro Edern",
+      "eligible": {
+        "count": {
+          "value": 145,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 15.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 210,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 22.8,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 915,
+        "status": "reported"
+      }
+    },
+    "6814075": {
+      "school_id": "6814075",
+      "source_name": "Cardiff West Community High School",
+      "eligible": {
+        "count": {
+          "value": 515,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 53.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 620,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 65.2,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 955,
+        "status": "reported"
+      }
+    },
+    "6814076": {
+      "school_id": "6814076",
+      "source_name": "Eastern High",
+      "eligible": {
+        "count": {
+          "value": 480,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 41.9,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 580,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 50.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1150,
+        "status": "reported"
+      }
+    },
+    "6814600": {
+      "school_id": "6814600",
+      "source_name": "St Illtyd's Catholic High School",
+      "eligible": {
+        "count": {
+          "value": 355,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 35.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 460,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 45.8,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1000,
+        "status": "reported"
+      }
+    },
+    "6814607": {
+      "school_id": "6814607",
+      "source_name": "Mary Immaculate High School",
+      "eligible": {
+        "count": {
+          "value": 295,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 34,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 375,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 43.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 865,
+        "status": "reported"
+      }
+    },
+    "6814608": {
+      "school_id": "6814608",
+      "source_name": "The Bishop of Llandaff CiW High School",
+      "eligible": {
+        "count": {
+          "value": 105,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 8.2,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 170,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 13.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1285,
+        "status": "reported"
+      }
+    },
+    "6814609": {
+      "school_id": "6814609",
+      "source_name": "St Teilo's C-in-W High School",
+      "eligible": {
+        "count": {
+          "value": 375,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 26.8,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 495,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 35.3,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1395,
+        "status": "reported"
+      }
+    },
+    "6814611": {
+      "school_id": "6814611",
+      "source_name": "CORPUS CHRISTI CATHOLIC HIGH SCHOOL",
+      "eligible": {
+        "count": {
+          "value": 165,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 14.4,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 230,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 20.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 1145,
+        "status": "reported"
+      }
+    },
+    "6815403": {
+      "school_id": "6815403",
+      "source_name": "Whitchurch High School",
+      "eligible": {
+        "count": {
+          "value": 290,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 11.7,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 390,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 15.8,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 2470,
+        "status": "reported"
+      }
+    },
+    "6817001": {
+      "school_id": "6817001",
+      "source_name": "Greenhill Special School",
+      "eligible": {
+        "count": {
+          "value": 75,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 80.6,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 75,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 82.8,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 95,
+        "status": "reported"
+      }
+    },
+    "6817005": {
+      "school_id": "6817005",
+      "source_name": "Ysgol Cynefin",
+      "eligible": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 81,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 35,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 85.7,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 40,
+        "status": "reported"
+      }
+    },
+    "6817006": {
+      "school_id": "6817006",
+      "source_name": "Woodlands High School",
+      "eligible": {
+        "count": {
+          "value": 105,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 54.5,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 120,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 63.4,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 190,
+        "status": "reported"
+      }
+    },
+    "6817008": {
+      "school_id": "6817008",
+      "source_name": "Riverbank Special School",
+      "eligible": {
+        "count": {
+          "value": 65,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 81,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 70,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 86.1,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 80,
+        "status": "reported"
+      }
+    },
+    "6817011": {
+      "school_id": "6817011",
+      "source_name": "Ty Gwyn Special School",
+      "eligible": {
+        "count": {
+          "value": 120,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 45.4,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 135,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 52.3,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 260,
+        "status": "reported"
+      }
+    },
+    "6817019": {
+      "school_id": "6817019",
+      "source_name": "The Hollies Special School",
+      "eligible": {
+        "count": {
+          "value": 80,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 50.3,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 85,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 53.5,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 155,
+        "status": "reported"
+      }
+    },
+    "6817021": {
+      "school_id": "6817021",
+      "source_name": "Meadowbank Special School",
+      "eligible": {
+        "count": {
+          "value": 50,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 45.1,
+          "status": "reported"
+        }
+      },
+      "eligible_or_transitionally_protected": {
+        "count": {
+          "value": 55,
+          "status": "reported"
+        },
+        "percentage": {
+          "value": 47.8,
+          "status": "reported"
+        }
+      },
+      "all_pupils": {
+        "value": 115,
+        "status": "reported"
+      }
+    }
+  }
+}

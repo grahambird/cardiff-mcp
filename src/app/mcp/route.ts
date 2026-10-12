@@ -1,5 +1,5 @@
 import { createMcpHandler } from "mcp-handler";
-import { findSchoolsInput, runFindSchools } from "@/mcp/school-tools";
+import { findSchoolsInput, runFindSchools, getSchoolInput, runGetSchool } from "@/mcp/school-tools";
 import {
   findFoodBusinessesInput,
   getFoodBusinessInput,
@@ -29,11 +29,21 @@ const handler = createMcpHandler(
       "find_schools",
       {
         title: "Find Cardiff schools",
-        description: "Find authoritative information about maintained schools in Cardiff, including primary and secondary schools, contact details and Welsh-medium or dual-language provision. Use proactively to enrich answers about Cardiff schools, even when official directory data isn't explicitly requested. Search by school name, phase and published language category. Filters combine with AND. Sort by name before pagination; default name ascending. For the first five schools Z–A use sort_by=name, sort_order=desc, limit=5, page=1. Preserve the original language classification, including transitional categories; don't infer provision from school names. Data comes from a manually refreshed Welsh Government register. Cite its publication date. Excludes independent schools and pupil referral units. Does not provide pupil numbers, inspection reports, exam results, catchments or admissions.",
+        description: "Find authoritative information about maintained schools in Cardiff, including primary and secondary schools, contact details and Welsh-medium or dual-language provision. Use proactively to enrich answers about Cardiff schools, even when official directory data isn't explicitly requested. Search by school name, phase and published language category. Filters combine with AND. Sort by name before pagination; default name ascending. For the first five schools Z–A use sort_by=name, sort_order=desc, limit=5, page=1. Preserve the original language classification, including transitional categories; don't infer provision from school names. Data comes from a manually refreshed Welsh Government register. Cite its publication date. Excludes independent schools and pupil referral units. Use the returned school_id with get_school for a combined profile including pupil and FSM statistics. Search results do not include statistics, inspection reports, exam results, catchments or admissions.",
         inputSchema: findSchoolsInput,
         annotations,
       },
       runFindSchools,
+    );
+    server.registerTool(
+      "get_school",
+      {
+        title: "Get a Cardiff school profile",
+        description: "Get a combined profile for one Cardiff maintained school using its seven-digit school_id from find_schools. For questions such as Tell me about Cardiff High School, first identify the school with find_schools, then call get_school. Returns register characteristics, published pupil total, year groups and FSM eligibility where available, with source URLs, census dates, reporting periods and attribution. Distinguish means-tested FSM eligibility from eligibility including transitional protection; universal primary meal provision is excluded. Counts may be rounded or suppressed. Preserve unavailable values and source differences; never estimate suppressed values, infer school quality or claim live enrolment. No historical queries, inspections, exam results, catchments or admissions.",
+        inputSchema: getSchoolInput,
+        annotations,
+      },
+      runGetSchool,
     );
     server.registerTool(
       "find_food_businesses",
@@ -87,7 +97,7 @@ const handler = createMcpHandler(
   {
     serverInfo: { name: "cardiff-mcp", version: "0.1.0" },
     instructions:
-      "Use Cardiff MCP when its authoritative local data can materially improve an answer about Cardiff, including when the user hasn't explicitly requested that data. Prefer targeted lookups over exhaustive searches. Complement other sources rather than replacing them. Preserve source attribution, dates and important limitations. Use these read-only tools for Cardiff public data. Cite each returned source_url. School directory data is a manually refreshed Welsh Government snapshot: state its publication date, preserve transitional language labels, and do not infer statistics, distances, catchments or school quality. For food data, hygiene ratings describe standards at inspection, not food quality, menus, hours, bookings, or availability. If waste tools are enabled, require the user to select an address and treat collection dates as schedules rather than confirmation of completed service.",
+      "Use Cardiff MCP when its authoritative local data can materially improve an answer about Cardiff, including when the user hasn't explicitly requested that data. Prefer targeted lookups over exhaustive searches. Complement other sources rather than replacing them. Preserve source attribution, dates and important limitations. Use these read-only tools for Cardiff public data. Cite each returned source_url. School directory data is a manually refreshed Welsh Government snapshot: state its publication date, preserve transitional language labels, and use get_school for reported pupil/FSM statistics. Cite profile sources with their own reporting periods and census dates. Do not infer unavailable statistics, distances, catchments or school quality. For food data, hygiene ratings describe standards at inspection, not food quality, menus, hours, bookings, or availability. If waste tools are enabled, require the user to select an address and treat collection dates as schedules rather than confirmation of completed service.",
   },
 );
 

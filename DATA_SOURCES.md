@@ -110,3 +110,55 @@ The importer selects only the `Maintained` sheet and Cardiff LA code; it neither
 The live API v2 `/SortOptions` lookup confirms name A–Z (`alpha`), name Z–A (`desc_alpha`), rating highest first (`rating`) and rating lowest first (`desc_rating`). These rating keys are counterintuitive and must be mapped explicitly. The lookup also provides relevance and distance; these are not exposed in this change. No inspection-date option is supplied.
 
 The connector sends the chosen sort with existing filters and bounded pagination in one request. It preserves returned ordering without sorting individual pages or downloading all matches. FSA does not document a secondary tie-breaker or guarantee an unchanged dataset between page requests. Non-numeric rating placement is upstream-controlled.
+
+## StatsWales school statistics
+
+Three independent Cardiff-only snapshots are stored under `src/schools/statswales/`; the register is never rewritten by this import. The provider is Welsh Government, publishing service StatsWales, source PLASC. Supported API documentation: <https://api.stats.gov.wales/docs/?urls.primaryName=API+v2+%28English%29>.
+
+| Import kind | Dataset ID | Measures |
+| --- | --- | --- |
+| characteristics | 2018f447-f4c0-438d-bb88-2a72af967724 | Pupil headcount and census characteristics |
+| year_groups | 9b0d8f7a-02f9-4663-8093-ec975074f4ea | Pupil headcounts by published year group |
+| fsm | 996385d1-061e-4835-8c92-60d232277216 | Eligibility and eligibility including transitional protection; counts, percentages, all-pupils count |
+
+Initial import: 12 October 2026. All three exports cover 2025/26, census 20 January 2026, published 5 August 2026; next update expected August 2027. Each matches all 126 register schools, with no unmatched Cardiff IDs. Year groups sum to the characteristics total for every Cardiff school. Pupil totals include published nursery and post-16 groups and are headcounts, not FTE or capacity. The characteristics dataset history records removal of subsidiary pupils on 29 January 2026.
+
+FSM counts round to the nearest five; percentages are supplied separately and must not be recalculated. Thus Glantaf has a pupil total of 1,528 and an FSM all-pupils count of 1,530. Means-tested eligibility and eligibility including transitional protection are separate categories; neither includes meals received solely through universal primary provision. CSV exports represent suppression as a blank value with a Confidential note. No Cardiff values were suppressed in this import; suppression exists elsewhere in the public dataset and is covered by tests. Blank values without notes are unavailable, never zero.
+
+Register and census characteristics differ, including governance at some schools and the name THE COURT SCHOOL versus Ysgol Cynefin (6817005). These differences are retained, not resolved by assumptions. Original source names are stored separately; joins use seven-digit identifiers only. The year-group Welsh metadata title is stale (2024/25); the importer checks the English title and explicitly supplied reporting period. Historical comparisons are deferred because the documented API exposes latest revisions, without an established historical revision-download route.
+
+Reuse follows OGL v3 through the dataset pages' linked <https://www.gov.wales/copyright-statement>. Every profile includes source URLs and: “Contains public sector information licensed under the Open Government Licence v3.0. Source: Welsh Government (StatsWales).” No logos or endorsement are used.
+
+### Independent manual refresh
+
+Python 3 standard library only; no network calls in the importer or runtime school tools.
+
+1. Choose one kind and its dataset ID above. Check its dataset page, English metadata, definitions and reporting period. Record the census date from the relevant official census report, not from the publication timestamp.
+2. Download metadata before, the full supported CSV, then metadata after. The export preserves source notes and published rounding. No HTML scraping or undocumented endpoint is needed:
+
+   ```bash
+   curl -fsS "https://api.stats.gov.wales/v2/DATASET_ID?language=en-gb" -o /tmp/metadata-before.json
+   curl -fsS "https://api.stats.gov.wales/v2/DATASET_ID/data?format=csv&language=en-gb" -o /tmp/schools.csv
+   curl -fsS "https://api.stats.gov.wales/v2/DATASET_ID?language=en-gb" -o /tmp/metadata-after.json
+   ```
+
+3. Create a candidate and change report (replace kind, period and date as appropriate):
+
+   ```bash
+   python3 scripts/import-statswales.py characteristics /tmp/schools.csv --metadata-before /tmp/metadata-before.json --metadata-after /tmp/metadata-after.json --period 2025/26 --census-date 2026-01-20 --candidate /tmp/characteristics-candidate.json --report /tmp/characteristics-report.json
+   ```
+
+   The importer refuses to write directly to its canonical snapshot. It checks dataset/revision consistency, columns, identifiers, duplicate measures, period, numeric ranges, notes and rounding. Changed schemas or unfamiliar notes require source review before adapting the parser. It validates all input rows before narrowing to Cardiff. Cardiff authority and the 681 school prefix must agree in characteristics; the other exports use these validated Welsh school identifiers. Geography codes are not school IDs.
+
+4. Review the report: missing register schools, unmatched Cardiff IDs, added/removed IDs, changed records, source characteristics, periods/revisions, pupil changes above 20%, and same-period year-group discrepancies. Changes may be valid. Never infer closure or silently change IDs. Retain raw inputs and reports outside the runtime bundle for audit.
+5. After review, copy the candidate beside the destination and rename it into place, so replacement is atomic. Update only the selected source:
+
+   ```bash
+   cp /tmp/characteristics-candidate.json src/schools/statswales/characteristics.json.pending
+   mv src/schools/statswales/characteristics.json.pending src/schools/statswales/characteristics.json
+   npm run check
+   ```
+
+6. Review the Git diff and deploy the tested update. Git preserves previous snapshots. If download or validation fails, stop before promotion; the previous snapshot remains intact. When updating totals and year groups separately, check the report again after both imports. Different periods stay explicitly labelled in profiles and are not combined.
+
+Supported CSV downloads stream the complete, modest national dataset once during manual refresh (currently about 1,441, 11,972 and 7,205 rows respectively), then bundle only Cardiff rows. This is a documented bulk export, not exhaustive runtime search. API v2 also supports filtered and paginated JSON and sorting, but runtime requests are unnecessary for this snapshot design. No new source-specific numerical usage limit was established; keep acquisition sequential and stop on upstream errors.

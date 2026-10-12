@@ -36,7 +36,7 @@ try {
   await client.connect(new StreamableHTTPClientTransport(endpoint));
   const { tools } = await client.listTools();
   const names = tools.map((tool) => tool.name).sort();
-  const expected = ["find_food_businesses", "find_schools", "get_food_business"];
+  const expected = ["find_food_businesses", "find_schools", "get_food_business", "get_school"];
   if (process.env.CARDIFF_WASTE_TOOLS_ENABLED === "true") {
     expected.push("find_waste_collection_addresses", "get_waste_collections");
     expected.sort();
@@ -65,6 +65,35 @@ try {
     for (const field of ["name", "sector", "school_type", "governance", "language_category", "language_group", "address", "postcode", "telephone"]) {
       assert(typeof school[field] === "string" && school[field].length > 0, `Missing school ${field}.`);
     }
+  }
+
+  const profileCall = await client.callTool({
+    name: "get_school", arguments: { school_id: directory.schools[0].school_id },
+  });
+  assert(!profileCall.isError, "School profile failed.");
+  const profile = profileCall.structuredContent?.result;
+  assert(profile?.school_id === directory.schools[0].school_id, "Profile school ID differs.");
+  assert(profile.name === directory.schools[0].name && profile.identity_source === "register", "Profile identity differs.");
+  for (const key of ["register", "characteristics", "year_groups", "fsm"]) {
+    const source = profile.sources?.[key];
+    assert(source?.provider === "Welsh Government", "Missing profile provider.");
+    assert(typeof source.source_url === "string" && source.source_url.startsWith("https://"), "Missing profile source URL.");
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(source.publication_date), "Missing profile publication date.");
+    assert(isIsoTimestamp(source.snapshot_imported_at), "Missing profile import date.");
+    assert(source.attribution?.includes("Open Government Licence v3.0"), "Missing profile attribution.");
+    if (key !== "register") {
+      assert(source.publishing_service === "StatsWales", "Missing StatsWales provenance.");
+      assert(/^\d{4}\/\d{2}$/.test(source.reporting_period), "Missing statistics period.");
+      assert(/^\d{4}-\d{2}-\d{2}$/.test(source.census_date), "Missing census date.");
+    }
+  }
+  const measures = [profile.pupils.total, profile.fsm.all_pupils,
+    profile.fsm.eligible.count, profile.fsm.eligible.percentage,
+    profile.fsm.eligible_or_transitionally_protected.count, profile.fsm.eligible_or_transitionally_protected.percentage,
+    ...Object.values(profile.year_groups.values)];
+  for (const measure of measures) {
+    assert(["reported", "suppressed", "unavailable", "not_applicable"].includes(measure.status), "Invalid measure status.");
+    assert(measure.status === "reported" ? typeof measure.value === "number" && measure.value >= 0 : measure.value === null, "Invalid measure value/status.");
   }
 
   const search = await client.callTool({

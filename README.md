@@ -1,16 +1,17 @@
 # Cardiff MCP
 
-Cardiff MCP is a small, open-source, read-only [Model Context Protocol](https://modelcontextprotocol.io/) server for useful public data about Cardiff, Wales. It connects AI assistants to live Food Standards Agency (FSA) food-hygiene ratings and a maintained-school directory. The production information page is at <https://mcp.wales>; connect an MCP client using `https://mcp.wales/mcp`.
+Cardiff MCP is a small, open-source, read-only [Model Context Protocol](https://modelcontextprotocol.io/) server for useful public data about Cardiff, Wales. It connects AI assistants to live Food Standards Agency (FSA) food-hygiene ratings and maintained-school profiles with StatsWales pupil and FSM statistics. The production information page is at <https://mcp.wales>; connect an MCP client using `https://mcp.wales/mcp`.
 
 ```text
 ChatGPT or another MCP client → Streamable HTTP /mcp → Next.js on Vercel → FSA API v2
 ```
 
-The server has no database, accounts, authentication, Redis, LLM calls, or OpenAI API key. This version exposes three tools (after deployment):
+The server has no database, accounts, authentication, Redis, LLM calls, or OpenAI API key. This version exposes four tools (after deployment):
 
 - `find_food_businesses` searches within Cardiff by business name, broad FSA business type, and minimum numeric hygiene rating.
 - `get_food_business` gets one Cardiff establishment using its FSA `FHRSID`.
 - `find_schools` searches a bundled Welsh Government directory of Cardiff maintained schools by name, phase and language group.
+- `get_school` returns one combined school profile with separate-source pupil totals, year groups and FSM eligibility.
 
 An implementation spike for Cardiff Council waste collections is present but gated off by default while data-reuse terms and Vercel-origin access are confirmed. It adds no production tools unless `CARDIFF_WASTE_TOOLS_ENABLED=true` is set.
 
@@ -49,7 +50,7 @@ npm run build
 npm run test:smoke
 ```
 
-The smoke test starts the production build, discovers all three MCP tools, checks the school directory, performs a live rating-5 Cardiff search, and retrieves the first returned establishment. It therefore requires internet access and a responsive FSA service. Unit tests use mocked responses and remain deterministic.
+The smoke test starts the production build, discovers all four MCP tools, checks the school directory, performs a live rating-5 Cardiff search, and retrieves the first returned establishment. It therefore requires internet access and a responsive FSA service. Unit tests use mocked responses and remain deterministic.
 
 The production endpoint is also checked daily by GitHub Actions using stable behavioural invariants rather than fixed establishment data. See [QUALITY.md](QUALITY.md) for the quality strategy and deliberately deferred improvements.
 
@@ -83,7 +84,7 @@ Availability is account- and workspace-dependent. It was observed on the project
 1. Use ChatGPT on the web and confirm **Plugins → Add Custom MCP Server** is available.
 2. Enter a name such as `Cardiff MCP` and the full `https://mcp.wales/mcp` URL.
 3. Choose no authentication, review the risk warning, create the connection, and install it.
-4. Confirm the discovered tools are `find_food_businesses`, `get_food_business` and `find_schools`.
+4. Confirm the discovered tools are `find_food_businesses`, `get_food_business`, `find_schools` and `get_school`.
 5. Try:
    - “Find cafés in Cardiff with a food hygiene rating of 5.”
    - “What is the hygiene rating and inspection date for this Cardiff restaurant?”
@@ -132,7 +133,7 @@ To exercise them in a local or Vercel preview environment:
 CARDIFF_WASTE_TOOLS_ENABLED=true npm run dev
 ```
 
-After building, `CARDIFF_WASTE_TOOLS_ENABLED=true npm run test:smoke` verifies that MCP discovery includes all five tools while retaining the existing live FSA checks. Waste execution remains covered by mocked deterministic tests until a private property is supplied for the gated acceptance check.
+After building, `CARDIFF_WASTE_TOOLS_ENABLED=true npm run test:smoke` verifies that MCP discovery includes all six tools while retaining the existing live FSA checks. Waste execution remains covered by mocked deterministic tests until a private property is supplied for the gated acceptance check.
 
 The connector uses a five-minute address cache, a fifteen-minute collection cache, short-lived JWT caching, single-flight request deduplication, and at most two outgoing Cardiff requests per warm instance. It retries transient network, `429`, and `5xx` failures once; it does not retry `400`, `401`, or `403`. Cache keys are SHA-256 hashes rather than raw location identifiers. These controls are per Vercel instance, not deployment-wide.
 
@@ -144,7 +145,7 @@ Collection dates are schedules, not proof of collection. The server does not inf
 
 The expected incremental cost for low-volume development is £0: the FSA API is free, public GitHub repositories are free, and this service should fit comfortably within Vercel Hobby limits. Usage limits and product availability can change.
 
-Not included in this milestone: Welsh responses, location/distance search, school statistics/inspections/performance, persistent analytics or caching, authentication, maps, menus, opening hours, bookings, alerts, MCP widgets, or public directory submission.
+Not included in this milestone: Welsh responses, location/distance search, school inspections/performance, persistent analytics or caching, authentication, maps, menus, opening hours, bookings, alerts, MCP widgets, or public directory submission.
 
 ## Licence
 
@@ -170,3 +171,13 @@ Both discovery tools accept optional `sort_by` and `sort_order` (`asc` or `desc`
 For the first five schools Z–A: `{"sort_by":"name","sort_order":"desc","limit":5,"page":1}`.
 For the five lowest-rated food businesses: `{"sort_by":"rating","sort_order":"asc","limit":5,"page":1}`.
 Keep the same filters, sort and limit when requesting the next page.
+
+## Combined school profiles
+
+For “Tell me about Cardiff High School”, call `find_schools` by name, then `get_school` with the returned seven-digit `school_id` string. The profile retains directory identity and contact fields and adds pupil totals, published year groups and both FSM eligibility categories. Search result shapes, filters, sorting and pagination remain unchanged.
+
+The initial three StatsWales snapshots cover all 126 register schools for 2025/26 (census 20 January 2026; published 5 August 2026). Each source is stored separately and composed at query time, with no network calls. Each section carries its own reporting period and source reference; `sources` gives publication/import dates, definitions and attribution. Different source characteristics appear in `source_differences` without overwriting register values.
+
+Measures return `value` and `status`: `reported`, `suppressed`, `unavailable` or `not_applicable`. Only reported values are numeric. Missing groups are not zero. FSM counts round to five; its “all pupils” count can differ from the unrounded pupil total. Published percentages are preserved rather than recalculated. Means-tested eligibility and eligibility including transitional protection exclude meals received solely under universal primary provision. No estimates, rankings or historical queries are supplied.
+
+Invalid IDs return `invalid_input`; IDs absent from the Cardiff register return `not_found`. Missing statistics for an existing school remain a successful partial profile. See DATA_SOURCES.md for independent refresh instructions.

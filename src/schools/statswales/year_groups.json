@@ -1,0 +1,5028 @@
+{
+  "source": {
+    "provider": "Welsh Government",
+    "publishing_service": "StatsWales",
+    "dataset": "Pupils in maintained schools by school and year group, 2025/26",
+    "dataset_id": "9b0d8f7a-02f9-4663-8093-ec975074f4ea",
+    "revision_id": "7dcaeec3-403f-41ca-a3d9-ef4f380bee25",
+    "source_url": "https://stats.gov.wales/en-GB/9b0d8f7a-02f9-4663-8093-ec975074f4ea",
+    "download_url": "https://api.stats.gov.wales/v2/9b0d8f7a-02f9-4663-8093-ec975074f4ea/data?format=csv&language=en-gb",
+    "publication_date": "2026-08-05",
+    "reporting_period": "2025/26",
+    "census_date": "2026-01-20",
+    "snapshot_imported_at": "2026-10-12T20:27:52.710957+00:00",
+    "input_sha256": "83be00d163738b23403b33e515e62245e14fab2c2d5eb26ed6188c80f0e09ae6",
+    "metadata_sha256": "7bd69fc94653db0c5effe1e1118e7220be1674befa3f83881e4480c9273fe323",
+    "definition": "Published PLASC pupil headcounts by year group. Omitted groups are not inferred to be zero.",
+    "rounding": "none",
+    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0. Source: Welsh Government (StatsWales)."
+  },
+  "schools": {
+    "6811003": {
+      "school_id": "6811003",
+      "source_name": "Grangetown Nursery School",
+      "values": {
+        "Nursery 1": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 102,
+          "status": "reported"
+        }
+      },
+      "sector": "Nursery"
+    },
+    "6811017": {
+      "school_id": "6811017",
+      "source_name": "Tremorfa Nursery School",
+      "values": {
+        "Nursery 1": {
+          "value": 11,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 42,
+          "status": "reported"
+        }
+      },
+      "sector": "Nursery"
+    },
+    "6811018": {
+      "school_id": "6811018",
+      "source_name": "Ely and Caerau Children's Centre",
+      "values": {
+        "Nursery 1": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 54,
+          "status": "reported"
+        }
+      },
+      "sector": "Nursery"
+    },
+    "6812001": {
+      "school_id": "6812001",
+      "source_name": "MILLBANK PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 9,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 27,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812003": {
+      "school_id": "6812003",
+      "source_name": "Adamsdown Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 38,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 45,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 41,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812005": {
+      "school_id": "6812005",
+      "source_name": "Albany Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 9,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 32,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 43,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 42,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 53,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 55,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812009": {
+      "school_id": "6812009",
+      "source_name": "BADEN POWELL PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 35,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 35,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 37,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 48,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812011": {
+      "school_id": "6812011",
+      "source_name": "Birchgrove Primary School",
+      "values": {
+        "Reception": {
+          "value": 46,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 34,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 56,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 54,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 60,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812015": {
+      "school_id": "6812015",
+      "source_name": "Trelai Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 7,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 35,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 34,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 33,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 48,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 38,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 48,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812017": {
+      "school_id": "6812017",
+      "source_name": "Fairwater Primary School",
+      "values": {
+        "Reception": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 26,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812019": {
+      "school_id": "6812019",
+      "source_name": "Gabalfa Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 3,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 28,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812031": {
+      "school_id": "6812031",
+      "source_name": "Kitchener Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 56,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 49,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 55,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 56,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812033": {
+      "school_id": "6812033",
+      "source_name": "Lansdowne Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 5,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 42,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 43,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 43,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812037": {
+      "school_id": "6812037",
+      "source_name": "Moorland Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 33,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 48,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 45,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 43,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 63,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 55,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812039": {
+      "school_id": "6812039",
+      "source_name": "Radnor Primary School",
+      "values": {
+        "Reception": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 35,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 36,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812041": {
+      "school_id": "6812041",
+      "source_name": "Rhydypenau Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 6,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 58,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 59,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812043": {
+      "school_id": "6812043",
+      "source_name": "Roath Park Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 10,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 54,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 60,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812045": {
+      "school_id": "6812045",
+      "source_name": "Greenway Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 9,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 37,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 32,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 33,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 29,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812050": {
+      "school_id": "6812050",
+      "source_name": "Stacey Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 5,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 22,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812052": {
+      "school_id": "6812052",
+      "source_name": "Ton-Yr-Ywen Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 46,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 45,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 58,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 60,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812061": {
+      "school_id": "6812061",
+      "source_name": "PETER LEA PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 49,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 34,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 41,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812065": {
+      "school_id": "6812065",
+      "source_name": "Bryn Hafod Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 32,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 33,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 35,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 41,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 42,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 54,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 59,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812069": {
+      "school_id": "6812069",
+      "source_name": "Pen-Y-Bryn Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 6,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 33,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 28,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812072": {
+      "school_id": "6812072",
+      "source_name": "Coed Glas Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 38,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 34,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 50,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 64,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 86,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 86,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812074": {
+      "school_id": "6812074",
+      "source_name": "Lakeside Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 61,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 63,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 62,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 60,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812075": {
+      "school_id": "6812075",
+      "source_name": "PENTREBANE PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 1,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 22,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812084": {
+      "school_id": "6812084",
+      "source_name": "Mount Stuart Primary",
+      "values": {
+        "Nursery 1": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 41,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 55,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 43,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 48,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 57,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812090": {
+      "school_id": "6812090",
+      "source_name": "LLANISHEN FACH PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 61,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 63,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 74,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 64,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 67,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 63,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 62,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812092": {
+      "school_id": "6812092",
+      "source_name": "RHIWBEINA PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 6,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 74,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 70,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 85,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 77,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 90,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 90,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 89,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 90,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812094": {
+      "school_id": "6812094",
+      "source_name": "Llanedeyrn Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 3,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 20,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 38,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 31,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812096": {
+      "school_id": "6812096",
+      "source_name": "Springwood Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 4,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 46,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 40,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812101": {
+      "school_id": "6812101",
+      "source_name": "Ninian Park Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 50,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 66,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 64,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 71,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 58,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 64,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 72,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 84,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812104": {
+      "school_id": "6812104",
+      "source_name": "Coryton Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 3,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 9,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 30,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812107": {
+      "school_id": "6812107",
+      "source_name": "BRYN CELYN PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 20,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 30,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812111": {
+      "school_id": "6812111",
+      "source_name": "Ysgol Gynradd Gwaelod-Y-Garth",
+      "values": {
+        "Nursery 1": {
+          "value": 6,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 38,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 36,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812132": {
+      "school_id": "6812132",
+      "source_name": "Radyr Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 9,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 37,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 58,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 51,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 59,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812137": {
+      "school_id": "6812137",
+      "source_name": "Tongwynlais Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 2,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 28,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812147": {
+      "school_id": "6812147",
+      "source_name": "Llysfaen Primary School",
+      "values": {
+        "Nursery 2": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 50,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 59,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812153": {
+      "school_id": "6812153",
+      "source_name": "Bryn Deri Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 7,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 20,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 29,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812164": {
+      "school_id": "6812164",
+      "source_name": "Oakfield Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 45,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 53,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 53,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 52,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812166": {
+      "school_id": "6812166",
+      "source_name": "Ysgol Gymraeg Melin Gruffydd",
+      "values": {
+        "Nursery 1": {
+          "value": 10,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 53,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 56,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 61,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 56,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 47,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812169": {
+      "school_id": "6812169",
+      "source_name": "Ysgol Y Wern",
+      "values": {
+        "Nursery 1": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 89,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 69,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 90,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 69,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 89,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 90,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 86,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812170": {
+      "school_id": "6812170",
+      "source_name": "YSGOL GYMRAEG COED Y GOF",
+      "values": {
+        "Reception": {
+          "value": 20,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 34,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 36,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812171": {
+      "school_id": "6812171",
+      "source_name": "Ysgol Bro Eirwg",
+      "values": {
+        "Nursery 1": {
+          "value": 10,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 38,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 38,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 43,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 45,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 56,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 41,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812173": {
+      "school_id": "6812173",
+      "source_name": "Ysgol Gymraeg Treganna",
+      "values": {
+        "Nursery 1": {
+          "value": 11,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 84,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 87,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 82,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 79,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 82,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 81,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 80,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 73,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812174": {
+      "school_id": "6812174",
+      "source_name": "Willowbrook Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 55,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 34,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 49,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 49,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 54,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 54,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 56,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812175": {
+      "school_id": "6812175",
+      "source_name": "Pentyrch Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 5,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 22,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812176": {
+      "school_id": "6812176",
+      "source_name": "Thornhill Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 10,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 37,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 42,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 54,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 55,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 59,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812177": {
+      "school_id": "6812177",
+      "source_name": "Ysgol Pencae",
+      "values": {
+        "Reception": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 29,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812179": {
+      "school_id": "6812179",
+      "source_name": "Meadowlane Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 37,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 43,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 38,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 40,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812180": {
+      "school_id": "6812180",
+      "source_name": "Ysgol Mynydd Bychan",
+      "values": {
+        "Nursery 1": {
+          "value": 9,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 29,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812305": {
+      "school_id": "6812305",
+      "source_name": "CREIGIAU PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 4,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 35,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 42,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 53,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 41,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 46,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812306": {
+      "school_id": "6812306",
+      "source_name": "YSGOL GYMRAEG PWLL COCH",
+      "values": {
+        "Nursery 1": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 45,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 34,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 34,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 33,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 33,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812308": {
+      "school_id": "6812308",
+      "source_name": "Ysgol Y Berllan Deg",
+      "values": {
+        "Nursery 1": {
+          "value": 11,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 50,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 42,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 53,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 41,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 55,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 57,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812310": {
+      "school_id": "6812310",
+      "source_name": "Glan-Yr-Afon Primary",
+      "values": {
+        "Nursery 1": {
+          "value": 4,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 26,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812311": {
+      "school_id": "6812311",
+      "source_name": "Grange Town Primary",
+      "values": {
+        "Reception": {
+          "value": 56,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 33,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 55,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 56,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 60,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812312": {
+      "school_id": "6812312",
+      "source_name": "Herbert Thompson Primary",
+      "values": {
+        "Nursery 1": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 32,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 50,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 49,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 51,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 54,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812313": {
+      "school_id": "6812313",
+      "source_name": "Ysgol Glan Morfa",
+      "values": {
+        "Nursery 1": {
+          "value": 4,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 32,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 35,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 20,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 28,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812314": {
+      "school_id": "6812314",
+      "source_name": "Ysgol Pen Y Pil",
+      "values": {
+        "Nursery 1": {
+          "value": 5,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 24,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812315": {
+      "school_id": "6812315",
+      "source_name": "Ysgol Gymraeg Nant Caerau",
+      "values": {
+        "Nursery 1": {
+          "value": 9,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 30,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812317": {
+      "school_id": "6812317",
+      "source_name": "Rumney Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 46,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 49,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 56,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812318": {
+      "school_id": "6812318",
+      "source_name": "Windsor Clive Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 9,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 55,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 51,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 58,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 48,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 62,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 65,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 53,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812319": {
+      "school_id": "6812319",
+      "source_name": "Severn Primary",
+      "values": {
+        "Nursery 1": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 63,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 51,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 46,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 58,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 49,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 44,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812320": {
+      "school_id": "6812320",
+      "source_name": "Hawthorn Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 6,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 31,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812321": {
+      "school_id": "6812321",
+      "source_name": "Danescourt Primary",
+      "values": {
+        "Nursery 1": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 48,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 38,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 49,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 42,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 50,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 51,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 60,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812322": {
+      "school_id": "6812322",
+      "source_name": "Hywel Dda Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 11,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 41,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 42,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 46,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 48,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 57,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812323": {
+      "school_id": "6812323",
+      "source_name": "Ysgol Gynradd Gymraeg Pen-Y-Groes",
+      "values": {
+        "Nursery 1": {
+          "value": 5,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 6,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 9,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812324": {
+      "school_id": "6812324",
+      "source_name": "Trowbridge Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 6,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 25,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812325": {
+      "school_id": "6812325",
+      "source_name": "Ysgol Glan Ceubal",
+      "values": {
+        "Nursery 1": {
+          "value": 5,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 12,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812326": {
+      "school_id": "6812326",
+      "source_name": "Marlborough Primary",
+      "values": {
+        "Nursery 1": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 43,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 63,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 54,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 58,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 64,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 66,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 62,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812327": {
+      "school_id": "6812327",
+      "source_name": "Pencaerau Primary school",
+      "values": {
+        "Nursery 1": {
+          "value": 7,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 31,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812328": {
+      "school_id": "6812328",
+      "source_name": "Glyncoed Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 3,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 32,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 41,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 41,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 59,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812329": {
+      "school_id": "6812329",
+      "source_name": "Whitchurch Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 50,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 74,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 79,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 74,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 90,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 90,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 93,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 90,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812330": {
+      "school_id": "6812330",
+      "source_name": "Pontprennau Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 72,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 61,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 56,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 56,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 59,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812331": {
+      "school_id": "6812331",
+      "source_name": "Howardian Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 37,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 50,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 50,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 58,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 58,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 60,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812332": {
+      "school_id": "6812332",
+      "source_name": "Ysgol Gynradd Gymraeg Hamadryad",
+      "values": {
+        "Nursery 1": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 59,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 53,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 51,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 42,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 41,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 37,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 51,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 29,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812333": {
+      "school_id": "6812333",
+      "source_name": "Ysgol Gynradd Groes-Wen Primary",
+      "values": {
+        "Nursery 1": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 61,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 46,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 6,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 6,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 4,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6812334": {
+      "school_id": "6812334",
+      "source_name": "Fairoak Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 11,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 37,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 38,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 53,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 40,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813000": {
+      "school_id": "6813000",
+      "source_name": "St Mellons C.I.W. Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 34,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 30,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813321": {
+      "school_id": "6813321",
+      "source_name": "St Albans RC Primary School",
+      "values": {
+        "Reception": {
+          "value": 10,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 14,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813323": {
+      "school_id": "6813323",
+      "source_name": "St Cuthbert's R.C. Primary School",
+      "values": {
+        "Reception": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 17,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813328": {
+      "school_id": "6813328",
+      "source_name": "St. Joseph's RC School",
+      "values": {
+        "Nursery 1": {
+          "value": 4,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 43,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 28,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813330": {
+      "school_id": "6813330",
+      "source_name": "ST. MARY'S R.C. PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 6,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 26,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813332": {
+      "school_id": "6813332",
+      "source_name": "St Patrick's R.C. Primary School",
+      "values": {
+        "Reception": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 33,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 35,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 47,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 43,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 38,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813334": {
+      "school_id": "6813334",
+      "source_name": "St Peter's RC Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 34,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 52,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 56,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 57,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 57,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813336": {
+      "school_id": "6813336",
+      "source_name": "St Cadoc's Catholic Primary",
+      "values": {
+        "Nursery 1": {
+          "value": 7,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 41,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 45,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 43,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813341": {
+      "school_id": "6813341",
+      "source_name": "St Monica's C.I.W. Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 1,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 5,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 11,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 20,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 26,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813343": {
+      "school_id": "6813343",
+      "source_name": "ST.PAUL'S C/W PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 30,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813344": {
+      "school_id": "6813344",
+      "source_name": "TREDEGARVILLE C/W PRIMARY",
+      "values": {
+        "Nursery 1": {
+          "value": 4,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 30,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813346": {
+      "school_id": "6813346",
+      "source_name": "Llandaff City C.I.W. Primary School",
+      "values": {
+        "Reception": {
+          "value": 54,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 46,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 56,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 60,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 60,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813351": {
+      "school_id": "6813351",
+      "source_name": "CHRIST THE KING PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 6,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 31,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813353": {
+      "school_id": "6813353",
+      "source_name": "St John Lloyd R.C. Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 11,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 37,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 34,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 53,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 43,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 43,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 48,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813354": {
+      "school_id": "6813354",
+      "source_name": "Holy Family R.C. Primary School",
+      "values": {
+        "Reception": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 20,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 26,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813355": {
+      "school_id": "6813355",
+      "source_name": "St Mary The Virgin C.I.W. Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 7,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 17,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813357": {
+      "school_id": "6813357",
+      "source_name": "All Saints C.I.W. Primary School",
+      "values": {
+        "Reception": {
+          "value": 11,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 11,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 20,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 23,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813366": {
+      "school_id": "6813366",
+      "source_name": "ST FAGANS CHURCH IN WALES",
+      "values": {
+        "Nursery 1": {
+          "value": 3,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 3,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 22,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 29,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813370": {
+      "school_id": "6813370",
+      "source_name": "ST BERNADETTES PRIMARY SCHOOL",
+      "values": {
+        "Nursery 1": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 26,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 30,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813371": {
+      "school_id": "6813371",
+      "source_name": "St David's C.I.W. Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 5,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 11,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 20,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 32,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 29,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813373": {
+      "school_id": "6813373",
+      "source_name": "BISHOP CHILDS C/W PRIMARY",
+      "values": {
+        "Reception": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 31,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813374": {
+      "school_id": "6813374",
+      "source_name": "St Phillip Evans R.C. Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 12,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 38,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 36,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 39,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 51,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 53,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 54,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 54,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6813375": {
+      "school_id": "6813375",
+      "source_name": "St Francis V.A. Primary School",
+      "values": {
+        "Nursery 1": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Nursery 2": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 41,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 32,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 45,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 32,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 46,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 52,
+          "status": "reported"
+        }
+      },
+      "sector": "Primary"
+    },
+    "6814039": {
+      "school_id": "6814039",
+      "source_name": "CARDIFF HIGH SCHOOL",
+      "values": {
+        "Year Group 7": {
+          "value": 239,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 240,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 241,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 239,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 239,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 315,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 282,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814041": {
+      "school_id": "6814041",
+      "source_name": "Willows High School",
+      "values": {
+        "Year Group 7": {
+          "value": 122,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 149,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 164,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 156,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 169,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814042": {
+      "school_id": "6814042",
+      "source_name": "Fitzalan High School",
+      "values": {
+        "Year Group 7": {
+          "value": 307,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 300,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 300,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 294,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 300,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 227,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 152,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814049": {
+      "school_id": "6814049",
+      "source_name": "Cantonian High School",
+      "values": {
+        "Year Group 7": {
+          "value": 202,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 178,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 165,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 171,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 174,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 69,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 39,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814051": {
+      "school_id": "6814051",
+      "source_name": "Llanishen High School",
+      "values": {
+        "Year Group 7": {
+          "value": 297,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 296,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 292,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 295,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 288,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 148,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 143,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814054": {
+      "school_id": "6814054",
+      "source_name": "Cathays High School",
+      "values": {
+        "Year Group 7": {
+          "value": 225,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 227,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 236,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 224,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 214,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 136,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 21,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814070": {
+      "school_id": "6814070",
+      "source_name": "Radyr Comprehensive School",
+      "values": {
+        "Year Group 7": {
+          "value": 240,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 239,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 238,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 233,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 239,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 137,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 111,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814071": {
+      "school_id": "6814071",
+      "source_name": "Ysgol Gyfun Gymraeg Glantaf",
+      "values": {
+        "Year Group 7": {
+          "value": 246,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 252,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 241,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 231,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 227,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 172,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 159,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814072": {
+      "school_id": "6814072",
+      "source_name": "Ysgol Gyfun Gymraeg Plasmawr",
+      "values": {
+        "Year Group 7": {
+          "value": 202,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 191,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 207,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 201,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 196,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 118,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 94,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814074": {
+      "school_id": "6814074",
+      "source_name": "Ysgol Gyfun Gymraeg Bro Edern",
+      "values": {
+        "Year Group 7": {
+          "value": 149,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 166,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 178,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 136,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 150,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 64,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 74,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814075": {
+      "school_id": "6814075",
+      "source_name": "Cardiff West Community High School",
+      "values": {
+        "Year Group 7": {
+          "value": 140,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 146,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 176,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 223,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 200,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 44,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 25,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814076": {
+      "school_id": "6814076",
+      "source_name": "Eastern High",
+      "values": {
+        "Year Group 7": {
+          "value": 259,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 202,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 239,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 228,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 222,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814600": {
+      "school_id": "6814600",
+      "source_name": "St Illtyd's Catholic High School",
+      "values": {
+        "Year Group 7": {
+          "value": 210,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 204,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 205,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 190,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 193,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814607": {
+      "school_id": "6814607",
+      "source_name": "Mary Immaculate High School",
+      "values": {
+        "Year Group 7": {
+          "value": 178,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 181,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 174,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 183,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 149,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814608": {
+      "school_id": "6814608",
+      "source_name": "The Bishop of Llandaff CiW High School",
+      "values": {
+        "Year Group 7": {
+          "value": 191,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 186,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 188,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 201,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 178,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 190,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 152,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814609": {
+      "school_id": "6814609",
+      "source_name": "St Teilo's C-in-W High School",
+      "values": {
+        "Year Group 7": {
+          "value": 252,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 250,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 259,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 256,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 214,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 92,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 74,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6814611": {
+      "school_id": "6814611",
+      "source_name": "CORPUS CHRISTI CATHOLIC HIGH SCHOOL",
+      "values": {
+        "Year Group 7": {
+          "value": 230,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 214,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 247,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 238,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 214,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6815403": {
+      "school_id": "6815403",
+      "source_name": "Whitchurch High School",
+      "values": {
+        "Year Group 7": {
+          "value": 412,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 399,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 398,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 399,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 390,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 254,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 216,
+          "status": "reported"
+        }
+      },
+      "sector": "Secondary"
+    },
+    "6817001": {
+      "school_id": "6817001",
+      "source_name": "Greenhill Special School",
+      "values": {
+        "Year Group 7": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 10,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 10,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 7,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 6,
+          "status": "reported"
+        }
+      },
+      "sector": "Special"
+    },
+    "6817005": {
+      "school_id": "6817005",
+      "source_name": "Ysgol Cynefin",
+      "values": {
+        "Year Group 3": {
+          "value": 5,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 14,
+          "status": "reported"
+        }
+      },
+      "sector": "Special"
+    },
+    "6817006": {
+      "school_id": "6817006",
+      "source_name": "Woodlands High School",
+      "values": {
+        "Year Group 7": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 40,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 21,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Year Group 14": {
+          "value": 15,
+          "status": "reported"
+        }
+      },
+      "sector": "Special"
+    },
+    "6817008": {
+      "school_id": "6817008",
+      "source_name": "Riverbank Special School",
+      "values": {
+        "Reception": {
+          "value": 4,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 9,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 7,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 16,
+          "status": "reported"
+        }
+      },
+      "sector": "Special"
+    },
+    "6817011": {
+      "school_id": "6817011",
+      "source_name": "Ty Gwyn Special School",
+      "values": {
+        "Nursery 2": {
+          "value": 2,
+          "status": "reported"
+        },
+        "Reception": {
+          "value": 7,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 16,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 11,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 9,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Year Group 7": {
+          "value": 31,
+          "status": "reported"
+        },
+        "Year Group 8": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 9": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 10": {
+          "value": 19,
+          "status": "reported"
+        },
+        "Year Group 11": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Year Group 12": {
+          "value": 18,
+          "status": "reported"
+        },
+        "Year Group 13": {
+          "value": 27,
+          "status": "reported"
+        },
+        "Year Group 14": {
+          "value": 18,
+          "status": "reported"
+        }
+      },
+      "sector": "Special"
+    },
+    "6817019": {
+      "school_id": "6817019",
+      "source_name": "The Hollies Special School",
+      "values": {
+        "Reception": {
+          "value": 24,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 25,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 30,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 28,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 17,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 17,
+          "status": "reported"
+        }
+      },
+      "sector": "Special"
+    },
+    "6817021": {
+      "school_id": "6817021",
+      "source_name": "Meadowbank Special School",
+      "values": {
+        "Reception": {
+          "value": 15,
+          "status": "reported"
+        },
+        "Year Group 1": {
+          "value": 29,
+          "status": "reported"
+        },
+        "Year Group 2": {
+          "value": 13,
+          "status": "reported"
+        },
+        "Year Group 3": {
+          "value": 23,
+          "status": "reported"
+        },
+        "Year Group 4": {
+          "value": 14,
+          "status": "reported"
+        },
+        "Year Group 5": {
+          "value": 8,
+          "status": "reported"
+        },
+        "Year Group 6": {
+          "value": 11,
+          "status": "reported"
+        }
+      },
+      "sector": "Special"
+    }
+  }
+}

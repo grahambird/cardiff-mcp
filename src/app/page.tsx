@@ -13,8 +13,8 @@ const capabilities = [
   },
   {
     title: "Schools",
-    description: "Explore Cardiff schools by name, school phase or language provision. Get details including addresses and contact numbers.",
-    prompts: ["Find Welsh-medium primary schools in Cardiff", "What is the phone number for Cardiff High School?", "List Cardiff secondary schools"],
+    description: "Explore Cardiff schools by name, school phase or language provision. Get a school profile with contact details, pupil numbers, year groups and free-school-meal eligibility.",
+    prompts: ["Find Welsh-medium primary schools in Cardiff", "Tell me about Cardiff High School", "List Cardiff secondary schools"],
     note: "Welsh-medium and dual-language groups include transitional provision; results retain the published labels.",
   },
 ];
@@ -64,12 +64,13 @@ export default function Home() {
           <div><dt><code>find_food_businesses</code></dt><dd>Search Cardiff food businesses by name, broad business type and minimum hygiene rating.</dd></div>
           <div><dt><code>get_food_business</code></dt><dd>Retrieve inspection details for a Cardiff business using its FSA establishment ID, typically from a search result.</dd></div>
           <div><dt><code>find_schools</code></dt><dd>Search the Cardiff maintained-school directory by name, phase and language group.</dd></div>
+          <div><dt><code>get_school</code></dt><dd>Get a combined school profile with published pupil and FSM statistics, reporting periods and sources.</dd></div>
         </dl>
       </section>
       <section className={styles.section} aria-labelledby="sources-heading">
         <h2 id="sources-heading">About the data</h2>
         <p>Food hygiene ratings come from the <a href="https://ratings.food.gov.uk/">Food Standards Agency</a> and reflect standards found on the inspection date. They do not assess food quality or provide menus, opening hours, bookings or availability. Ratings can change; results include inspection dates and official source links.</p>
-        <p>School details come from a manually refreshed snapshot of the <a href="https://www.gov.wales/addresses-and-phone-numbers-schools-and-pupil-referral-units">Welsh Government school register</a>. Results include publication and import dates. This is directory information, not live school status, catchments, pupil statistics, inspections or performance results.</p>
+        <p>School details come from a manually refreshed snapshot of the <a href="https://www.gov.wales/addresses-and-phone-numbers-schools-and-pupil-referral-units">Welsh Government school register</a>. Results include publication and import dates. School profiles also include published <a href="https://stats.gov.wales/en-GB/2018f447-f4c0-438d-bb88-2a72af967724">StatsWales</a> pupil and FSM statistics with their census dates. FSM eligibility differs from universal primary meal provision. Counts may be rounded or suppressed. These figures do not measure school quality or provide live enrolment, catchments, inspections or performance results.</p>
         <p className={styles.note}>Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>. Sources: Food Standards Agency and Welsh Government.</p>
       </section>
       <footer className={styles.footer}>

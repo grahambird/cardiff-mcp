@@ -85,3 +85,28 @@ After deploying and refreshing the ChatGPT connection, start a new conversation:
 - Answers preserve sources, school snapshot dates and non-numeric rating distinctions: [ ]
 
 Local deterministic tests establish tool behaviour, not ChatGPT argument selection. These checks remain pending until performed in ChatGPT.
+
+## StatsWales school-profile release
+
+- Independently imported characteristics, year groups and FSM: [x]
+- All 126 Cardiff register IDs match each initial snapshot; year-group totals agree: [x]
+- Publication 5 August 2026, period 2025/26 and census 20 January 2026 recorded separately: [x]
+- Name, governance and school-type differences reviewed and preserved: [x]
+- Local lint, type-check, 79 Vitest tests (including six Python importer cases), production build and combined-profile smoke: [x]
+- Production discovery includes four default read-only tools: [ ]
+- Production profile canary and existing live FSA smoke checks pass: [ ]
+
+Manual ChatGPT acceptance after deployment and connection refresh (not established by automated tests):
+
+- “Tell me about Cardiff High School”: identifies via find_schools, calls get_school, cites register and statistics with reporting/census dates: [ ]
+- “Tell me about Ysgol Gyfun Gymraeg Glantaf”: preserves Welsh provision and distinguishes the pupil total from rounded FSM all-pupils count: [ ]
+- “How many pupils at Adamsdown Primary are eligible for free school meals?”: distinguishes eligibility from eligibility including transitional protection; reports rounding: [ ]
+- Missing or confidential data remains unavailable/suppressed, not estimated or treated as zero: [ ]
+- No claims about live enrolment, historical trends, catchments or school quality: [ ]
+
+### Release validation — 12 October 2026
+
+- Reused the existing server on port 3000 at the user's request. All four read-only tools were discovered; dynamic school profile provenance/status checks and live FSA search/detail checks passed.
+- The production build passed separately. An isolated smoke server was not started because port 3000 was in use and the user preferred reuse.
+- Vercel production deployment was attempted using the existing linked project; CLI returned “Not authorized” and exit code 1. No successful deployment or production acceptance is claimed.
+- Production and manual ChatGPT checks remain pending. Source/code changes have not been committed or pushed in this increment.
