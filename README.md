@@ -1,6 +1,6 @@
 # Cardiff MCP
 
-Cardiff MCP is a small, open-source, read-only [Model Context Protocol](https://modelcontextprotocol.io/) server for useful public data about Cardiff, Wales. Its first milestone connects AI assistants to live Food Standards Agency (FSA) food-hygiene ratings.
+Cardiff MCP is a small, open-source, read-only [Model Context Protocol](https://modelcontextprotocol.io/) server for useful public data about Cardiff, Wales. It connects AI assistants to live Food Standards Agency (FSA) food-hygiene ratings and a maintained-school directory. The production information page is at <https://mcp.wales>; connect an MCP client using `https://mcp.wales/mcp`.
 
 ```text
 ChatGPT or another MCP client → Streamable HTTP /mcp → Next.js on Vercel → FSA API v2
@@ -58,10 +58,10 @@ The production endpoint is also checked daily by GitHub Actions using stable beh
 1. Push this repository to GitHub.
 2. In Vercel, choose **Add New → Project**, import the repository, and accept the detected Next.js settings.
 3. Deploy without environment variables. New Vercel projects use Fluid Compute by default. Do not enable the waste feature in production until the release gate below is cleared.
-4. Visit `https://<project>.vercel.app` and run the smoke client against production:
+4. Add `mcp.wales` as the production custom domain in Vercel. Visit `https://mcp.wales` and run the smoke client against production:
 
    ```bash
-   npm run smoke:client -- https://<project>.vercel.app
+   npm run smoke:client -- https://mcp.wales
    ```
 
 5. In **Project → Firewall → Configure**, create and publish this WAF rule:
@@ -81,7 +81,7 @@ The code also applies an eight-second FSA timeout, permits no more than 20 recor
 Availability is account- and workspace-dependent. It was observed on the project owner's ChatGPT Plus account, but this is not a guarantee for every Plus account.
 
 1. Use ChatGPT on the web and confirm **Plugins → Add Custom MCP Server** is available.
-2. Enter a name such as `Cardiff MCP` and the full `https://<project>.vercel.app/mcp` URL.
+2. Enter a name such as `Cardiff MCP` and the full `https://mcp.wales/mcp` URL.
 3. Choose no authentication, review the risk warning, create the connection, and install it.
 4. Confirm the discovered tools are `find_food_businesses`, `get_food_business` and `find_schools`.
 5. Try:

@@ -24,4 +24,4 @@ jobs:
           cache: npm
       - run: npm ci
       - name: Check production MCP and live FSA path
-        run: npm run smoke:client -- https://cardiff-mcp.vercel.app
+        run: npm run smoke:client -- https://mcp.wales

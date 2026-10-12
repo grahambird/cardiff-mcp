@@ -66,3 +66,10 @@ Preview and ChatGPT checks remain pending until a preview is deployed and the co
 - Live Cardiff High name search and Welsh-medium secondary search passed: [x]
 - ChatGPT discovery and presentation remain for the user's live test: [ ]
 - Vercel preview checks above were not performed; this was a direct production deployment.
+
+### Custom production domain — 12 October 2026
+
+- Production endpoint: <https://mcp.wales/mcp>.
+- Unauthenticated production MCP smoke client discovered all three default read-only tools: [x]
+- School directory invariants and live FSA search/detail checks passed: [x]
+- Earlier records retain the deployment URLs used for those checks.

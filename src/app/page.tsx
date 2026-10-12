@@ -1,6 +1,9 @@
+import Image from "next/image";
+import logo from "./mcp-logo.png";
+import background from "./background.png";
 import styles from "./page.module.css";
 
-const endpoint = "https://cardiff-mcp.vercel.app/mcp";
+const endpoint = "https://mcp.wales/mcp";
 const capabilities = [
   {
     title: "Food hygiene",
@@ -18,10 +21,15 @@ const capabilities = [
 
 export default function Home() {
   return (
+    <div className={styles.canvas}>
+      <Image className={styles.background} src={background} alt="" aria-hidden="true" sizes="(max-width: 680px) 476px, (max-width: 923px) 672px, (max-width: 1385px) 72.8vw, 1008px" />
     <main className={styles.page}>
       <header className={styles.hero}>
         <p className={styles.eyebrow}>ChatGPT Plugin</p>
-        <h1>Cardiff MCP</h1>
+        <h1 className={styles.brand}>
+          <Image className={styles.logo} src={logo} alt="" />
+          <span>Cardiff MCP</span>
+        </h1>
         <p className={styles.intro}>Give your AI assistant local knowledge.</p>
         <p className={styles.summary}>An open-source, read-only connector that gives compatible AI assistants access to detailed information about Cardiff, Wales.</p>
         <nav className={styles.actions} aria-label="Useful links">
@@ -29,7 +37,7 @@ export default function Home() {
           <a href="https://github.com/grahambird/cardiff-mcp">View on GitHub <span aria-hidden="true">↗</span></a>
         </nav>
       </header>
-      <section className={styles.section} aria-labelledby="prompts-heading">
+      <section className={`${styles.section} ${styles.askSection}`} aria-labelledby="prompts-heading">
         <h2 id="prompts-heading">What to ask</h2>
         <p>Once connected, try these prompts in your assistant.</p>
         <div className={styles.cards}>
@@ -59,7 +67,7 @@ export default function Home() {
         </dl>
       </section>
       <section className={styles.section} aria-labelledby="sources-heading">
-        <h2 id="sources-heading">Know what the data tells you</h2>
+        <h2 id="sources-heading">About the data</h2>
         <p>Food hygiene ratings come from the <a href="https://ratings.food.gov.uk/">Food Standards Agency</a> and reflect standards found on the inspection date. They do not assess food quality or provide menus, opening hours, bookings or availability. Ratings can change; results include inspection dates and official source links.</p>
         <p>School details come from a manually refreshed snapshot of the <a href="https://www.gov.wales/addresses-and-phone-numbers-schools-and-pupil-referral-units">Welsh Government school register</a>. Results include publication and import dates. This is directory information, not live school status, catchments, pupil statistics, inspections or performance results.</p>
         <p className={styles.note}>Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>. Sources: Food Standards Agency and Welsh Government.</p>
@@ -69,5 +77,6 @@ export default function Home() {
         <a href="https://github.com/grahambird/cardiff-mcp">Code and documentation on GitHub</a>
       </footer>
     </main>
+    </div>
   );
 }
