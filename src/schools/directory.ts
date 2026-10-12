@@ -1,3 +1,4 @@
+import characteristics from "./statswales/characteristics.json";
 import snapshot from "./directory.json";
 
 export const SCHOOL_ATTRIBUTION =
@@ -22,13 +23,20 @@ interface FindSchoolsInput {
   name?: string;
   phase?: typeof PHASES[number];
   language_group?: typeof LANGUAGE_GROUPS[number];
-  sort_by?: "name";
+  sort_by?: "name" | "pupil_total";
   sort_order?: "asc" | "desc";
   page: number;
   limit: number;
 }
 
 export function findSchools(input: FindSchoolsInput) {
+  const pupilSort = input.sort_by === "pupil_total";
+  const totals = characteristics.schools as Record<string, { total: { value: number | null; status: string; note?: string } }>;
+  const totalFor = (id: string) => totals[id]?.total ?? { value: null, status: "unavailable" };
+  const reported = (id: string) => {
+    const total = totalFor(id);
+    return total.status === "reported" && total.value !== null;
+  };
   const schools = snapshot.schools
     .filter((school) => school.local_authority_code === "681")
     .map((school) => ({ ...school, language_group: languageGroup(school.language_category) }))
@@ -36,10 +44,26 @@ export function findSchools(input: FindSchoolsInput) {
       (!input.name || school.name.toLocaleLowerCase("en-GB").includes(input.name.trim().toLocaleLowerCase("en-GB"))) &&
       (!input.phase || school.sector.toLowerCase() === input.phase) &&
       (!input.language_group || school.language_group === input.language_group))
-    .sort((a, b) => (input.sort_order === "desc" ? -1 : 1) * a.name.localeCompare(b.name, "en-GB") || a.school_id.localeCompare(b.school_id));
+    .sort((a, b) => {
+      if (pupilSort) {
+        const aReported = reported(a.school_id), bReported = reported(b.school_id);
+        if (aReported !== bReported) return aReported ? -1 : 1;
+        const difference = aReported ? (totalFor(a.school_id).value! - totalFor(b.school_id).value!) : 0;
+        return (input.sort_order === "desc" ? -1 : 1) * difference || a.school_id.localeCompare(b.school_id);
+      }
+      return (input.sort_order === "desc" ? -1 : 1) * a.name.localeCompare(b.name, "en-GB") || a.school_id.localeCompare(b.school_id);
+    });
   const start = (input.page - 1) * input.limit;
   return {
-    schools: schools.slice(start, start + input.limit),
+    schools: schools.slice(start, start + input.limit).map((school) =>
+      pupilSort ? { ...school, pupil_total: totalFor(school.school_id) } : school),
+    ...(pupilSort ? {
+      pupil_statistics: {
+        source: characteristics.source,
+        reported_count: schools.filter((school) => reported(school.school_id)).length,
+        unavailable_count: schools.filter((school) => !reported(school.school_id)).length,
+      },
+    } : {}),
     total_count: schools.length,
     page: input.page,
     has_more: start + input.limit < schools.length,
@@ -47,6 +71,8 @@ export function findSchools(input: FindSchoolsInput) {
     source_published_at: snapshot.source_published_at,
     snapshot_imported_at: snapshot.snapshot_imported_at,
     attribution: SCHOOL_ATTRIBUTION,
-    note: SCHOOL_LIMITATIONS,
+    note: pupilSort
+      ? "Cardiff maintained schools ordered by published pupil headcount, not school quality or live enrolment. Non-reported totals sort last; coverage counts apply to all matching schools. No distances, catchments, inspections or performance results are supplied."
+      : SCHOOL_LIMITATIONS,
   };
 }

@@ -110,3 +110,14 @@ Manual ChatGPT acceptance after deployment and connection refresh (not establish
 - The production build passed separately. An isolated smoke server was not started because port 3000 was in use and the user preferred reuse.
 - Vercel production deployment was attempted using the existing linked project; CLI returned “Not authorized” and exit code 1. No successful deployment or production acceptance is claimed.
 - Production and manual ChatGPT checks remain pending. Source/code changes have not been committed or pushed in this increment.
+
+## Pupil-total discovery release
+
+After automatic deployment from GitHub, refresh the ChatGPT connection and start a new conversation:
+
+- “Which is the largest school in Cardiff by pupil numbers?” invokes find_schools once with sort_by=pupil_total, sort_order=desc, limit=1; cites the census date and qualifies maintained-school coverage: [ ]
+- “List the five largest Welsh-medium primary schools in Cardiff.” combines filters and descending pupil sorting with limit=5, without fetching five full profiles: [ ]
+- “Show the next five.” retains filters, sort and limit and uses page=2: [ ]
+- Incomplete coverage is qualified; suppressed/missing figures are not zero; pupil size is not described as school quality: [ ]
+
+The reported 18-call query is the regression trigger. Deterministic tests establish tool behaviour; the manual checks above remain pending.

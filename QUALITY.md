@@ -56,3 +56,7 @@ Deterministic sorting tests cover first-five requests, school ties and adjacent 
 The canary selects a school from discovery and checks its combined profile identity, source dates, attribution and value/status shapes; it does not fix school names, counts, pupil values or reporting dates. Offline importer tests run through Vitest and require Python 3 in development/CI (already available on the Ubuntu runner). They cover representative primary, secondary and Welsh-medium exports, schema/period/revision failures, suppression, rounding, identifiers and preservation of existing files on failure.
 
 Source differences and mismatched same-period year-group sums are preserved and surfaced. Refresh reports flag coverage losses and pupil changes above 20% for review, rather than automatically treating them as errors. Independent updates retain unrelated sections and their own periods.
+
+## School size discovery regression
+
+ChatGPT needed 18 calls to answer “Which is the largest school in Cardiff?” after individual profiles launched. Pupil-total sorting now supports that query in one bounded discovery call. Deterministic fixtures verify first-five ordering before pagination, filters, zeros, ties, adjacent pages, incomplete coverage and missing/suppressed totals last in either direction. Manual ChatGPT acceptance confirms argument selection; no LLM calls or eval platform are introduced.

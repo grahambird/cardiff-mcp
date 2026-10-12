@@ -165,7 +165,7 @@ Contains public sector information licensed under the Open Government Licence v3
 
 Both discovery tools accept optional `sort_by` and `sort_order` (`asc` or `desc`). Omitted values mean name ascending; supplying only `sort_order` changes the name direction. Existing filters, `page` and `limit` defaults and bounds are unchanged. Unsupported sort values return `invalid_input`.
 
-- `find_schools`: `sort_by="name"`; filters and sorts the complete matching snapshot before pagination. Equal names use ascending school ID in either direction, giving stable pages within an unchanged snapshot.
+- `find_schools`: `sort_by="name"` or `"pupil_total"`; filters and sorts the complete matching snapshot before pagination. Equal names use ascending school ID in either direction, giving stable pages within an unchanged snapshot.
 - `find_food_businesses`: `sort_by="name"` or `"rating"`; FSA filters and sorts before returning the requested page. Inspection-date sorting is unavailable. Non-numeric ratings retain their explicit states, and missing or sentinel inspection dates remain null. FSA controls their placement and tied results; stable ties and snapshot consistency across live pages are not guaranteed.
 
 For the first five schools Z–A: `{"sort_by":"name","sort_order":"desc","limit":5,"page":1}`.
@@ -181,3 +181,11 @@ The initial three StatsWales snapshots cover all 126 register schools for 2025/2
 Measures return `value` and `status`: `reported`, `suppressed`, `unavailable` or `not_applicable`. Only reported values are numeric. Missing groups are not zero. FSM counts round to five; its “all pupils” count can differ from the unrounded pupil total. Published percentages are preserved rather than recalculated. Means-tested eligibility and eligibility including transitional protection exclude meals received solely under universal primary provision. No estimates, rankings or historical queries are supplied.
 
 Invalid IDs return `invalid_input`; IDs absent from the Cardiff register return `not_found`. Missing statistics for an existing school remain a successful partial profile. See DATA_SOURCES.md for independent refresh instructions.
+
+## School size comparisons in one call
+
+For “Which is the largest school in Cardiff?”, call `find_schools` with `{"sort_by":"pupil_total","sort_order":"desc","limit":1}`. Ascending order finds the smallest published pupil headcount; `limit=5` returns the first five. Existing name, phase and language filters still apply before ordering.
+
+Only pupil-sorted responses add `pupil_total: {value, status}` to each school and shared `pupil_statistics` metadata. Its `source` carries StatsWales provenance, reporting period and census date; `reported_count` and `unavailable_count` cover all matching schools, including those on other pages. The latter includes every non-reported total, including suppression and non-applicability. Non-reported totals sort last in both directions; ties use ascending school ID.
+
+Describe the result as the largest Cardiff maintained school by published pupil headcount, with its census date. If coverage is incomplete, qualify it as the largest among schools with reported totals. This excludes independent schools and does not measure school quality, capacity or live enrolment. Do not claim a unique largest school if totals tie. Use `get_school` only for additional profile details. Default name searches retain their original response shape.

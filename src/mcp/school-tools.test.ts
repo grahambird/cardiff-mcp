@@ -19,6 +19,20 @@ describe("school MCP tool", () => {
     expect(logger.mock.calls[0][0]).not.toContain("private search phrase");
     expect(fetchSpy).not.toHaveBeenCalled();
   });
+  it("supports a single-call largest-school query without network requests or full profiles", async () => {
+    vi.spyOn(console, "info").mockImplementation(() => {});
+    const fetchSpy = vi.spyOn(globalThis, "fetch");
+    const args = findSchoolsInput.parse({ sort_by: "pupil_total", sort_order: "desc", limit: 1 });
+    const response = await runFindSchools(args);
+    const result = JSON.parse(response.content[0].text);
+    expect(result.schools).toHaveLength(1);
+    expect(result.schools[0].pupil_total.status).toBe("reported");
+    expect(result.schools[0]).not.toHaveProperty("year_groups");
+    expect(result.schools[0]).not.toHaveProperty("fsm");
+    expect(result.pupil_statistics.source).toHaveProperty("census_date");
+    expect(result.pupil_statistics.reported_count + result.pupil_statistics.unavailable_count).toBe(result.total_count);
+    expect(fetchSpy).not.toHaveBeenCalled();
+  });
   it("returns explicit validation errors", async () => {
     vi.spyOn(console, "warn").mockImplementation(() => {});
     const result = await runFindSchools({ page: 0, limit: 10 });
