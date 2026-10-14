@@ -1,0 +1,934 @@
+{
+  "retrieved_at": "2026-10-14T21:01:24.777479+00:00",
+  "sources": [
+    "https://www.arcgis.com/sharing/rest/content/items/96172380bb7d429bac154d03bf35a651/data",
+    "https://api.beta.ons.gov.uk/v1/population-types/UR/area-types/msoa/areas?q=Cardiff",
+    "https://api.beta.ons.gov.uk/v1/population-types/UR/area-types/ltla/areas",
+    "https://geoportal.statistics.gov.uk/datasets/lsoa-2021-to-ward-to-local-authority-district-may-2022-best-fit-lookup-for-ew/about"
+  ],
+  "attribution": "Source: Office for National Statistics licensed under the Open Government Licence v.3.0",
+  "areas": [
+    {
+      "code": "W02000367",
+      "name": "Cardiff 001",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000368",
+      "name": "Cardiff 002",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000369",
+      "name": "Cardiff 003",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000370",
+      "name": "Cardiff 004",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000371",
+      "name": "Cardiff 005",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000372",
+      "name": "Cardiff 006",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000373",
+      "name": "Cardiff 007",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000374",
+      "name": "Cardiff 008",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000375",
+      "name": "Cardiff 009",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000376",
+      "name": "Cardiff 010",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000377",
+      "name": "Cardiff 011",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000378",
+      "name": "Cardiff 012",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000379",
+      "name": "Cardiff 013",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000380",
+      "name": "Cardiff 014",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000381",
+      "name": "Cardiff 015",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000382",
+      "name": "Cardiff 016",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000383",
+      "name": "Cardiff 017",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000384",
+      "name": "Cardiff 018",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000385",
+      "name": "Cardiff 019",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000386",
+      "name": "Cardiff 020",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000387",
+      "name": "Cardiff 021",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000388",
+      "name": "Cardiff 022",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000389",
+      "name": "Cardiff 023",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000390",
+      "name": "Cardiff 024",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000391",
+      "name": "Cardiff 025",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000392",
+      "name": "Cardiff 026",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000393",
+      "name": "Cardiff 027",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000394",
+      "name": "Cardiff 028",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000395",
+      "name": "Cardiff 029",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000396",
+      "name": "Cardiff 030",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000397",
+      "name": "Cardiff 031",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000398",
+      "name": "Cardiff 032",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000399",
+      "name": "Cardiff 033",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000400",
+      "name": "Cardiff 034",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000401",
+      "name": "Cardiff 035",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000402",
+      "name": "Cardiff 036",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000403",
+      "name": "Cardiff 037",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000404",
+      "name": "Cardiff 038",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000405",
+      "name": "Cardiff 039",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000406",
+      "name": "Cardiff 040",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000407",
+      "name": "Cardiff 041",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000408",
+      "name": "Cardiff 042",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000409",
+      "name": "Cardiff 043",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000410",
+      "name": "Cardiff 044",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000411",
+      "name": "Cardiff 045",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000412",
+      "name": "Cardiff 046",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000422",
+      "name": "Cardiff 048",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W02000423",
+      "name": "Cardiff 049",
+      "area_type": "msoa",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W05001270",
+      "name": "Adamsdown",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": []
+    },
+    {
+      "code": "W05001271",
+      "name": "Butetown",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": []
+    },
+    {
+      "code": "W05001272",
+      "name": "Caerau",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": []
+    },
+    {
+      "code": "W05001273",
+      "name": "Canton",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Treganna"
+      ]
+    },
+    {
+      "code": "W05001274",
+      "name": "Cathays",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": []
+    },
+    {
+      "code": "W05001275",
+      "name": "Cyncoed",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": []
+    },
+    {
+      "code": "W05001276",
+      "name": "Ely",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Trelái"
+      ]
+    },
+    {
+      "code": "W05001277",
+      "name": "Fairwater",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Y Tyllgoed"
+      ]
+    },
+    {
+      "code": "W05001278",
+      "name": "Gabalfa",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": []
+    },
+    {
+      "code": "W05001279",
+      "name": "Grangetown",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": []
+    },
+    {
+      "code": "W05001280",
+      "name": "Heath",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Y Mynydd Bychan"
+      ]
+    },
+    {
+      "code": "W05001281",
+      "name": "Lisvane and Thornhill",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Llys-faen a'r Ddraenen"
+      ]
+    },
+    {
+      "code": "W05001282",
+      "name": "Llandaff",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Llandaf"
+      ]
+    },
+    {
+      "code": "W05001283",
+      "name": "Llandaff North",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Ystum Taf"
+      ]
+    },
+    {
+      "code": "W05001284",
+      "name": "Llanishen",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Llanisien"
+      ]
+    },
+    {
+      "code": "W05001285",
+      "name": "Llanrumney",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Llanrhymni"
+      ]
+    },
+    {
+      "code": "W05001286",
+      "name": "Pentwyn",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": []
+    },
+    {
+      "code": "W05001287",
+      "name": "Pentyrch and St Fagans",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Pentyrch a Sain Ffagan"
+      ]
+    },
+    {
+      "code": "W05001288",
+      "name": "Penylan",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Pen-y-lan"
+      ]
+    },
+    {
+      "code": "W05001289",
+      "name": "Plasnewydd",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": []
+    },
+    {
+      "code": "W05001290",
+      "name": "Pontprennau and Old St Mellons",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Pontprennau a Phentref Llaneirwg"
+      ]
+    },
+    {
+      "code": "W05001291",
+      "name": "Radyr",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Radur"
+      ]
+    },
+    {
+      "code": "W05001292",
+      "name": "Rhiwbina",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Rhiwbeina"
+      ]
+    },
+    {
+      "code": "W05001293",
+      "name": "Riverside",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Glanyrafon"
+      ]
+    },
+    {
+      "code": "W05001294",
+      "name": "Rumney",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Tredelerch"
+      ]
+    },
+    {
+      "code": "W05001295",
+      "name": "Splott",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Y Sblot"
+      ]
+    },
+    {
+      "code": "W05001296",
+      "name": "Trowbridge",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": []
+    },
+    {
+      "code": "W05001297",
+      "name": "Whitchurch and Tongwynlais",
+      "area_type": "ward",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2022-05",
+      "aliases": [
+        "Yr Eglwys Newydd a Thongwynlais"
+      ]
+    },
+    {
+      "code": "W06000001",
+      "name": "Isle of Anglesey",
+      "area_type": "local_authority",
+      "parent_code": "W06000001",
+      "parent_name": "Isle of Anglesey",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000002",
+      "name": "Gwynedd",
+      "area_type": "local_authority",
+      "parent_code": "W06000002",
+      "parent_name": "Gwynedd",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000003",
+      "name": "Conwy",
+      "area_type": "local_authority",
+      "parent_code": "W06000003",
+      "parent_name": "Conwy",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000004",
+      "name": "Denbighshire",
+      "area_type": "local_authority",
+      "parent_code": "W06000004",
+      "parent_name": "Denbighshire",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000005",
+      "name": "Flintshire",
+      "area_type": "local_authority",
+      "parent_code": "W06000005",
+      "parent_name": "Flintshire",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000006",
+      "name": "Wrexham",
+      "area_type": "local_authority",
+      "parent_code": "W06000006",
+      "parent_name": "Wrexham",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000008",
+      "name": "Ceredigion",
+      "area_type": "local_authority",
+      "parent_code": "W06000008",
+      "parent_name": "Ceredigion",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000009",
+      "name": "Pembrokeshire",
+      "area_type": "local_authority",
+      "parent_code": "W06000009",
+      "parent_name": "Pembrokeshire",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000010",
+      "name": "Carmarthenshire",
+      "area_type": "local_authority",
+      "parent_code": "W06000010",
+      "parent_name": "Carmarthenshire",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000011",
+      "name": "Swansea",
+      "area_type": "local_authority",
+      "parent_code": "W06000011",
+      "parent_name": "Swansea",
+      "boundary_date": "2021",
+      "aliases": [
+        "Abertawe"
+      ]
+    },
+    {
+      "code": "W06000012",
+      "name": "Neath Port Talbot",
+      "area_type": "local_authority",
+      "parent_code": "W06000012",
+      "parent_name": "Neath Port Talbot",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000013",
+      "name": "Bridgend",
+      "area_type": "local_authority",
+      "parent_code": "W06000013",
+      "parent_name": "Bridgend",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000014",
+      "name": "Vale of Glamorgan",
+      "area_type": "local_authority",
+      "parent_code": "W06000014",
+      "parent_name": "Vale of Glamorgan",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000015",
+      "name": "Cardiff",
+      "area_type": "local_authority",
+      "parent_code": "W06000015",
+      "parent_name": "Cardiff",
+      "boundary_date": "2021",
+      "aliases": [
+        "Caerdydd"
+      ]
+    },
+    {
+      "code": "W06000016",
+      "name": "Rhondda Cynon Taf",
+      "area_type": "local_authority",
+      "parent_code": "W06000016",
+      "parent_name": "Rhondda Cynon Taf",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000018",
+      "name": "Caerphilly",
+      "area_type": "local_authority",
+      "parent_code": "W06000018",
+      "parent_name": "Caerphilly",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000019",
+      "name": "Blaenau Gwent",
+      "area_type": "local_authority",
+      "parent_code": "W06000019",
+      "parent_name": "Blaenau Gwent",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000020",
+      "name": "Torfaen",
+      "area_type": "local_authority",
+      "parent_code": "W06000020",
+      "parent_name": "Torfaen",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000021",
+      "name": "Monmouthshire",
+      "area_type": "local_authority",
+      "parent_code": "W06000021",
+      "parent_name": "Monmouthshire",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000022",
+      "name": "Newport",
+      "area_type": "local_authority",
+      "parent_code": "W06000022",
+      "parent_name": "Newport",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000023",
+      "name": "Powys",
+      "area_type": "local_authority",
+      "parent_code": "W06000023",
+      "parent_name": "Powys",
+      "boundary_date": "2021",
+      "aliases": []
+    },
+    {
+      "code": "W06000024",
+      "name": "Merthyr Tydfil",
+      "area_type": "local_authority",
+      "parent_code": "W06000024",
+      "parent_name": "Merthyr Tydfil",
+      "boundary_date": "2021",
+      "aliases": []
+    }
+  ]
+}

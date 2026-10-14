@@ -6,6 +6,12 @@ import styles from "./page.module.css";
 const endpoint = "https://mcp.wales/mcp";
 const capabilities = [
   {
+    title: "Census 2021",
+    description: "Explore official ONS population, age profiles and Welsh-speaking ability for Cardiff wards and MSOAs, and compare Welsh local authorities.",
+    prompts: ["Compare the age profiles of Llanishen and Grangetown", "Which Cardiff wards had the highest proportion of Welsh speakers in 2021?", "Compare Cardiff and Swansea’s Census 2021 populations"],
+    note: "Statistics describe 21 March 2021, not today. Ward boundaries are from May 2022 and may differ from neighbourhoods.",
+  },
+  {
     title: "Food hygiene",
     description: "Find Cardiff food businesses by name, business type or minimum hygiene rating, then look up an individual business’s inspection details and official FSA record.",
     prompts: ["Find cafés in Cardiff with a food hygiene rating of 5", "Which Costa has the best hygiene rating?", "Which restaurants have out of date inspections?"],
@@ -31,7 +37,7 @@ export default function Home() {
           <span>MCP Wales</span>
         </h1>
         <p className={styles.intro}>Give your AI assistant local knowledge.</p>
-        <p className={styles.summary}>An open-source, read-only connector for trusted local and public data in Wales, starting with Cardiff. Wider Welsh coverage is a future ambition; current tools cover Cardiff.</p>
+        <p className={styles.summary}>An open-source, read-only connector for trusted local and public data in Wales, starting with Cardiff. Census comparisons cover Welsh local authorities; neighbourhood statistics, food businesses and schools currently cover Cardiff.</p>
         <nav className={styles.actions} aria-label="Useful links">
           <a className={styles.primaryLink} href="#connect">Connect your assistant <span aria-hidden="true">↓</span></a>
           <a href="https://github.com/grahambird/mcp-wales">View on GitHub <span aria-hidden="true">↗</span></a>
@@ -65,12 +71,18 @@ export default function Home() {
           <div><dt><code>get_food_business</code></dt><dd>Retrieve inspection details for a Cardiff business using its FSA establishment ID, typically from a search result.</dd></div>
           <div><dt><code>find_schools</code></dt><dd>Search the Cardiff maintained-school directory by name, phase and language group.</dd></div>
           <div><dt><code>get_school</code></dt><dd>Get a combined school profile with published pupil and FSM statistics, reporting periods and sources.</dd></div>
+          <div><dt><code>find_census_areas</code></dt><dd>Resolve official census area names and codes, with notes on neighbourhood boundaries.</dd></div>
+          <div><dt><code>get_area_demographics</code></dt><dd>Get Census 2021 population, age, sex or Welsh-speaking statistics.</dd></div>
+          <div><dt><code>compare_area_demographics</code></dt><dd>Compare consistent demographic measures across equivalent areas.</dd></div>
+          <div><dt><code>rank_areas_by_demographic</code></dt><dd>Rank all Cardiff wards or MSOAs by population, age 65+ or Welsh-speaking percentage.</dd></div>
         </dl>
       </section>
       <section className={styles.section} aria-labelledby="sources-heading">
         <h2 id="sources-heading">About the data</h2>
         <p>Food hygiene ratings come from the <a href="https://ratings.food.gov.uk/">Food Standards Agency</a> and reflect standards found on the inspection date. They do not assess food quality or provide menus, opening hours, bookings or availability. Ratings can change; results include inspection dates and official source links.</p>
         <p>School details come from a manually refreshed snapshot of the <a href="https://www.gov.wales/addresses-and-phone-numbers-schools-and-pupil-referral-units">Welsh Government school register</a>. Results include publication and import dates. School profiles also include published <a href="https://stats.gov.wales/en-GB/2018f447-f4c0-438d-bb88-2a72af967724">StatsWales</a> pupil and FSM statistics with their census dates. FSM eligibility differs from universal primary meal provision. Counts may be rounded or suppressed. These figures do not measure school quality or provide live enrolment, catchments, inspections or performance results.</p>
+        <p>Census statistics are queried from the <a href="https://developer.ons.gov.uk/censusobservations/">Office for National Statistics API</a>. They describe Census Day, 21 March 2021, rather than current population estimates. Welsh-speaking percentages cover residents aged three or over. Wards use May 2022 boundaries; approximate neighbourhood matches require an explicit area selection. Disclosure control can cause small differences between topic totals.</p>
+        <p className={styles.note}>Source: Office for National Statistics licensed under the Open Government Licence v.3.0.</p>
         <p className={styles.note}>Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>. Sources: Food Standards Agency and Welsh Government.</p>
       </section>
       <footer className={styles.footer}>

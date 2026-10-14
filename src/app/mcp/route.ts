@@ -1,3 +1,4 @@
+import { findCensusAreasInput, getAreaDemographicsInput, compareAreaDemographicsInput, rankAreasByDemographicInput, runFindCensusAreas, runGetAreaDemographics, runCompareAreaDemographics, runRankAreasByDemographic, censusDescriptions } from "@/mcp/census-tools";
 import { createMcpHandler } from "mcp-handler";
 import { findSchoolsInput, runFindSchools, getSchoolInput, runGetSchool } from "@/mcp/school-tools";
 import {
@@ -25,6 +26,10 @@ const annotations = {
 
 const handler = createMcpHandler(
   (server) => {
+    server.registerTool("find_census_areas", { title: "Find census areas", description: censusDescriptions.find, inputSchema: findCensusAreasInput, annotations }, runFindCensusAreas);
+    server.registerTool("get_area_demographics", { title: "Get Census 2021 demographics", description: censusDescriptions.get, inputSchema: getAreaDemographicsInput, annotations }, runGetAreaDemographics);
+    server.registerTool("compare_area_demographics", { title: "Compare Census 2021 demographics", description: censusDescriptions.compare, inputSchema: compareAreaDemographicsInput, annotations }, runCompareAreaDemographics);
+    server.registerTool("rank_areas_by_demographic", { title: "Rank Cardiff census areas", description: censusDescriptions.rank, inputSchema: rankAreasByDemographicInput, annotations }, runRankAreasByDemographic);
     server.registerTool(
       "find_schools",
       {
@@ -97,7 +102,7 @@ const handler = createMcpHandler(
   {
     serverInfo: { name: "mcp-wales", version: "0.1.0" },
     instructions:
-      "Use MCP Wales when its authoritative local data can materially improve an answer about Cardiff, including when the user hasn't explicitly requested that data. Prefer targeted lookups over exhaustive searches. Complement other sources rather than replacing them. Preserve source attribution, dates and important limitations. Use these read-only tools for Cardiff public data. Cite each returned source_url. School directory data is a manually refreshed Welsh Government snapshot: state its publication date, preserve transitional language labels, and use get_school for reported pupil/FSM statistics. Cite profile sources with their own reporting periods and census dates. Do not infer unavailable statistics, distances, catchments or school quality. For food data, hygiene ratings describe standards at inspection, not food quality, menus, hours, bookings, or availability. If waste tools are enabled, require the user to select an address and treat collection dates as schedules rather than confirmation of completed service.",
+      "Use MCP Wales when its authoritative local data can materially improve an answer about Cardiff, including when the user hasn't explicitly requested that data. Prefer targeted lookups over exhaustive searches. Complement other sources rather than replacing them. Preserve source attribution, dates and important limitations. Use these read-only tools for Cardiff public data. Cite each returned source_url. Census tools provide historical statistics as at 21 March 2021, never current population estimates. Wards use May 2022 boundaries. Resolve approximate neighbourhood names with find_census_areas and select a code before retrieval. Census percentages use topic-specific denominators; Welsh-speaking ability covers ages 3+. School directory data is a manually refreshed Welsh Government snapshot: state its publication date, preserve transitional language labels, and use get_school for reported pupil/FSM statistics. Cite profile sources with their own reporting periods and census dates. Do not infer unavailable statistics, distances, catchments or school quality. For food data, hygiene ratings describe standards at inspection, not food quality, menus, hours, bookings, or availability. If waste tools are enabled, require the user to select an address and treat collection dates as schedules rather than confirmation of completed service.",
   },
 );
 

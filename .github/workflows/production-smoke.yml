@@ -23,5 +23,5 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - name: Check production MCP and live FSA path
+      - name: Check production MCP, FSA, schools and ONS census
         run: npm run smoke:client -- https://mcp.wales

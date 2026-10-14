@@ -1,3 +1,4 @@
+import { readFile } from "node:fs/promises";
 import { Client, StreamableHTTPClientTransport } from "@modelcontextprotocol/client";
 
 const origin = process.argv.slice(2).find((argument) => argument !== "--") || "http://127.0.0.1:3000";
@@ -36,7 +37,7 @@ try {
   await client.connect(new StreamableHTTPClientTransport(endpoint));
   const { tools } = await client.listTools();
   const names = tools.map((tool) => tool.name).sort();
-  const expected = ["find_food_businesses", "find_schools", "get_food_business", "get_school"];
+  const expected = ["find_food_businesses", "find_schools", "get_food_business", "get_school", "find_census_areas", "get_area_demographics", "compare_area_demographics", "rank_areas_by_demographic"].sort();
   if (process.env.CARDIFF_WASTE_TOOLS_ENABLED === "true") {
     expected.push("find_waste_collection_addresses", "get_waste_collections");
     expected.sort();
@@ -49,6 +50,37 @@ try {
     assert(tool.annotations?.destructiveHint === false, `${tool.name} is incorrectly advertised as destructive.`);
     assert(typeof tool.description === "string" && tool.description.length > 0, `${tool.name} has no description.`);
   }
+
+  const census = await client.callTool({ name: "get_area_demographics", arguments: { area: "W06000015", topic: "population" } });
+  assert(!census.isError, "ONS Cardiff population lookup failed.");
+  const population = census.structuredContent?.result;
+  function validateCensus(value) {
+    assert(value?.census_date === "2021-03-21" && value.census_year === 2021, "Invalid census reference date.");
+    assert(Number.isInteger(value.dataset_version) && value.dataset_version > 0, "Missing census version.");
+    assert(value.source_url?.startsWith(`https://www.ons.gov.uk/datasets/${value.dataset_id}/editions/2021/versions/`), "Invalid ONS provenance.");
+    assert(isIsoTimestamp(value.source_retrieved_at), "Missing census retrieval time.");
+    assert(value.attribution?.includes("Office for National Statistics") && value.attribution.includes("Open Government Licence"), "Missing ONS attribution.");
+  }
+  validateCensus(population);
+  assert(population.area?.code === "W06000015" && population.dataset_id === "TS001", "Invalid Cardiff census identity.");
+  assert(Number.isInteger(population.denominator) && population.denominator > 0, "Invalid census population.");
+  assert(population.measures?.population?.count === population.denominator, "Population denominator differs.");
+  const rankingCall = await client.callTool({ name: "rank_areas_by_demographic", arguments: { metric: "welsh_speaking_percentage", limit: 3 } });
+  assert(!rankingCall.isError, "ONS Cardiff ward ranking failed.");
+  const ranking = rankingCall.structuredContent?.result;
+  validateCensus(ranking);
+  const geography = JSON.parse(await readFile(new URL("../src/ons/geographies.json", import.meta.url), "utf8"));
+  const eligible = geography.areas.filter(a => a.area_type === "ward" && a.parent_code === "W06000015");
+  assert(ranking.complete === true && ranking.areas_considered === eligible.length && ranking.eligible_area_count === eligible.length, "Ward ranking is incomplete.");
+  assert(ranking.dataset_id === "TS033" && ranking.unit === "percent", "Invalid ranking measure.");
+  assert(ranking.results?.length === 3 && new Set(ranking.results.map(r => r.area.code)).size === 3, "Invalid bounded ranking results.");
+  for (const row of ranking.results) {
+    assert(eligible.some(a => a.code === row.area.code) && row.area.boundary_date === "2022-05", "Invalid ward boundary.");
+    assert(Number.isInteger(row.count) && row.count >= 0 && Number.isInteger(row.denominator) && row.denominator >= row.count && row.denominator > 0, "Invalid Welsh-speaking denominator.");
+    assert(row.denominator_definition === "Usual residents aged 3 years and over", "Invalid Welsh-speaking population base.");
+    assert(row.value === Math.round(row.count / row.denominator * 10000) / 100, "Invalid Welsh-speaking percentage.");
+  }
+  assert(ranking.results.every((row, i, all) => i === 0 || all[i - 1].count / all[i - 1].denominator >= row.count / row.denominator), "Ranking order is incorrect.");
 
   const schools = await client.callTool({ name: "find_schools", arguments: { limit: 3 } });
   assert(!schools.isError, "School directory search failed.");

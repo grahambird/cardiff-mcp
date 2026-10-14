@@ -162,3 +162,34 @@ Python 3 standard library only; no network calls in the importer or runtime scho
 6. Review the Git diff and deploy the tested update. Git preserves previous snapshots. If download or validation fails, stop before promotion; the previous snapshot remains intact. When updating totals and year groups separately, check the report again after both imports. Different periods stay explicitly labelled in profiles and are not combined.
 
 Supported CSV downloads stream the complete, modest national dataset once during manual refresh (currently about 1,441, 11,972 and 7,205 rows respectively), then bundle only Cardiff rows. This is a documented bulk export, not exhaustive runtime search. API v2 also supports filtered and paginated JSON and sorting, but runtime requests are unnecessary for this snapshot design. No new source-specific numerical usage limit was established; keep acquisition sequential and stop on upstream errors.
+
+## ONS Census 2021
+
+| Dataset | Pinned published version | Use |
+| --- | --- | --- |
+| TS001 | 3 | Usual residents in households and communal establishments |
+| TS007 | 3 | Single-year ages; derived summary and five-year bands |
+| TS008 | 4 | Sex |
+| TS033 | 3 | Welsh-speaking ability; denominator is residents aged 3+ |
+
+Metadata latest-version links and live Cardiff requests were verified on 14 October 2026. TS007A was not found at its API dataset endpoint; this integration uses TS007, not a local download or a substituted provider. Pinned definitions are in `src/ons/datasets.ts`. During release verification, read each `/datasets/{ID}` metadata response and compare `links.latest_version` with the registry. Review category/population-definition changes and rerun acceptance before updating a pin; never silently adopt a new version.
+
+API: `https://api.beta.ons.gov.uk/v1`. Observations use GET `/datasets/{ID}/editions/2021/versions/{version}/json?area-type={ltla|wd|msoa},{explicit codes}`. Documentation: <https://developer.ons.gov.uk/censusobservations/>. No authentication or API key. Queries always specify supported codes. Parent filters are not relied on, because attempted filters were rejected or ignored during investigation. All 28 Cardiff wards were returned together for TS001, TS007 and TS033. No upstream sorting is assumed. The connector checks returned codes and completeness, then calculates and sorts locally. MSOA and local-authority comparisons use the same normalizer.
+
+Statistics are as at 21 March 2021. ONS wards use May 2022 boundaries. Census disclosure control adds small perturbations: topic totals can differ, and sums of areas need not equal the separately tabulated authority total. Cardiff TS001 in the checked response summed to 362,308, whereas TS008 summed to 362,310; these are table-specific estimates, not a calculation defect or today’s population. Percentages use the selected table’s categories and population base. “65+” includes age 65 and the 100+ category. TS033 excludes category -8 from its eligible denominator. See <https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/methodologies/protectingpersonaldataincensus2021results>.
+
+### Geography catalogue and extension
+
+`src/ons/geographies.json` stores **identifiers, names, selected published aliases and provenance only**. It includes 22 Welsh authorities, 28 Cardiff wards and 48 Cardiff MSOAs. The manual refresh command is `python3 scripts/refresh-census-geographies.py` (Python standard library and curl). It follows all ONS metadata pages, validates expected coverage and unique codes, and writes only after all sources pass. Review the diff before committing.
+
+Ward membership comes from the direct ONS May 2022 ward-to-authority workbook, ArcGIS item `96172380bb7d429bac154d03bf35a651`; its full list is used rather than inferred code ranges. Welsh ward aliases come from the ONS geography lookup service. MSOA membership uses ONS’s published Cardiff-prefixed official MSOA names; the response has 48 entries and is validated. Local-authority identifiers come from the ONS ltla listing. Cardiff/Caerdydd and Swansea/Abertawe aliases are included; Welsh aliases are not comprehensive across all authorities. Sources and retrieval time are recorded in the catalogue.
+
+To add another authority’s subdivisions: extend the refresh script’s explicit authority coverage, retrieve matching official ward and MSOA membership for the same boundary vintages, validate the lists against ONS, update resolver coverage and ranking scope, and add contract/completeness tests and live acceptance. Do not derive ward population by summing best-fit LSOAs. Neighbourhood aliases require authoritative boundary evidence; approximate or partial names must require explicit official-code selection. LSOA support requires a separate reviewed catalogue and bounds update.
+
+### Attribution, storage and operations
+
+Source: Office for National Statistics licensed under the Open Government Licence v.3.0.
+
+ONS observations and non-postcode lookup products use OGL v3: <https://www.ons.gov.uk/methodology/geography/licences>. The integration uses no logos, boundary geometry, postcode or UPRN data. Observations are never written to disk or a persistent store; synthetic test fixtures are not a demographic dataset. Successful validated live responses are cached in memory for five minutes, at most 100 entries per warm instance.
+
+ONS documents 120 requests/10 seconds, 200/minute, and 15/10 seconds for high-demand assets, subject to change: <https://developer.ons.gov.uk/bots/>. Honour Retry-After. Local safeguards are deliberately more conservative but cannot enforce a deployment-wide budget. Node/Vercel access must be checked separately: curl worked locally; another HTTP client received 403. Neither availability nor an undocumented production observation-size limit is assumed.

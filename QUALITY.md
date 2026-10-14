@@ -14,7 +14,7 @@ These tests are the persistent source of truth for behaviour that MCP Wales cont
 
 `.github/workflows/production-smoke.yml` calls the deployed Streamable HTTP endpoint once each day. It checks that:
 
-- exactly the four expected tools after the school-profile release are discoverable and advertised as read-only;
+- exactly the eight expected tools after the census release are discoverable and advertised as read-only;
 - a bounded rating-5 Cardiff search succeeds with valid metadata, attribution, and FSA source links;
 - every returned result satisfies stable shape and rating invariants;
 - a detail lookup agrees with the selected search result;
@@ -60,3 +60,11 @@ Source differences and mismatched same-period year-group sums are preserved and 
 ## School size discovery regression
 
 ChatGPT needed 18 calls to answer “Which is the largest school in Cardiff?” after individual profiles launched. Pupil-total sorting now supports that query in one bounded discovery call. Deterministic fixtures verify first-five ordering before pagination, filters, zeros, ties, adjacent pages, incomplete coverage and missing/suppressed totals last in either direction. Manual ChatGPT acceptance confirms argument selection; no LLM calls or eval platform are introduced.
+
+## Census quality
+
+Synthetic contract tests cover geography resolution, explicit selection for approximate names, dimension/category order, disclosure-control-compatible topic denominators, age 65 and 100+, exclusions, malformed/incomplete observations, bounded batching, all-area rankings, ties, failures, caching and throttling. Never persist live observations as an application dataset. Mocked contracts remain the behavioural truth.
+
+The existing production canary additionally calls Cardiff TS001 and a bounded TS033 ward ranking. It checks the complete eligible catalogue size, valid official codes, census/boundary dates, counts, population bases, percentage arithmetic, unrounded ordering and ONS attribution. Live demographic values are not fixed assertions. An ONS outage is surfaced as a canary failure, not silently skipped.
+
+`scripts/fixtures/census-prompts.json` records representative prompt-to-tool expectations for manual ChatGPT acceptance; no LLM evaluator or paid infrastructure is introduced. Before release, compare numerical results with the same ONS table/version and record Vercel-origin access in ACCEPTANCE.md. Keep checks pending until actually performed.

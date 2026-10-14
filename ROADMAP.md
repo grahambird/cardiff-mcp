@@ -28,3 +28,7 @@ The first release is a Cardiff maintained-school directory from the Welsh Govern
 | Catchments, term dates and capacity | Confirm structured access, reuse terms and school-specific coverage. Admission numbers are not total capacity or live vacancies. |
 
 Do not scrape unsupported endpoints, generate school rankings or add infrastructure in anticipation of these steps.
+
+## Census 2021
+
+Implemented initial coverage: Cardiff wards/MSOAs plus Welsh local-authority demographics, comparisons and complete Cardiff rankings. Future candidates: verified neighbourhood aliases, LSOAs and other authorities’ subdivisions. Add only with authoritative dated membership, bounded queries and coverage tests. Current population estimates would be a separate source with distinct reporting dates.

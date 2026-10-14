@@ -121,3 +121,22 @@ After automatic deployment from GitHub, refresh the ChatGPT connection and start
 - Incomplete coverage is qualified; suppressed/missing figures are not zero; pupil size is not described as school quality: [ ]
 
 The reported 18-call query is the regression trigger. Deterministic tests establish tool behaviour; the manual checks above remain pending.
+
+## Census release acceptance — pending deployment
+
+- [ ] Verify ONS access from a Vercel preview using Cardiff population and a complete ward ranking.
+- [ ] Run the updated smoke client against that preview and production after release.
+- [ ] Refresh ChatGPT tool discovery and exercise the eight cases in `scripts/fixtures/census-prompts.json`.
+- [ ] Confirm Whitchurch requires code selection, Roath is not silently substituted, and neighbourhood/ward boundaries are explained.
+- [ ] Confirm “current population” is not answered as though Census 2021 were current.
+- [ ] Compare numerical outputs with the same ONS dataset/version and geography; preserve any disclosure-control differences.
+
+Automated offline checks and local live acceptance are recorded separately when run; they do not establish Vercel-origin access or signed-in ChatGPT behaviour.
+
+### Local census verification — 14 October 2026
+
+- Lint, TypeScript, mocked contracts and production build passed.
+- Updated smoke client passed against the existing local server on port 3000, including eight-tool discovery, Cardiff population and complete Welsh-speaking ward ranking, plus existing FSA and school checks.
+- Optional live census acceptance passed: Llanishen/Grangetown age comparison, Whitchurch explicit selection and full age bands, Roath non-equivalence, Cardiff/Swansea comparison, MSOA sex and historical-date metadata.
+- Independent live ONS TS007 v3 JSON retrieval agreed with returned ward-age counts, denominators and calculated age-65-plus percentages. This checks the same published table; it does not assume agreement with differently tabulated/rounded publications.
+- Vercel preview/production and signed-in ChatGPT acceptance remain pending. No deployment was performed.

@@ -1,0 +1,10 @@
+[
+  {"prompt":"What was Cardiff's population in the 2021 Census?","tool":"get_area_demographics","arguments":{"area":"Cardiff","topic":"population"}},
+  {"prompt":"How many people lived in Llanishen in 2021?","tool":"get_area_demographics","arguments":{"area":"Llanishen","topic":"population"},"expectation":"Label electoral ward and May 2022 boundary."},
+  {"prompt":"What percentage of people in Whitchurch were aged 65 or over?","tool":"find_census_areas","arguments":{"query":"Whitchurch"},"expectation":"Explicitly select Whitchurch and Tongwynlais code before get_area_demographics age."},
+  {"prompt":"Compare the age profiles of Llanishen and Grangetown.","tool":"compare_area_demographics","arguments":{"areas":["Llanishen","Grangetown"],"topic":"age"}},
+  {"prompt":"Which Cardiff wards had the highest proportion of Welsh speakers in 2021?","tool":"rank_areas_by_demographic","arguments":{"metric":"welsh_speaking_percentage"},"expectation":"Denominator is residents aged 3+, all wards considered."},
+  {"prompt":"Rank Cardiff wards by population.","tool":"rank_areas_by_demographic","arguments":{"metric":"population"}},
+  {"prompt":"Compare Cardiff's population with Swansea's.","tool":"compare_area_demographics","arguments":{"areas":["Cardiff","Swansea"],"topic":"population"},"expectation":"State Census 2021 date."},
+  {"prompt":"What is the current population of Cardiff?","expectation":"Do not present Census 2021 as current; use another source for current estimates and label any census context historical."}
+]
