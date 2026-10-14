@@ -193,3 +193,35 @@ Source: Office for National Statistics licensed under the Open Government Licenc
 ONS observations and non-postcode lookup products use OGL v3: <https://www.ons.gov.uk/methodology/geography/licences>. The integration uses no logos, boundary geometry, postcode or UPRN data. Observations are never written to disk or a persistent store; synthetic test fixtures are not a demographic dataset. Successful validated live responses are cached in memory for five minutes, at most 100 entries per warm instance.
 
 ONS documents 120 requests/10 seconds, 200/minute, and 15/10 seconds for high-demand assets, subject to change: <https://developer.ons.gov.uk/bots/>. Honour Retry-After. Local safeguards are deliberately more conservative but cannot enforce a deployment-wide budget. Node/Vercel access must be checked separately: curl worked locally; another HTTP client received 403. Neither availability nor an undocumented production observation-size limit is assumed.
+
+## Monthly freshness review
+
+`.github/workflows/source-freshness.yml` runs on the first of each month at
+08:23 UTC and can also be started with **Run workflow** in GitHub Actions.
+It compares the school-register ODS link, workbook SHA-256 and available page
+modification metadata, StatsWales revision IDs and reporting periods, and ONS
+latest-version links with committed snapshots and pins. It does not import,
+change dataset versions, or deploy anything. Geography remains a manual review
+because newer boundaries may not match Census 2021.
+
+Run locally with Python 3 and curl (no npm dependencies or credentials):
+
+```bash
+python3 scripts/test-source-freshness.py
+python3 scripts/check-source-freshness.py --report /tmp/source-freshness.md
+```
+
+Each source reports unchanged, update available, or check failed. An update
+requires the existing manual review/import/test/deploy procedure above. A check
+failure fails the workflow and requires investigating availability or metadata
+shape; it never counts as unchanged. This is a change detector, not a guarantee
+that the publisher has corrected every outdated record.
+
+The workflow publishes a run summary and maintains one bot-owned GitHub issue,
+“Review public-source freshness”, while updates or failures remain. An unchanged
+report does not create an issue; when all checks become unchanged, the existing
+issue closes. Issue creation uses only the workflow's built-in GitHub token with
+`issues: write`; no additional secret is needed. Repository Issues and scheduled
+Actions must be enabled. The schedule starts after the workflow reaches the
+default branch; GitHub may delay scheduled runs. Source checks run sequentially
+with bounded downloads and timeouts.

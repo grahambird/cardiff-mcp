@@ -1,0 +1,38 @@
+name: Monthly source freshness
+
+on:
+  schedule:
+    - cron: "23 8 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: source-freshness
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - name: Test checker
+        run: python3 scripts/test-source-freshness.py
+      - name: Check public sources
+        id: freshness
+        continue-on-error: true
+        run: python3 scripts/check-source-freshness.py --report "$RUNNER_TEMP/source-freshness.md"
+      - name: Publish summary and maintain review issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          report="$RUNNER_TEMP/source-freshness.md"
+          cat "$report" >> "$GITHUB_STEP_SUMMARY"
+          python3 scripts/publish-source-freshness.py "$report"
+      - name: Fail on incomplete checks
+        if: steps.freshness.outcome == 'failure'
+        run: exit 1
