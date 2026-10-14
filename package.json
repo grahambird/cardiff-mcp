@@ -18,7 +18,8 @@
     "test:watch": "vitest",
     "smoke:client": "node scripts/test-client.mjs",
     "test:smoke": "start-server-and-test start http://127.0.0.1:3000 smoke:client",
-    "check": "npm run lint && npm run type-check && npm test && npm run build"
+    "check": "npm run lint && npm run type-check && npm test && npm run test:maintenance && npm run build",
+    "test:maintenance": "python3 scripts/test-source-freshness.py"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "^2.3.1",

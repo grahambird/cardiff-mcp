@@ -6,7 +6,7 @@ MCP Wales uses the smallest quality system that provides useful confidence. Test
 
 ### Deterministic checks on every change
 
-GitHub Actions runs linting, type-checking, unit tests, and a production build on each push and pull request. Mocked FSA fixtures cover filtering, response mapping, non-numeric and pending ratings, sentinel dates, Cardiff enforcement, upstream failures, and validation boundaries.
+GitHub Actions runs `npm run check` on each push and pull request: linting, type-checking, unit tests (including Python importer/geography checks), offline maintenance tests, and a production build. Contributors run the same command locally. Mocked FSA fixtures cover filtering, response mapping, non-numeric and pending ratings, sentinel dates, Cardiff enforcement, upstream failures, and validation boundaries.
 
 These tests are the persistent source of truth for behaviour that MCP Wales controls. The gated waste spike additionally covers postcode normalization, ambiguous and empty address results, string UPRNs, bounded results, unusual stream/status values, empty and malformed schedules, throttling/access failures, cache behaviour, simultaneous-request deduplication, and privacy-safe logging. Live residential details are never fixtures.
 
