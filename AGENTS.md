@@ -7,6 +7,8 @@ Read `README.md`, `DATA_SOURCES.md`, `ROADMAP.md` and `QUALITY.md` before changi
 - Maintain the daily production canary using stable invariants rather than fixed establishment names, IDs, ratings, or dates.
 - Turn confirmed production defects into deterministic regression tests.
 - Follow the adoption triggers in `QUALITY.md`. Do not add databases, hosted eval platforms, LLM calls, authentication, or paid infrastructure without a demonstrated need and explicit approval.
+- Read [design principles](docs/design-principles.md) and use the [tool checklist](docs/tool-design-checklist.md) before changing tools. Consult the current official MCP specification and security links there, preserving tested legacy compatibility.
+- Reuse `src/lib/cache.ts`, `src/lib/logger.ts`, `src/mcp/http-guard.ts` and `src/mcp/output-schemas.ts` where applicable. Use mocked tests and the [evaluation guide](docs/ai-evaluations.md); never claim manual evaluations or deployed settings were checked when they were not.
 - Prefer small, understandable changes over speculative abstractions.
 
 <!-- BEGIN:nextjs-agent-rules -->

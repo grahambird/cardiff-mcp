@@ -34,7 +34,7 @@ First classify a failure as a MCP Wales regression, an upstream FSA availability
 
 Keep these deferred until their trigger occurs:
 
-- **Prompt-to-tool eval cases:** add a small version-controlled dataset when a real tool-selection, argument-extraction, or answer-quality failure is observed, or before adding several overlapping tools.
+- **Prompt-to-tool eval cases:** the reusable cases now cover Census, schools, food, unsupported and no-call questions under the agreed design-principles work. Use [the evaluation guide](docs/ai-evaluations.md); add cases for observed failures. Actual assistant comparisons remain manual.
 - **Automated model-based evals:** consider only when prompt behaviour changes frequently enough to justify API cost and grader maintenance. Keep deterministic checks as the primary gate and calibrate model graders with human review.
 - **Persistent monitoring and alerting:** add when traffic or reliability expectations make Vercel's short Hobby log retention insufficient.
 - **Distributed caching or analytics:** add only when measured traffic, latency, or FSA limits require them.
@@ -68,3 +68,7 @@ Synthetic contract tests cover geography resolution, explicit selection for appr
 The existing production canary additionally calls Cardiff TS001 and a bounded TS033 ward ranking. It checks the complete eligible catalogue size, valid official codes, census/boundary dates, counts, population bases, percentage arithmetic, unrounded ordering and ONS attribution. Live demographic values are not fixed assertions. An ONS outage is surfaced as a canary failure, not silently skipped.
 
 `scripts/fixtures/census-prompts.json` records representative prompt-to-tool expectations for manual ChatGPT acceptance; no LLM evaluator or paid infrastructure is introduced. Before release, compare numerical results with the same ONS table/version and record Vercel-origin access in ACCEPTANCE.md. Keep checks pending until actually performed.
+
+## Design and security regression checks
+
+Follow the [principles](docs/design-principles.md) and [tool checklist](docs/tool-design-checklist.md). Mocked tests cover the HTTP byte/origin guard, FSA cache/concurrency/cooldowns, streamed response bounds, disclosure safety, nested output schemas and legacy/current protocol paths. Keep existing missing/suppressed-data, sorting and provenance contracts. Instance-local controls cannot prove a Vercel firewall is configured. See the [assessment](docs/engineering-assessment.md) for pending deployment/manual checks.

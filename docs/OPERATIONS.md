@@ -23,7 +23,7 @@
 
 This is a deliberately generous starting limit for an MCP client. Review it if ChatGPT or another MCP host uses shared outbound addresses and legitimate requests receive `429` responses. The firewall is configured in Vercel rather than in this repository; Vercel Hobby currently permits one custom firewall rule.
 
-The code also applies an eight-second FSA timeout, permits no more than 20 records per page, caps pages at 10, and caches successful upstream responses for five minutes in warm instances. Cache and rate limiting are deliberately modest for a first public prototype.
+The code also applies an eight-second FSA timeout, permits no more than 20 records per page, caps pages at 10, and caches successful upstream responses for five minutes in warm instances. FSA cache capacity is 100 entries, with identical in-flight requests deduplicated. Outgoing FSA concurrency is two per warm instance, waiting within a 20-second operation deadline. Responses are limited to 512 KiB; the eight-second timeout includes body reading. HTTP 429 Retry-After establishes a per-instance cooldown; requests are not automatically retried. These limits are not deployment-wide.
 
 ## Logging and monitoring
 
@@ -65,3 +65,9 @@ Collection dates are schedules, not proof of collection. The server does not inf
 The expected incremental cost for low-volume development is £0: the FSA API is free, public GitHub repositories are free, and this service should fit comfortably within Vercel Hobby limits. Usage limits and product availability can change.
 
 Not included in this milestone: Welsh responses, location/distance search, school inspections/performance, persistent analytics or caching, authentication, maps, menus, opening hours, bookings, alerts, MCP widgets, or public directory submission.
+
+## HTTP guard and privacy
+
+The route caps POST bodies at 64 KiB before handler JSON parsing, returning 413 above that limit. Supplied Origin values must exactly match `https://mcp.wales`, the deployment's `VERCEL_URL` or `VERCEL_BRANCH_URL` origin, or `http://localhost:3000` / `http://127.0.0.1:3000` in development. No-Origin clients remain supported. Incoming Host and forwarded headers never extend this list. A future browser client needs an intentional trusted-origin addition in `src/mcp/http-guard.ts` and matching tests; do not reflect arbitrary origins or enable wildcard access.
+
+See the [privacy statement](privacy.md) for provider recipients, cache retention and the distinction between application logs and hosting/firewall network logs. Verify the deployed WAF and hosting retention settings separately; repository tests cannot verify them. Read the [assessment](engineering-assessment.md) before directory submission.

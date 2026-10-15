@@ -53,3 +53,7 @@ MCP client → /mcp route → tool validation and responses → source connector
 Next.js hosts the public information page and MCP endpoint on Vercel. There is no database, account system or LLM dependency. Keep changes small and sources public and read-only.
 
 Project code is MIT-licensed. Public datasets have separate attribution and licence requirements; see [DATA_SOURCES.md](DATA_SOURCES.md).
+
+## Design and engineering guidance
+
+Read the [design principles](docs/design-principles.md) and use the [tool checklist](docs/tool-design-checklist.md) for new integrations. See the [engineering assessment](docs/engineering-assessment.md), [privacy statement](docs/privacy.md) and [AI evaluation guide](docs/ai-evaluations.md). Reuse the shared bounded cache, HTTP guard, logger and output schemas; follow existing mocked tests and `npm run check`.

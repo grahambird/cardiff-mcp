@@ -1,0 +1,21 @@
+import { afterEach, expect, it, vi } from "vitest";
+import { TtlCache } from "./cache";
+afterEach(() => vi.useRealTimers());
+it("deduplicates, evicts oldest, expires entries and never caches failures", async () => {
+  vi.useFakeTimers();
+  const cache = new TtlCache(1000, 2);
+  const load = vi.fn(async () => 1);
+  expect(await Promise.all([cache.getOrLoad("a", load), cache.getOrLoad("a", load)])).toEqual([1, 1]);
+  expect(load).toHaveBeenCalledTimes(1);
+  await cache.getOrLoad("b", load);
+  await cache.getOrLoad("c", load);
+  await cache.getOrLoad("a", load);
+  expect(load).toHaveBeenCalledTimes(4);
+  await vi.advanceTimersByTimeAsync(1001);
+  await cache.getOrLoad("a", load);
+  expect(load).toHaveBeenCalledTimes(5);
+  const fail = vi.fn(async () => { throw new Error("failure"); });
+  await expect(cache.getOrLoad("bad", fail)).rejects.toThrow();
+  await expect(cache.getOrLoad("bad", fail)).rejects.toThrow();
+  expect(fail).toHaveBeenCalledTimes(2);
+});

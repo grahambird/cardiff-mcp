@@ -82,36 +82,71 @@ export function buildSearchUrl(input: FindBusinessesInput): URL {
   return url;
 }
 
+let active = 0;
+let cooldown = 0;
+const MAX_BYTES = 512 * 1024;
 async function requestJson(url: URL): Promise<unknown> {
-  let response: Response;
+  const deadline = Date.now() + 20_000;
+  while (true) {
+    if (Date.now() >= deadline) throw new FsaError("timeout", "The Food Standards Agency operation timed out.");
+    if (Date.now() < cooldown) throw new FsaError("throttled", "The Food Standards Agency is temporarily limiting requests. Please retry later.", 429);
+    if (active < 2) break;
+    await new Promise(resolve => setTimeout(resolve, Math.min(50, deadline - Date.now())));
+  }
+  active++;
+  const signal = AbortSignal.timeout(Math.max(1, Math.min(TIMEOUT_MS, deadline - Date.now())));
   try {
-    response = await fetch(url, {
-      headers: {
-        "x-api-version": "2",
-        Accept: "application/json",
-        "Accept-Language": "en-GB",
-        "User-Agent": "mcp-wales/0.1 (+https://github.com/)",
-      },
-      signal: AbortSignal.timeout(TIMEOUT_MS),
+    const response = await fetch(url, {
+      cache: "no-store",
+      headers: { "x-api-version": "2", Accept: "application/json", "Accept-Language": "en-GB", "User-Agent": "mcp-wales/0.1 (+https://mcp.wales)" },
+      signal,
     });
-  } catch (error) {
-    if (error instanceof Error && (error.name === "TimeoutError" || error.name === "AbortError")) {
-      throw new FsaError("timeout", "The Food Standards Agency request timed out.");
+    if (!response.ok) {
+      await response.body?.cancel();
+      if (response.status === 429) {
+        const header = response.headers.get("retry-after");
+        const delay = header && /^\d+$/.test(header) ? Number(header) * 1000 : header ? Date.parse(header) - Date.now() : 10_000;
+        cooldown = Math.max(cooldown, Date.now() + (Number.isFinite(delay) ? Math.max(1000, delay) : 10_000));
+      }
+      if (response.status === 404) throw new FsaError("not_found", "No FSA establishment was found with that ID.", 404);
+      if ([403, 429].includes(response.status)) throw new FsaError("throttled", "The Food Standards Agency is temporarily limiting requests. Please retry later.", response.status);
+      throw new FsaError("upstream", `The Food Standards Agency returned HTTP ${response.status}.`, response.status);
     }
+    if (Number(response.headers.get("content-length")) > MAX_BYTES) {
+      await response.body?.cancel();
+      throw new FsaError("malformed", "The Food Standards Agency response exceeds the size limit.");
+    }
+    const reader = response.body?.getReader();
+    if (!reader) throw new FsaError("malformed", "The Food Standards Agency returned an empty response.");
+    const abort = () => { void reader.cancel().catch(() => undefined); };
+    signal.addEventListener("abort", abort, { once: true });
+    const chunks: Uint8Array[] = [];
+    let size = 0;
+    try {
+      while (true) {
+        signal.throwIfAborted();
+        const { done, value } = await reader.read();
+        signal.throwIfAborted();
+        if (done) break;
+        size += value.byteLength;
+        if (size > MAX_BYTES) {
+          await reader.cancel();
+          throw new FsaError("malformed", "The Food Standards Agency response exceeds the size limit.");
+        }
+        chunks.push(value);
+      }
+    } finally { signal.removeEventListener("abort", abort); reader.releaseLock(); }
+    try { return JSON.parse(Buffer.concat(chunks).toString("utf8")); }
+    catch { throw new FsaError("malformed", "The Food Standards Agency returned invalid JSON."); }
+  } catch (error) {
+    if (error instanceof FsaError) throw error;
+    if (signal.aborted || error instanceof Error && ["TimeoutError", "AbortError"].includes(error.name)) throw new FsaError("timeout", "The Food Standards Agency request timed out.");
     throw new FsaError("upstream", "The Food Standards Agency service could not be reached.");
-  }
+  } finally { active--; }
+}
 
-  if (response.status === 404) throw new FsaError("not_found", "No FSA establishment was found with that ID.", 404);
-  if (response.status === 403 || response.status === 429) {
-    throw new FsaError("throttled", "The Food Standards Agency is temporarily limiting requests. Please retry later.", response.status);
-  }
-  if (!response.ok) throw new FsaError("upstream", `The Food Standards Agency returned HTTP ${response.status}.`, response.status);
-
-  try {
-    return await response.json();
-  } catch {
-    throw new FsaError("malformed", "The Food Standards Agency returned invalid JSON.");
-  }
+function isCardiff(record: Establishment): boolean {
+  return record.LocalAuthorityCode === CARDIFF_LOCAL_AUTHORITY_CODE || record.LocalAuthorityName?.trim().toLowerCase() === "cardiff";
 }
 
 function mapRating(value: string): FoodBusiness["rating"] {
@@ -154,6 +189,13 @@ export async function findFoodBusinesses(input: FindBusinessesInput): Promise<Fi
     const raw = await requestJson(url);
     const parsed = searchSchema.safeParse(raw);
     if (!parsed.success) throw new FsaError("malformed", "The Food Standards Agency returned an unexpected search response.");
+    const { establishments, meta } = parsed.data;
+    if (establishments.length > input.limit || meta.pageNumber !== input.page ||
+        meta.totalPages !== Math.ceil(meta.totalCount / input.limit) || establishments.length > meta.totalCount ||
+        (input.page > meta.totalPages && establishments.length > 0)) {
+      throw new FsaError("malformed", "The Food Standards Agency returned inconsistent pagination.");
+    }
+    if (!establishments.every(isCardiff)) throw new FsaError("outside_cardiff", "The Food Standards Agency returned records outside Cardiff.");
     const retrievedAt = new Date().toISOString();
     return {
       businesses: parsed.data.establishments.map((item) => mapEstablishment(item, retrievedAt)),
@@ -175,10 +217,7 @@ export async function getFoodBusiness(establishmentId: number): Promise<FoodBusi
   const url = new URL(`/Establishments/${establishmentId}`, baseUrl());
   return cache.getOrLoad(url.toString(), async () => {
     const record = parseEstablishment(await requestJson(url));
-    const isCardiff =
-      record.LocalAuthorityCode === CARDIFF_LOCAL_AUTHORITY_CODE ||
-      record.LocalAuthorityName?.trim().toLowerCase() === "cardiff";
-    if (!isCardiff) throw new FsaError("outside_cardiff", "That establishment exists but is not within Cardiff local authority.");
+    if (!isCardiff(record)) throw new FsaError("outside_cardiff", "That establishment exists but is not within Cardiff local authority.");
     const retrievedAt = new Date().toISOString();
     return { ...mapEstablishment(record, retrievedAt), attribution: FSA_ATTRIBUTION };
   });
@@ -186,4 +225,5 @@ export async function getFoodBusiness(establishmentId: number): Promise<FoodBusi
 
 export function clearFsaCacheForTests(): void {
   cache.clear();
+  cooldown = 0;
 }

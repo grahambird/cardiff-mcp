@@ -71,3 +71,7 @@ Follow the documented import procedures for snapshots. Review candidate diffs an
 Keep sources read-only and public. Do not add databases, authentication, paid services or LLM calls without demonstrated need and explicit approval; follow the adoption triggers in [QUALITY.md](QUALITY.md). Waste tools remain disabled until the documented release gate is cleared.
 
 Never commit credentials, private user data, copied production logs or `.env` files. Logs should contain safe operational metadata, not tool arguments or tokens.
+
+## Design and engineering guidance
+
+Read the [design principles](docs/design-principles.md) and use the [tool checklist](docs/tool-design-checklist.md) for new integrations. See the [engineering assessment](docs/engineering-assessment.md), [privacy statement](docs/privacy.md) and [AI evaluation guide](docs/ai-evaluations.md). Reuse the shared bounded cache, HTTP guard, logger and output schemas; follow existing mocked tests and `npm run check`.

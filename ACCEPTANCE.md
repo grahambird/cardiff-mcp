@@ -140,3 +140,12 @@ Automated offline checks and local live acceptance are recorded separately when 
 - Optional live census acceptance passed: Llanishen/Grangetown age comparison, Whitchurch explicit selection and full age bands, Roath non-equivalence, Cardiff/Swansea comparison, MSOA sex and historical-date metadata.
 - Independent live ONS TS007 v3 JSON retrieval agreed with returned ward-age counts, denominators and calculated age-65-plus percentages. This checks the same published table; it does not assume agreement with differently tabulated/rounded publications.
 - Vercel preview/production and signed-in ChatGPT acceptance remain pending. No deployment was performed.
+
+## Design principles and engineering safeguards — 15 October 2026
+
+- `npm run check`: passed lint, TypeScript, 156 tests in 18 files, five offline maintenance checks and production build.
+- `npm run test:smoke`: passed against the local production build with live ONS and FSA, plus bundled schools. The existing client checked discovery of eight read-only tools, bounded FSA search/detail, school search/profile, Census population and a bounded complete-area ranking. No fixed live values were added to assertions.
+- Mocked HTTP contracts exercised all eight tools over legacy 2025-03-26 and current 2026-07-28 requests, plus discovery and tool-error paths. Existing input schemas, structured response shapes and text fallbacks are retained.
+- New deterministic checks cover request/body limits, supplied-origin validation, FSA cache eviction/expiry/single-flight, outgoing concurrency, queue deadlines, cooldowns, body timeouts, inconsistent pagination/geography, untrusted names, output provenance requirements and diagnostic/secret leakage.
+- **Pending:** actual assistant baseline comparisons and tool-selection/interpretation acceptance using [the evaluation guide](docs/ai-evaluations.md). Offline fixture execution does not establish model behaviour or comparative answer gains.
+- **Pending:** verify deployed Vercel firewall and hosting log settings. Local smoke success is not Vercel-origin verification of these changes. No deployment or directory submission was performed.
