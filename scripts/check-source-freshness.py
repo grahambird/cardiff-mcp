@@ -1,5 +1,6 @@
 """Check public-source metadata without replacing runtime snapshots."""
 import argparse
+import datetime
 import hashlib
 import json
 from pathlib import Path
@@ -7,6 +8,7 @@ import re
 import subprocess
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlparse
+from urllib.parse import urlencode
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -88,6 +90,29 @@ def ons_check(dataset, version, get):
     return f'pinned version {version}; latest version {latest}' if latest != version else ''
 
 
+def geography_check(source, get):
+    item = urlparse(source['source_url']).query.split('id=')[-1]
+    latest = json.loads(get(f'https://www.arcgis.com/sharing/rest/content/items/{item}?f=json'))
+    if latest['id'] != item:
+        raise ValueError('Unexpected reference identity')
+    modified = datetime.datetime.fromtimestamp(latest['modified'] / 1000, datetime.timezone.utc).isoformat()
+    return 'pinned reference metadata changed; review correction without changing boundary vintage' if modified != source['modified_at'] else ''
+
+
+def postcode_edition_check(get):
+    reference = load('src/geography/data/W06000015/catalogue.json')['reference']
+    query = urlencode(dict(f='json', q='owner:ONSGeography_data AND type:"Feature Service" AND title:"ONS Postcode Directory" AND title:"Hosted Table"', sortField='created', sortOrder='desc', num=1))
+    latest = json.loads(get('https://www.arcgis.com/sharing/rest/search?' + query))['results'][0]
+    stored = next(s for s in reference['sources'] if s['kind'] == 'postcodes')
+    return f"new postcode edition available: {latest['title']}" if latest['id'] not in stored['source_url'] else ''
+
+
+def fsa_snapshot_check():
+    stored = load('src/fsa/source.json')
+    age = (datetime.date.today() - datetime.date.fromisoformat(stored['source_extract_time'])).days
+    return f'FSA ward snapshot is {age} days old; manually refresh and deploy' if age > 30 else ''
+
+
 def checks(get=fetch):
     tasks = [('School register', lambda: register_check(get))]
     for kind in ['characteristics', 'year_groups', 'fsm']:
@@ -98,6 +123,11 @@ def checks(get=fetch):
         raise ValueError('Could not read all four ONS dataset pins')
     for dataset, version in pins:
         tasks.append((f'ONS {dataset}', lambda dataset=dataset, version=version: ons_check(dataset, int(version), get)))
+    for source in load('src/geography/data/W06000015/catalogue.json')['reference']['sources']:
+        if source['publisher'] == 'Office for National Statistics':
+            tasks.append((f"Geography {source['kind']}", lambda source=source: geography_check(source, get)))
+    tasks.append(('ONSPD latest edition', lambda: postcode_edition_check(get)))
+    tasks.append(('FSA ward snapshot age', fsa_snapshot_check))
     results = []
     for name, check in tasks:
         try:

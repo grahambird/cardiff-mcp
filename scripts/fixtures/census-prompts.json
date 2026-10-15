@@ -247,5 +247,48 @@
       "Describe general knowledge examples and contrast dataset-specific retrieval needs without calling tools."
     ],
     "baseline": "Pending manual comparison; record evidence and retrieval effort with and without MCP Wales."
+  },
+  {
+    "prompt": "How many maintained secondary schools are located in each Cardiff ward?",
+    "tool": "summarize_schools_by_ward",
+    "arguments": {
+      "phase": "secondary"
+    },
+    "max_calls": 1,
+    "checks": [
+      "Complete source population, not discovery pages",
+      "School locations are not catchments",
+      "Postcode approximation and unresolved coverage stated"
+    ],
+    "baseline": "Pending manual comparison without MCP Wales"
+  },
+  {
+    "prompt": "Compare food hygiene rating distributions across Cardiff wards.",
+    "tool": "summarize_food_businesses_by_ward",
+    "arguments": {},
+    "max_calls": 1,
+    "checks": [
+      "Snapshot date and complete population",
+      "Non-numeric states separate; numeric denominator explicit",
+      "Unresolved locations included in coverage"
+    ],
+    "baseline": "Pending manual comparison without MCP Wales"
+  },
+  {
+    "prompt": "Which restaurants in Grangetown have hygiene rating 5?",
+    "tool": "find_food_businesses",
+    "arguments": {
+      "ward": "Grangetown",
+      "business_type": "restaurant_cafe_canteen",
+      "minimum_rating": 5,
+      "limit": 10
+    },
+    "max_calls": 1,
+    "checks": [
+      "Snapshot date; may differ from live details",
+      "Category includes cafes and canteens",
+      "Results bounded"
+    ],
+    "baseline": "Pending manual comparison without MCP Wales"
   }
 ]

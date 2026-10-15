@@ -1,3 +1,4 @@
+import { CARDIFF, resolveArea, getRecordGeography, coverage, geographyMetadata, selectedWards } from "@/geography";
 import characteristics from "./statswales/characteristics.json";
 import snapshot from "./directory.json";
 
@@ -19,7 +20,8 @@ export function languageGroup(category: string): typeof LANGUAGE_GROUPS[number] 
   }
 }
 
-interface FindSchoolsInput {
+export interface FindSchoolsInput {
+  ward?: string;
   name?: string;
   phase?: typeof PHASES[number];
   language_group?: typeof LANGUAGE_GROUPS[number];
@@ -30,6 +32,7 @@ interface FindSchoolsInput {
 }
 
 export function findSchools(input: FindSchoolsInput) {
+  const ward = input.ward ? resolveArea(input.ward, { type: "ward", localAuthority: CARDIFF }).code : undefined;
   const pupilSort = input.sort_by === "pupil_total";
   const totals = characteristics.schools as Record<string, { total: { value: number | null; status: string; note?: string } }>;
   const totalFor = (id: string) => totals[id]?.total ?? { value: null, status: "unavailable" };
@@ -37,13 +40,14 @@ export function findSchools(input: FindSchoolsInput) {
     const total = totalFor(id);
     return total.status === "reported" && total.value !== null;
   };
-  const schools = snapshot.schools
+  const population = snapshot.schools
     .filter((school) => school.local_authority_code === "681")
-    .map((school) => ({ ...school, language_group: languageGroup(school.language_category) }))
+    .map((school) => ({ ...school, language_group: languageGroup(school.language_category), geography: getRecordGeography("schools", school.school_id, school) }))
     .filter((school) =>
       (!input.name || school.name.toLocaleLowerCase("en-GB").includes(input.name.trim().toLocaleLowerCase("en-GB"))) &&
       (!input.phase || school.sector.toLowerCase() === input.phase) &&
-      (!input.language_group || school.language_group === input.language_group))
+      (!input.language_group || school.language_group === input.language_group));
+  const schools = population.filter(school => !ward || school.geography.ward.code === ward)
     .sort((a, b) => {
       if (pupilSort) {
         const aReported = reported(a.school_id), bReported = reported(b.school_id);
@@ -64,6 +68,8 @@ export function findSchools(input: FindSchoolsInput) {
         unavailable_count: schools.filter((school) => !reported(school.school_id)).length,
       },
     } : {}),
+    geography: { ...geographyMetadata(), coverage: coverage(schools) },
+    authority_coverage: coverage(population),
     total_count: schools.length,
     page: input.page,
     has_more: start + input.limit < schools.length,
@@ -75,4 +81,16 @@ export function findSchools(input: FindSchoolsInput) {
       ? "Cardiff maintained schools ordered by published pupil headcount, not school quality or live enrolment. Non-reported totals sort last; coverage counts apply to all matching schools. No distances, catchments, inspections or performance results are supplied."
       : SCHOOL_LIMITATIONS,
   };
+}
+
+export function summarizeSchoolsByWard(input: Pick<FindSchoolsInput, "phase" | "language_group"> & { wards?: string[] }) {
+  // The register is bounded; no discovery pagination participates in population selection.
+  const schools = snapshot.schools.filter(s => s.local_authority_code === "681" &&
+    (!input.phase || s.sector.toLowerCase() === input.phase) &&
+    (!input.language_group || languageGroup(s.language_category) === input.language_group))
+    .map(s => ({ ...s, geography: getRecordGeography("schools", s.school_id, s) }));
+  return { wards: selectedWards(input.wards).map(area => ({ area, ...coverage(schools.filter(s => s.geography.ward.code === area.code)) })),
+    authority_coverage: coverage(schools), geography: geographyMetadata(), source_url: snapshot.source_url,
+    source_published_at: snapshot.source_published_at, snapshot_imported_at: snapshot.snapshot_imported_at,
+    attribution: SCHOOL_ATTRIBUTION, limitations: "Maintained school locations only, not catchments, admissions eligibility or pupils’ residences. Postcode allocations are approximate; unresolved schools are not assigned to wards." };
 }

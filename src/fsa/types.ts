@@ -13,6 +13,7 @@ export const BUSINESS_TYPES = {
 export type BusinessType = keyof typeof BUSINESS_TYPES;
 
 export interface FindBusinessesInput {
+  ward?: string;
   name?: string;
   business_type?: BusinessType;
   minimum_rating?: 0 | 1 | 2 | 3 | 4 | 5;

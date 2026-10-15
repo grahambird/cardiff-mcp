@@ -1,3 +1,4 @@
+import { summarizeSchoolsInput, summarizeFoodInput, runSummarizeSchools, runSummarizeFood } from "@/mcp/geography-tools";
 import { guardMcpHandler } from "@/mcp/http-guard";
 import { outputSchemas } from "@/mcp/output-schemas";
 import { findCensusAreasInput, getAreaDemographicsInput, compareAreaDemographicsInput, rankAreasByDemographicInput, runFindCensusAreas, runGetAreaDemographics, runCompareAreaDemographics, runRankAreasByDemographic, censusDescriptions } from "@/mcp/census-tools";
@@ -37,7 +38,7 @@ const handler = createMcpHandler(
       {
         outputSchema: outputSchemas.find_schools,
         title: "Find Cardiff schools",
-        description: "Find authoritative information about maintained schools in Cardiff, including primary and secondary schools, contact details and Welsh-medium or dual-language provision. Search by school name, phase and published language category. Filters combine with AND. Sort by name or pupil_total before pagination; default name ascending. For the largest Cardiff maintained school by published pupil headcount use sort_by=pupil_total, sort_order=desc, limit=1: one discovery call supplies the total, census date, source and coverage. Missing or suppressed totals sort last; size does not measure quality. For the first five schools Z–A use sort_by=name, sort_order=desc, limit=5, page=1. Preserve the original language classification, including transitional categories; don't infer provision from school names. Data comes from a manually refreshed Welsh Government register. Cite its publication date. Excludes independent schools and pupil referral units. Use the returned school_id with get_school for a combined profile including pupil and FSM statistics. Pupil-sorted results include only total headcounts; use get_school only for further profile details. Search results do not include full statistical profiles, inspection reports, exam results, catchments or admissions.",
+        description: "Find authoritative information about maintained schools in Cardiff, including primary and secondary schools, contact details and Welsh-medium or dual-language provision. Search by school name, phase and published language category. Filters combine with AND. Sort by name or pupil_total before pagination; default name ascending. For the largest Cardiff maintained school by published pupil headcount use sort_by=pupil_total, sort_order=desc, limit=1: one discovery call supplies the total, census date, source and coverage. Missing or suppressed totals sort last; size does not measure quality. Optional ward filters select school locations using labelled postcode approximations; use summarize_schools_by_ward for complete ward counts. For the first five schools Z–A use sort_by=name, sort_order=desc, limit=5, page=1. Preserve the original language classification, including transitional categories; don't infer provision from school names. Data comes from a manually refreshed Welsh Government register. Cite its publication date. Excludes independent schools and pupil referral units. Use the returned school_id with get_school for a combined profile including pupil and FSM statistics. Pupil-sorted results include only total headcounts; use get_school only for further profile details. Search results do not include full statistical profiles, inspection reports, exam results, catchments or admissions.",
         inputSchema: findSchoolsInput,
         annotations,
       },
@@ -59,7 +60,7 @@ const handler = createMcpHandler(
       {
         outputSchema: outputSchemas.find_food_businesses,
         title: "Find Cardiff food businesses",
-        description: "Find official Food Standards Agency hygiene records for Cardiff food businesses when hygiene information helps answer the user's question. Search by business name, broad type or minimum rating; use a targeted name search to check a specific venue. Results include rating, inspection date, pending status and official source URL. Hygiene ratings reflect conditions at inspection, not food quality. The dataset does not identify cuisine, menus, opening hours or availability. Results are sorted server-side before pagination; default name ascending. For five lowest-rated businesses use sort_by=rating, sort_order=asc, limit=5, page=1. Name sorting also supports both directions. Inspection-date sorting is unavailable. FSA controls ties and non-numeric rating placement; live pages can change.",
+        description: "Find official Food Standards Agency hygiene records for Cardiff food businesses when hygiene information helps answer the user's question. An optional ward code or official name searches a complete dated snapshot with geographic coverage; without ward, searches remain live. Search by business name, broad type or minimum rating; use a targeted name search to check a specific venue. Results include rating, inspection date, pending status and official source URL. Hygiene ratings reflect conditions at inspection, not food quality. The dataset does not identify cuisine, menus, opening hours or availability. Live results are sorted server-side before pagination; ward snapshot results are sorted locally before pagination; default name ascending. For five lowest-rated businesses use sort_by=rating, sort_order=asc, limit=5, page=1. Name sorting also supports both directions. Inspection-date sorting is unavailable. FSA controls ties and non-numeric rating placement; live pages can change.",
         inputSchema: findFoodBusinessesInput,
         annotations,
       },
@@ -77,6 +78,17 @@ const handler = createMcpHandler(
       },
       runGetFoodBusiness,
     );
+
+    server.registerTool("summarize_schools_by_ward", {
+      title: "Count maintained schools by Cardiff ward", inputSchema: summarizeSchoolsInput,
+      outputSchema: outputSchemas.summarize_schools_by_ward, annotations,
+      description: "Count all matching Cardiff maintained schools in each May 2022 ward, optionally filtered by phase or language group. Use for ward comparisons rather than enumerating discovery pages. Returns exact, approximate postcode allocations, unresolved coverage and source dates. School location is not catchment, admissions eligibility, pupils’ residence or educational quality.",
+    }, runSummarizeSchools);
+    server.registerTool("summarize_food_businesses_by_ward", {
+      title: "Compare food hygiene across Cardiff wards", inputSchema: summarizeFoodInput,
+      outputSchema: outputSchemas.summarize_food_businesses_by_ward, annotations,
+      description: "Count FSA-published establishments and compare hygiene-rating distributions across Cardiff May 2022 wards from a complete manually refreshed snapshot. Optionally select wards and business type. Includes snapshot dates, exact/approximate/unresolved location coverage, numeric-rating denominators and separate pending flags. Use for aggregates instead of discovery pages. Snapshot ratings are not live; get_food_business remains live. Hygiene does not measure food quality.",
+    }, runSummarizeFood);
 
     // Gated until Cardiff Council confirms third-party reuse terms and the
     // upstream flow has been verified from Vercel. Enable only in a preview

@@ -2,6 +2,7 @@ import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { z } from "zod";
 import prompts from "../../scripts/fixtures/census-prompts.json";
 import { outputSchemas } from "./output-schemas";
+import * as geography from "./geography-tools";
 import * as census from "./census-tools";
 import * as food from "./tools";
 import * as schools from "./school-tools";
@@ -12,6 +13,8 @@ import { clearFsaCacheForTests } from "@/fsa/client";
 import { POST } from "@/app/mcp/route";
 
 const contracts = {
+  summarize_schools_by_ward: { input: geography.summarizeSchoolsInput, run: geography.runSummarizeSchools },
+  summarize_food_businesses_by_ward: { input: geography.summarizeFoodInput, run: geography.runSummarizeFood },
   find_census_areas: { input: census.findCensusAreasInput, run: census.runFindCensusAreas },
   get_area_demographics: { input: census.getAreaDemographicsInput, run: census.runGetAreaDemographics },
   compare_area_demographics: { input: census.compareAreaDemographicsInput, run: census.runCompareAreaDemographics },
@@ -60,9 +63,10 @@ it("validates reusable prompts and executes all expected tools against mocked so
   expect([...exercised].sort()).toEqual(Object.keys(contracts).sort());
 });
 
-it.each(["2025-03-26", "2026-07-28"])("executes all eight tools over HTTP with %s", async version => {
+it.each(["2025-03-26", "2026-07-28"])("executes all ten tools over HTTP with %s", async version => {
   mockSources();
   const args = {
+    summarize_schools_by_ward: { wards: ["Grangetown"] }, summarize_food_businesses_by_ward: { wards: ["Grangetown"] },
     find_census_areas: { query: "Cardiff" }, get_area_demographics: { area: "Cardiff", topic: "age", detail_level: "full" },
     compare_area_demographics: { areas: ["Cardiff", "Swansea"], topic: "sex" }, rank_areas_by_demographic: { metric: "population", limit: 1 },
     find_food_businesses: { name: "Costa", limit: 5 }, get_food_business: { establishment_id: 123 },
@@ -89,7 +93,7 @@ it.each(["2025-03-26", "2026-07-28"])("keeps discovery and tool execution errors
     const body = await response.text();
     const json = JSON.parse(body.includes("data: ") ? body.split("\n").find(l => l.startsWith("data: "))!.slice(6) : body);
     expect(response.status, body).toBe(200);
-    if (method === "tools/list") expect(json.result.tools).toHaveLength(8);
+    if (method === "tools/list") expect(json.result.tools).toHaveLength(10);
     else {
       expect(json.result).toMatchObject({ isError: true, structuredContent: { error: "not_found" } });
       expect(outputSchemas.get_school.safeParse(json.result.structuredContent).success).toBe(true);

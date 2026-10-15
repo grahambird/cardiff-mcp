@@ -32,13 +32,13 @@ describe("MCP discovery metadata over HTTP", () => {
     const tools = new Map<string, { description: string; inputSchema: { properties: object } }>(
       result.tools.map((tool: { name: string }) => [tool.name, tool]),
     );
-    expect(Object.keys(tools.get("find_food_businesses")!.inputSchema.properties).sort()).toEqual(["business_type", "limit", "minimum_rating", "name", "page", "sort_by", "sort_order"]);
-    expect(tools.size).toBe(8);
+    expect(Object.keys(tools.get("find_food_businesses")!.inputSchema.properties).sort()).toEqual(["business_type", "limit", "minimum_rating", "name", "page", "sort_by", "sort_order", "ward"]);
+    expect(tools.size).toBe(10);
     for (const name of ["find_census_areas", "get_area_demographics", "compare_area_demographics", "rank_areas_by_demographic"]) expect(tools.get(name)?.description).toContain("21 March 2021");
     expect(tools.get("get_school")?.description).toContain("first identify the school with find_schools");
     expect(Object.keys(tools.get("get_school")!.inputSchema.properties)).toEqual(["school_id"]);
     expect(Object.keys(tools.get("get_food_business")!.inputSchema.properties)).toEqual(["establishment_id"]);
-    expect(Object.keys(tools.get("find_schools")!.inputSchema.properties).sort()).toEqual(["language_group", "limit", "name", "page", "phase", "sort_by", "sort_order"]);
+    expect(Object.keys(tools.get("find_schools")!.inputSchema.properties).sort()).toEqual(["language_group", "limit", "name", "page", "phase", "sort_by", "sort_order", "ward"]);
   });
 });
 

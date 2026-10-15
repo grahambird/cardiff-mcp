@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run geography:verify && next build && node scripts/check-runtime-bundle.mjs",
     "start": "next start",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
@@ -19,7 +19,8 @@
     "smoke:client": "node scripts/test-client.mjs",
     "test:smoke": "start-server-and-test start http://127.0.0.1:3000 smoke:client",
     "check": "npm run lint && npm run type-check && npm test && npm run test:maintenance && npm run build",
-    "test:maintenance": "python3 scripts/test-source-freshness.py"
+    "test:maintenance": "python3 scripts/test-source-freshness.py",
+    "geography:verify": "node scripts/verify-geography.mts"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "^2.3.1",

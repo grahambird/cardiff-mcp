@@ -180,7 +180,7 @@ Statistics are as at 21 March 2021. ONS wards use May 2022 boundaries. Census di
 
 ### Geography catalogue and extension
 
-`src/ons/geographies.json` stores **identifiers, names, selected published aliases and provenance only**. It includes 22 Welsh authorities, 28 Cardiff wards and 48 Cardiff MSOAs. The manual refresh command is `python3 scripts/refresh-census-geographies.py` (Python standard library and curl). It follows all ONS metadata pages, validates expected coverage and unique codes, and writes only after all sources pass. Review the diff before committing.
+The shared geography catalogue now supplies runtime Census resolution through a compatibility adapter, preserving 22 Welsh authorities, 28 Cardiff wards and 48 Cardiff MSOAs. `src/ons/geographies.json` is a historical seed only; its old refresh command no longer writes a competing catalogue. Follow [shared geography refresh procedures](docs/geography.md). Internal LSOA coverage does not add LSOAs to Census tools.
 
 Ward membership comes from the direct ONS May 2022 ward-to-authority workbook, ArcGIS item `96172380bb7d429bac154d03bf35a651`; its full list is used rather than inferred code ranges. Welsh ward aliases come from the ONS geography lookup service. MSOA membership uses ONS’s published Cardiff-prefixed official MSOA names; the response has 48 entries and is validated. Local-authority identifiers come from the ONS ltla listing. Cardiff/Caerdydd and Swansea/Abertawe aliases are included; Welsh aliases are not comprehensive across all authorities. Sources and retrieval time are recorded in the catalogue.
 
@@ -190,7 +190,7 @@ To add another authority’s subdivisions: extend the refresh script’s explici
 
 Source: Office for National Statistics licensed under the Open Government Licence v.3.0.
 
-ONS observations and non-postcode lookup products use OGL v3: <https://www.ons.gov.uk/methodology/geography/licences>. The integration uses no logos, boundary geometry, postcode or UPRN data. Observations are never written to disk or a persistent store; synthetic test fixtures are not a demographic dataset. Successful validated live responses are cached in memory for five minutes, at most 100 entries per warm instance.
+ONS observations and non-postcode lookup products use OGL v3: <https://www.ons.gov.uk/methodology/geography/licences>. The Census observation connector uses no logos, boundary geometry, postcode or UPRN data. The separate shared geography capability uses licensed boundaries and a Cardiff postcode subset as documented below. Observations are never written to disk or a persistent store; synthetic test fixtures are not a demographic dataset. Successful validated live responses are cached in memory for five minutes, at most 100 entries per warm instance.
 
 ONS documents 120 requests/10 seconds, 200/minute, and 15/10 seconds for high-demand assets, subject to change: <https://developer.ons.gov.uk/bots/>. Honour Retry-After. Local safeguards are deliberately more conservative but cannot enforce a deployment-wide budget. Node/Vercel access must be checked separately: curl worked locally; another HTTP client received 403. Neither availability nor an undocumented production observation-size limit is assumed.
 
@@ -225,3 +225,14 @@ issue closes. Issue creation uses only the workflow's built-in GitHub token with
 Actions must be enabled. The schedule starts after the workflow reaches the
 default branch; GitHub may delay scheduled runs. Source checks run sequentially
 with bounded downloads and timeouts.
+
+
+## Shared geography and FSA ward snapshots
+
+See [architecture, source products, licences and refresh/rebuild commands](docs/geography.md). References use May 2022 wards, 2021 LSOAs/MSOAs, and the August 2026 ONSPD postcode edition; latest postcode ward fields are not substituted for 2022 wards. Exact statistical nesting, published best-fit allocation and spatial intersection remain distinct. Machine-readable product identities, available publication dates, portal metadata dates, checksums and attribution are recorded in `src/geography/data/W06000015/catalogue.json`.
+
+The official [Welsh Government May 2022 ward geometry](https://datamap.gov.wales/layers/geonode:electoral_wards_wales_may_2022) is derived from OS Boundary-Line, created 4 July 2022, OGL v3, with its 2022 OS copyright notice. ONS boundary products and postcode products are OGL subject to the [ONS/OS/Royal Mail attribution notices](https://www.ons.gov.uk/methodology/geography/licences). Only Cardiff postcode records are retained; no commercial postcode-to-address service, Northern Ireland data or public postcode tool is involved. Postcode assignment of establishments is approximate. Terminated or unreliable postcodes are not current location evidence.
+
+`src/fsa/source.json` is a source-only snapshot of the complete official Cardiff XML download; associations are stored separately. FSA [recommends authority Open Data downloads for complete updates](https://api.ratings.food.gov.uk/Help/BestPractices). Initial acquisition: 15 October 2026; extract date 13 October 2026; 3,492 records; SHA-256 and exact retrieval time are in the snapshot. Manual refreshes validate the official listing count against the XML header and parsed population. Ward discovery and aggregates use this dated population; existing unfiltered discovery and individual details remain live with existing API protections. Source fields are retained; geography does not rewrite them.
+
+Current source, reference and association versions are tied together by a release manifest checked on every production build. Reference updates can re-enrich retained source snapshots without downloading them again; unchanged locations keep existing valid associations across source-only updates. Review ONSPD quarterly, metadata/corrections monthly, and FSA snapshots manually as needed; responses warn after 30 days. No reference vintage is advanced automatically because it must remain compatible with Census.

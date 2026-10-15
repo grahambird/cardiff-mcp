@@ -53,8 +53,17 @@ class FreshnessTests(unittest.TestCase):
         def unavailable(url):
             raise TimeoutError()
         results = m.checks(unavailable)
-        self.assertEqual(len(results), 8)
-        self.assertTrue(all(r['status'] == 'check failed' for r in results))
+        self.assertEqual(len(results), 15)
+        self.assertTrue(all(r['status'] == 'check failed' for r in results if r['source'] != 'FSA ward snapshot age'))
+
+    def test_reference_corrections_and_postcode_editions(self):
+        source = next(s for s in m.load('src/geography/data/W06000015/catalogue.json')['reference']['sources'] if s['kind'] == 'postcodes')
+        identity = source['source_url'].split('id=')[-1]
+        modified = int(m.datetime.datetime.fromisoformat(source['modified_at']).timestamp() * 1000)
+        self.assertEqual(m.geography_check(source, lambda url: json.dumps(dict(id=identity, modified=modified)).encode()), '')
+        self.assertIn('changed', m.geography_check(source, lambda url: json.dumps(dict(id=identity, modified=modified + 1000)).encode()))
+        self.assertEqual(m.postcode_edition_check(lambda url: json.dumps(dict(results=[dict(id=identity, title='Same edition')])).encode()), '')
+        self.assertIn('new postcode edition', m.postcode_edition_check(lambda url: json.dumps(dict(results=[dict(id='new', title='New edition')])).encode()))
 
 
 class IssueTests(unittest.TestCase):

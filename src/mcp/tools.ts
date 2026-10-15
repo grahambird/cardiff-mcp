@@ -1,9 +1,12 @@
+import { GeographyError } from "@/geography";
+import { wardInput } from "./geography-tools";
 import { z } from "zod";
 import { findFoodBusinesses, FsaError, getFoodBusiness } from "@/fsa/client";
 import { BUSINESS_TYPES } from "@/fsa/types";
 import { logEvent } from "@/lib/logger";
 
 export const findFoodBusinessesInput = z.object({
+  ward: wardInput.optional(),
   name: z.string().trim().min(1).max(100).optional().describe("Terms to search within the business name."),
   business_type: z.enum(Object.keys(BUSINESS_TYPES) as [keyof typeof BUSINESS_TYPES, ...(keyof typeof BUSINESS_TYPES)[]]).optional(),
   minimum_rating: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]).optional(),
@@ -27,16 +30,18 @@ function success(value: unknown) {
   };
 }
 
-function normalizeError(error: unknown): FsaError {
+function normalizeError(error: unknown): FsaError | GeographyError {
+  if (error instanceof GeographyError) return error;
   if (error instanceof z.ZodError) return new FsaError("invalid_input", "Invalid food business parameters.");
   return error instanceof FsaError ? error : new FsaError("upstream", "An unexpected error occurred while reading FSA data.");
 }
 
-function failure(fsaError: FsaError) {
+function failure(fsaError: FsaError | GeographyError) {
+  const candidates = fsaError instanceof GeographyError && fsaError.candidates ? { candidates: fsaError.candidates } : {};
   return {
     isError: true,
-    content: [{ type: "text" as const, text: JSON.stringify({ error: fsaError.code, message: fsaError.message }) }],
-    structuredContent: { error: fsaError.code, message: fsaError.message },
+    content: [{ type: "text" as const, text: JSON.stringify({ error: fsaError.code, message: fsaError.message, ...candidates }) }],
+    structuredContent: { error: fsaError.code, message: fsaError.message, ...candidates },
   };
 }
 
@@ -58,7 +63,7 @@ export async function runFindFoodBusinesses(input: z.infer<typeof findFoodBusine
       tool: "find_food_businesses",
       outcome: "error",
       error_code: fsaError.code,
-      upstream_status: fsaError.status,
+      upstream_status: fsaError instanceof FsaError ? fsaError.status : undefined,
       duration_ms: Math.round(performance.now() - startedAt),
     });
     return failure(fsaError);
@@ -82,7 +87,7 @@ export async function runGetFoodBusiness(input: z.infer<typeof getFoodBusinessIn
       tool: "get_food_business",
       outcome: "error",
       error_code: fsaError.code,
-      upstream_status: fsaError.status,
+      upstream_status: fsaError instanceof FsaError ? fsaError.status : undefined,
       duration_ms: Math.round(performance.now() - startedAt),
     });
     return failure(fsaError);

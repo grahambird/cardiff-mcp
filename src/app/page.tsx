@@ -13,15 +13,15 @@ const capabilities = [
   },
   {
     title: "Food hygiene",
-    description: "Find Cardiff food businesses by name, business type or minimum hygiene rating, then look up an individual business’s inspection details and official FSA record.",
-    prompts: ["Find cafés in Cardiff with a food hygiene rating of 5", "Which Costa has the best hygiene rating?", "Which restaurants have out of date inspections?"],
-    note: "Café searches use the FSA’s broader Restaurant/Cafe/Canteen category.",
+    description: "Find Cardiff food businesses and live inspection details, or compare food hygiene across electoral wards using a complete dated snapshot.",
+    prompts: ["Find cafés in Cardiff with a food hygiene rating of 5", "Which restaurants in Grangetown have a hygiene rating of 5?", "Compare food hygiene rating distributions across Cardiff wards"],
+    note: "Ward results show their snapshot date and location coverage. Café searches use the broader Restaurant/Cafe/Canteen category.",
   },
   {
     title: "Schools",
     description: "Explore Cardiff schools by name, size, school phase or language provision. Get a school profile with contact details, pupil numbers, year groups and free-school-meal eligibility.",
-    prompts: ["Find Welsh-medium primary schools in Cardiff", "What's the largest school in Cardiff?", "How does one school compare to another?"],
-    note: "Welsh-medium and dual-language groups include transitional provision; results retain the published labels.",
+    prompts: ["Find Welsh-medium primary schools in Cardiff", "What's the largest school in Cardiff?", "How many maintained secondary schools are located in each Cardiff ward?"],
+    note: "Ward allocations use approximate postcode locations, not catchments. Welsh-medium and dual-language groups include transitional provision.",
   },
 ];
 
@@ -67,14 +67,16 @@ export default function Home() {
       <section className={styles.section} aria-labelledby="tools-heading">
         <h2 id="tools-heading">Tools included</h2>
         <dl className={styles.tools}>
-          <div><dt><code>find_food_businesses</code></dt><dd>Search Cardiff food businesses by name, broad business type and minimum hygiene rating.</dd></div>
+          <div><dt><code>find_food_businesses</code></dt><dd>Search Cardiff food businesses by name, broad business type and minimum hygiene rating. Optional ward filtering uses a dated snapshot.</dd></div>
           <div><dt><code>get_food_business</code></dt><dd>Retrieve inspection details for a Cardiff business using its FSA establishment ID, typically from a search result.</dd></div>
-          <div><dt><code>find_schools</code></dt><dd>Search the Cardiff maintained-school directory by name, phase and language group.</dd></div>
+          <div><dt><code>find_schools</code></dt><dd>Search the Cardiff maintained-school directory by name, phase, language group and ward.</dd></div>
           <div><dt><code>get_school</code></dt><dd>Get a combined school profile with published pupil and FSM statistics, reporting periods and sources.</dd></div>
           <div><dt><code>find_census_areas</code></dt><dd>Resolve official census area names and codes, with notes on neighbourhood boundaries.</dd></div>
           <div><dt><code>get_area_demographics</code></dt><dd>Get Census 2021 population, age, sex or Welsh-speaking statistics.</dd></div>
           <div><dt><code>compare_area_demographics</code></dt><dd>Compare consistent demographic measures across equivalent areas.</dd></div>
           <div><dt><code>rank_areas_by_demographic</code></dt><dd>Rank all Cardiff wards or MSOAs by population, age 65+ or Welsh-speaking percentage.</dd></div>
+          <div><dt><code>summarize_schools_by_ward</code></dt><dd>Count maintained-school locations by ward, with phase/language filters and geographical coverage.</dd></div>
+          <div><dt><code>summarize_food_businesses_by_ward</code></dt><dd>Compare establishment counts and hygiene-rating distributions using a complete dated Cardiff snapshot.</dd></div>
         </dl>
       </section>
       <section className={styles.section} aria-labelledby="sources-heading">
@@ -82,7 +84,9 @@ export default function Home() {
         <p>Food hygiene ratings come from the <a href="https://ratings.food.gov.uk/">Food Standards Agency</a> and reflect standards found on the inspection date. They do not assess food quality or provide menus, opening hours, bookings or availability. Ratings can change; results include inspection dates and official source links.</p>
         <p>School details come from a manually refreshed snapshot of the <a href="https://www.gov.wales/addresses-and-phone-numbers-schools-and-pupil-referral-units">Welsh Government school register</a>. Results include publication and import dates. School profiles also include published <a href="https://stats.gov.wales/en-GB/2018f447-f4c0-438d-bb88-2a72af967724">StatsWales</a> pupil and FSM statistics with their census dates. FSM eligibility differs from universal primary meal provision. Counts may be rounded or suppressed. These figures do not measure school quality or provide live enrolment, catchments, inspections or performance results.</p>
         <p>Census statistics are queried from the <a href="https://developer.ons.gov.uk/censusobservations/">Office for National Statistics API</a>. They describe Census Day, 21 March 2021, rather than current population estimates. Welsh-speaking percentages cover residents aged three or over. Wards use May 2022 boundaries; approximate neighbourhood matches require an explicit area selection. Disclosure control can cause small differences between topic totals.</p>
+        <p>Shared geography uses official May 2022 ward boundaries and 2021 statistical areas. Postcode allocations are approximate; missing locations remain unresolved and coverage is reported. Ward food searches and comparisons use manually refreshed FSA snapshots, while individual records remain live. Matching ward codes does not make Census and establishment reporting periods contemporary.</p>
         <p className={styles.note}>Source: Office for National Statistics licensed under the Open Government Licence v.3.0.</p>
+        <p className={styles.note}>Contains OS data © Crown copyright and database right 2026. Contains Royal Mail data © Royal Mail copyright and database right 2026. Electoral ward boundaries: Welsh Government; contains OS data © Crown copyright and database right 2022.</p>
         <p className={styles.note}>Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>. Sources: Food Standards Agency and Welsh Government.</p>
       </section>
       <footer className={styles.footer}>

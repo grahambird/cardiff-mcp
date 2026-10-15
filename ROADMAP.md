@@ -38,4 +38,4 @@ Do not scrape unsupported endpoints, generate school rankings or add infrastruct
 
 ## Census 2021
 
-Implemented initial coverage: Cardiff wards/MSOAs plus Welsh local-authority demographics, comparisons and complete Cardiff rankings. Future candidates: verified neighbourhood aliases, LSOAs and other authorities’ subdivisions. Add only with authoritative dated membership, bounded queries and coverage tests. Current population estimates would be a separate source with distinct reporting dates.
+Implemented initial coverage: Cardiff wards/MSOAs plus Welsh local-authority demographics, comparisons and complete Cardiff rankings. Shared geography now supplies internal Cardiff LSOA coverage and separate school/FSA ward associations. Future Census candidates: verified neighbourhood aliases, native LSOA observations and other authorities’ subdivisions. Add only with authoritative dated membership, bounded queries and coverage tests. Current population estimates would be a separate source with distinct reporting dates.

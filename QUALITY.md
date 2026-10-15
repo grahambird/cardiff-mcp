@@ -14,7 +14,7 @@ These tests are the persistent source of truth for behaviour that MCP Wales cont
 
 `.github/workflows/production-smoke.yml` calls the deployed Streamable HTTP endpoint once each day. It checks that:
 
-- exactly the eight expected tools after the census release are discoverable and advertised as read-only;
+- exactly the ten expected tools after the shared geography release are discoverable and advertised as read-only;
 - a bounded rating-5 Cardiff search succeeds with valid metadata, attribution, and FSA source links;
 - every returned result satisfies stable shape and rating invariants;
 - a detail lookup agrees with the selected search result;
@@ -72,3 +72,14 @@ The existing production canary additionally calls Cardiff TS001 and a bounded TS
 ## Design and security regression checks
 
 Follow the [principles](docs/design-principles.md) and [tool checklist](docs/tool-design-checklist.md). Mocked tests cover the HTTP byte/origin guard, FSA cache/concurrency/cooldowns, streamed response bounds, disclosure safety, nested output schemas and legacy/current protocol paths. Keep existing missing/suppressed-data, sorting and provenance contracts. Instance-local controls cannot prove a Vercel firewall is configured. See the [assessment](docs/engineering-assessment.md) for pending deployment/manual checks.
+
+
+## Shared geography quality
+
+`npm run check` covers coordinate containment (holes, multipolygons, edges, overlaps and gaps), postcode normalisation/termination/quality, area ambiguity, partial resolution, source-only incremental reuse, new/changed/removed locations, reference and matcher invalidation, full rebuilds, complete aggregation and release-manifest consistency. Offline Python importer tests reject incomplete, wrong-scope and malformed FSA extracts and changed reference input checksums. Source records and derived associations remain separate. Dated public school/business examples in Grangetown, Rhiwbina and Llanishen test the bundled reference release; synthetic fixtures control mutable behaviour.
+
+Both summary tools reconcile ward totals plus unresolved records with their full filtered source population. No aggregate is computed from a discovery page. Production-build verification rejects mismatched source/reference/association files. Live FSA coordinate casing has a deterministic regression fixture. Existing live-record, sorting, throttling and MCP compatibility tests remain intact.
+
+Canaries use codes from the official catalogue and dynamically selected live records; they do not pin live ratings, establishments, dates or snapshot population sizes. Manual assistant comparisons and Vercel-origin checks remain pending; see [geography release evidence](docs/geography.md#quality-operation-and-release-evidence).
+
+The production build also checks its MCP file trace to prevent offline boundary/postcode reference inputs from entering the deployed server. Public queries use only the catalogue, precomputed relationships/associations and relevant source records.

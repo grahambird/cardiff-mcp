@@ -37,7 +37,7 @@ try {
   await client.connect(new StreamableHTTPClientTransport(endpoint));
   const { tools } = await client.listTools();
   const names = tools.map((tool) => tool.name).sort();
-  const expected = ["find_food_businesses", "find_schools", "get_food_business", "get_school", "find_census_areas", "get_area_demographics", "compare_area_demographics", "rank_areas_by_demographic"].sort();
+  const expected = ["find_food_businesses", "find_schools", "get_food_business", "get_school", "find_census_areas", "get_area_demographics", "compare_area_demographics", "rank_areas_by_demographic", "summarize_schools_by_ward", "summarize_food_businesses_by_ward"].sort();
   if (process.env.CARDIFF_WASTE_TOOLS_ENABLED === "true") {
     expected.push("find_waste_collection_addresses", "get_waste_collections");
     expected.sort();
@@ -69,7 +69,7 @@ try {
   assert(!rankingCall.isError, "ONS Cardiff ward ranking failed.");
   const ranking = rankingCall.structuredContent?.result;
   validateCensus(ranking);
-  const geography = JSON.parse(await readFile(new URL("../src/ons/geographies.json", import.meta.url), "utf8"));
+  const geography = JSON.parse(await readFile(new URL("../src/geography/data/W06000015/catalogue.json", import.meta.url), "utf8"));
   const eligible = geography.areas.filter(a => a.area_type === "ward" && a.parent_code === "W06000015");
   assert(ranking.complete === true && ranking.areas_considered === eligible.length && ranking.eligible_area_count === eligible.length, "Ward ranking is incomplete.");
   assert(ranking.dataset_id === "TS033" && ranking.unit === "percent", "Invalid ranking measure.");
@@ -81,6 +81,29 @@ try {
     assert(row.value === Math.round(row.count / row.denominator * 10000) / 100, "Invalid Welsh-speaking percentage.");
   }
   assert(ranking.results.every((row, i, all) => i === 0 || all[i - 1].count / all[i - 1].denominator >= row.count / row.denominator), "Ranking order is incorrect.");
+
+  for (const name of ["summarize_schools_by_ward", "summarize_food_businesses_by_ward"]) {
+    const call = await client.callTool({ name, arguments: {} });
+    assert(!call.isError, `${name} failed.`);
+    const summary = call.structuredContent?.result;
+    assert(summary?.wards?.length === eligible.length, `${name} omitted wards.`);
+    const coverage = summary.authority_coverage;
+    assert(coverage && coverage.population === coverage.exact + coverage.approximate + coverage.unresolved, "Invalid association coverage.");
+    assert(summary.wards.reduce((sum, row) => sum + row.population, 0) + coverage.unresolved === coverage.population, "Incomplete ward population.");
+    assert(summary.geography?.reference_version && summary.geography.boundary_dates.ward === "2022-05", "Missing geography version.");
+    for (const row of summary.wards) {
+      assert(eligible.some(a => a.code === row.area.code), "Unsupported ward in summary.");
+      assert(row.population === row.exact + row.approximate && row.unresolved === 0, "Invalid ward allocation counts.");
+      if (row.rating_counts) {
+        assert(Object.values(row.rating_counts).reduce((sum, count) => sum + count, 0) === row.population, "Incomplete rating distribution.");
+        assert(row.numeric_rating_denominator === [0,1,2,3,4,5].reduce((sum, rating) => sum + row.rating_counts[rating], 0), "Incorrect numeric denominator.");
+      }
+    }
+    if (name === "summarize_food_businesses_by_ward") assert(summary.data_mode === "snapshot" && isIsoTimestamp(summary.source_extract_time), "Missing FSA snapshot date.");
+    const wardCall = await client.callTool({ name: name === "summarize_schools_by_ward" ? "find_schools" : "find_food_businesses", arguments: { ward: summary.wards[0].area.code, limit: 1 } });
+    assert(!wardCall.isError, "Bounded ward discovery failed.");
+    assert(wardCall.structuredContent?.result?.total_count === summary.wards[0].population, "Ward discovery and summary disagree.");
+  }
 
   const schools = await client.callTool({ name: "find_schools", arguments: { limit: 3 } });
   assert(!schools.isError, "School directory search failed.");

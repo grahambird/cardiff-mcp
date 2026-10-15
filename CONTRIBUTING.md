@@ -75,3 +75,5 @@ Never commit credentials, private user data, copied production logs or `.env` fi
 ## Design and engineering guidance
 
 Read the [design principles](docs/design-principles.md) and use the [tool checklist](docs/tool-design-checklist.md) for new integrations. See the [engineering assessment](docs/engineering-assessment.md), [privacy statement](docs/privacy.md) and [AI evaluation guide](docs/ai-evaluations.md). Reuse the shared bounded cache, HTTP guard, logger and output schemas; follow existing mocked tests and `npm run check`.
+
+Shared geographical references and independently rebuildable establishment associations are documented in [the geography runbook](docs/geography.md). Production builds verify their release manifest. No network access is needed for the normal offline check.

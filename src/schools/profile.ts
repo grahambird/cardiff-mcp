@@ -1,3 +1,4 @@
+import { getRecordGeography, geographyMetadata } from "@/geography";
 import register from "./directory.json";
 import characteristics from "./statswales/characteristics.json";
 import yearGroups from "./statswales/year_groups.json";
@@ -94,7 +95,7 @@ export function getSchool(schoolId: string, stats: Statistics = bundled) {
     return publicFields;
   };
   return {
-    ...school, language_group: languageGroup(school.language_category), identity_source: "register",
+    ...school, geography: getRecordGeography("schools", school.school_id, school), geography_reference: geographyMetadata(), language_group: languageGroup(school.language_category), identity_source: "register",
     pupils: { source: "characteristics", reporting_period: stats.characteristics.source.reporting_period, total: c?.total ?? unavailable() },
     year_groups: { source: "year_groups", reporting_period: stats.year_groups.source.reporting_period,
       status: y ? "reported" : "unavailable", values: y?.values ?? {} },

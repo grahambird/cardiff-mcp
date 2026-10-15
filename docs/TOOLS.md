@@ -100,3 +100,19 @@ The existing daily GitHub Action now checks Cardiff population and a complete We
 Source: Office for National Statistics licensed under the Open Government Licence v.3.0. See DATA_SOURCES.md for geography refresh and dataset revision procedures.
 
 Optional live census release acceptance: `node scripts/test-census-live.mjs http://localhost:3000`. It checks comparisons and geography edge cases, and independently verifies ward-age arithmetic against the published ONS API response without saving observations.
+
+
+## Ward filtering and complete ward summaries
+
+Both `find_schools` and `find_food_businesses` accept optional `ward`: a May 2022 Cardiff ward code or unambiguous official English/Welsh name. Filtering happens before sorting and pagination. Approximate neighbourhood names require explicit official-area selection; Roath is not a single ward. Existing calls without this parameter keep their defaults.
+
+- `find_schools({"ward":"Grangetown","limit":10})`: joined school locations, including explicitly approximate postcode allocations. Profiles also include geography and reference provenance.
+- `find_food_businesses({"ward":"Grangetown","business_type":"restaurant_cafe_canteen","minimum_rating":5})`: a dated FSA snapshot search. Without `ward` this tool remains live. Snapshot sorting is local, with numeric ratings before other states and stable ascending FHRSID ties. The FSA category includes restaurants, cafes and canteens.
+- `summarize_schools_by_ward({"phase":"secondary"})`: complete maintained-school counts for every ward. Optional `wards` (1–28 distinct wards) and existing `language_group` filter. No discovery-page enumeration is needed.
+- `summarize_food_businesses_by_ward({"wards":["Rhiwbina","Llanishen"]})`: establishment counts and hygiene-rating distributions; optionally filter `business_type`. All eligible snapshot records participate, independent of search pagination.
+
+Summaries include zero wards, exact/approximate allocation counts, authority-wide filtered coverage and unresolved records. Numeric rating percentages use only numerically rated establishments; non-numeric states remain separate. `new_rating_pending_count` is an overlapping flag, not another rating bucket. Never add it to rating totals.
+
+School location is not catchment, admission eligibility or pupils’ residence. FSA-published establishment counts are not a count of every business operating in Cardiff. Missing source locations can leave geography unresolved. Complete source coverage and complete geographical allocation are different properties.
+
+FSA ward outputs identify `data_mode: snapshot`, extract/retrieval dates, age and a warning after 30 days. `get_food_business` remains live and may disagree with a historical snapshot; it shows pending geography if its location changed. Census uses native ward statistics from 2021 on May 2022 boundaries. A shared ward code does not make establishment and Census reporting periods contemporary. See [matching, provenance and limitations](geography.md).

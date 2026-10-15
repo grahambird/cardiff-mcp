@@ -52,7 +52,7 @@ To exercise them in a local or Vercel preview environment:
 CARDIFF_WASTE_TOOLS_ENABLED=true npm run dev
 ```
 
-After building, `CARDIFF_WASTE_TOOLS_ENABLED=true npm run test:smoke` verifies that MCP discovery includes all ten tools while retaining the existing live FSA checks. Waste execution remains covered by mocked deterministic tests until a private property is supplied for the gated acceptance check.
+After building, `CARDIFF_WASTE_TOOLS_ENABLED=true npm run test:smoke` verifies that MCP discovery includes all twelve tools while retaining the existing live FSA checks. Waste execution remains covered by mocked deterministic tests until a private property is supplied for the gated acceptance check.
 
 The connector uses a five-minute address cache, a fifteen-minute collection cache, short-lived JWT caching, single-flight request deduplication, and at most two outgoing Cardiff requests per warm instance. It retries transient network, `429`, and `5xx` failures once; it does not retry `400`, `401`, or `403`. Cache keys are SHA-256 hashes rather than raw location identifiers. These controls are per Vercel instance, not deployment-wide.
 
@@ -71,3 +71,12 @@ Not included in this milestone: Welsh responses, location/distance search, schoo
 The route caps POST bodies at 64 KiB before handler JSON parsing, returning 413 above that limit. Supplied Origin values must exactly match `https://mcp.wales`, the deployment's `VERCEL_URL` or `VERCEL_BRANCH_URL` origin, or `http://localhost:3000` / `http://127.0.0.1:3000` in development. No-Origin clients remain supported. Incoming Host and forwarded headers never extend this list. A future browser client needs an intentional trusted-origin addition in `src/mcp/http-guard.ts` and matching tests; do not reflect arbitrary origins or enable wildcard access.
 
 See the [privacy statement](privacy.md) for provider recipients, cache retention and the distinction between application logs and hosting/firewall network logs. Verify the deployed WAF and hosting retention settings separately; repository tests cannot verify them. Read the [assessment](engineering-assessment.md) before directory submission.
+
+
+## Geography snapshot operations
+
+The two ward summaries bring default discovery to ten tools (twelve with the gated waste prototype). Follow [the geography runbook](geography.md) for separate source import, reference refresh, incremental association generation, full rebuild and rollback. All publication remains manual and reviewed. `npm run build` runs the release verifier before Next.js; partial or incompatible snapshots cannot pass that gate.
+
+Ward queries perform bounded local joins, not bulk upstream searches. Existing FSA live queries retain their cache, sorting and request limits. Monthly source-freshness checks also flag changed reference metadata, newer ONSPD editions and FSA snapshot age; they do not publish changes. The daily canary reconciles complete snapshot populations and bounded ward discovery, using stable invariants.
+
+The initial production build traced about 18.8 MB of MCP server files. Runtime point/postcode lookup helpers have since been removed, excluding the full boundary and postcode inputs from deployment. The simplified local production build on 15 October 2026 traced 7,496,856 bytes (about 7.5 MB), down from 18,800,047 bytes (about 18.8 MB). Production builds enforce that exclusion and print the resulting traced size. These inputs remain available offline for refreshes and rebuilds; deployment limits and Vercel-origin access were not checked. No hosted storage, paid service or runtime geospatial dependency was added. Measure again when adding another authority rather than bundling all Wales pre-emptively.

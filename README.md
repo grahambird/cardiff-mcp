@@ -6,8 +6,8 @@ Visit [mcp.wales](https://mcp.wales). Connect an MCP client to `https://mcp.wale
 
 | Data | Tools | Coverage and freshness |
 | --- | --- | --- |
-| Food hygiene | `find_food_businesses`, `get_food_business` | Cardiff; live FSA data |
-| Schools | `find_schools`, `get_school` | Cardiff maintained schools; manually refreshed register and StatsWales snapshots |
+| Food hygiene | `find_food_businesses`, `get_food_business`, `summarize_food_businesses_by_ward` | Cardiff; live records, dated snapshots for ward searches/aggregates |
+| Schools | `find_schools`, `get_school`, `summarize_schools_by_ward` | Cardiff maintained schools; manually refreshed register and StatsWales snapshots |
 | Census 2021 | `find_census_areas`, `get_area_demographics`, `compare_area_demographics`, `rank_areas_by_demographic` | All 22 Welsh local authorities and Cardiff wards/MSOAs; live requests to pinned historical datasets |
 
 Food ratings describe hygiene, not food quality. School statistics describe their published census period, and Census 2021 figures describe 2021 rather than today's population. Responses include source information and dates.
@@ -38,6 +38,7 @@ For live checks against the local production build, run `npm run build` followed
 - [Contributing](CONTRIBUTING.md): project map, workflow, checks and an example change.
 - [Tool guide](docs/TOOLS.md): inputs, examples, interpretation and errors.
 - [Operations](docs/OPERATIONS.md): deployment, logging, privacy and the waste release gate.
+- [Shared geography](docs/geography.md): ward comparisons, accuracy, three data layers and independent refreshes.
 - [Data sources](DATA_SOURCES.md): licences, snapshots, refresh procedures and monthly freshness checks.
 - [Quality strategy](QUALITY.md): test expectations and when more infrastructure is justified.
 - [Release acceptance](ACCEPTANCE.md): manual verification records.

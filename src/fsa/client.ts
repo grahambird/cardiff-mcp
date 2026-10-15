@@ -1,3 +1,4 @@
+import { getRecordGeography, geographyMetadata } from "@/geography";
 import { z } from "zod";
 import { TtlCache } from "@/lib/cache";
 import {
@@ -17,7 +18,7 @@ const TIMEOUT_MS = 8_000;
 const SENTINEL_DATE = "1901-01-01";
 
 const nullableString = z.string().nullable().optional();
-const establishmentSchema = z.object({
+export const establishmentSchema = z.object({
   FHRSID: z.number().int().positive(),
   BusinessName: z.string(),
   BusinessType: z.string(),
@@ -27,6 +28,8 @@ const establishmentSchema = z.object({
   AddressLine3: nullableString,
   AddressLine4: nullableString,
   PostCode: nullableString,
+  Geocode: z.object({ Latitude: z.union([z.string(), z.number()]).nullable().optional(), Longitude: z.union([z.string(), z.number()]).nullable().optional() }).optional(),
+  geocode: z.object({ latitude: z.union([z.string(), z.number()]).nullable().optional(), longitude: z.union([z.string(), z.number()]).nullable().optional() }).optional(),
   RatingValue: z.string(),
   RatingDate: nullableString,
   NewRatingPending: z.boolean().default(false),
@@ -158,7 +161,7 @@ function mapRating(value: string): FoodBusiness["rating"] {
   return "Other";
 }
 
-function mapEstablishment(value: Establishment, retrievedAt: string): FoodBusiness {
+export function mapEstablishment(value: Establishment, retrievedAt: string): FoodBusiness {
   const address = [value.AddressLine1, value.AddressLine2, value.AddressLine3, value.AddressLine4, value.PostCode]
     .filter((part): part is string => Boolean(part?.trim()))
     .join(", ");
@@ -184,6 +187,7 @@ function parseEstablishment(value: unknown): Establishment {
 }
 
 export async function findFoodBusinesses(input: FindBusinessesInput): Promise<FindBusinessesResult> {
+  if (input.ward) return (await import("./snapshot")).findFoodBusinessesByWard(input);
   const url = buildSearchUrl(input);
   return cache.getOrLoad(url.toString(), async () => {
     const raw = await requestJson(url);
@@ -219,11 +223,17 @@ export async function getFoodBusiness(establishmentId: number): Promise<FoodBusi
     const record = parseEstablishment(await requestJson(url));
     if (!isCardiff(record)) throw new FsaError("outside_cardiff", "That establishment exists but is not within Cardiff local authority.");
     const retrievedAt = new Date().toISOString();
-    return { ...mapEstablishment(record, retrievedAt), attribution: FSA_ATTRIBUTION };
+    return { ...mapEstablishment(record, retrievedAt), geography: getRecordGeography("fsa", String(record.FHRSID), fsaLocation(record)), geography_reference: geographyMetadata(), attribution: FSA_ATTRIBUTION };
   });
 }
 
 export function clearFsaCacheForTests(): void {
   cache.clear();
   cooldown = 0;
+}
+
+export function fsaLocation(record: { AddressLine1?: string | null; AddressLine2?: string | null; AddressLine3?: string | null; AddressLine4?: string | null; PostCode?: string | null; Geocode?: { Latitude?: string | number | null; Longitude?: string | number | null }; geocode?: { latitude?: string | number | null; longitude?: string | number | null } }) {
+  const numeric = (value: string | number | null | undefined): number | null => value !== null && value !== undefined && String(value).trim() && Number.isFinite(Number(value)) ? Number(value) : null;
+  return { address: [record.AddressLine1, record.AddressLine2, record.AddressLine3, record.AddressLine4].filter(Boolean).join(", "),
+    postcode: record.PostCode, latitude: numeric(record.geocode?.latitude ?? record.Geocode?.Latitude), longitude: numeric(record.geocode?.longitude ?? record.Geocode?.Longitude) };
 }

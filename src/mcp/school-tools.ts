@@ -1,9 +1,12 @@
+import { GeographyError } from "@/geography";
+import { wardInput } from "./geography-tools";
 import { getSchool } from "@/schools/profile";
 import { z } from "zod";
 import { findSchools, LANGUAGE_GROUPS, PHASES, SCHOOL_LIMITATIONS } from "@/schools/directory";
 import { logEvent } from "@/lib/logger";
 
 export const findSchoolsInput = z.object({
+  ward: wardInput.optional(),
   name: z.string().trim().min(1).max(100).optional().describe("Case-insensitive text within the school name."),
   phase: z.enum(PHASES).optional(),
   language_group: z.enum(LANGUAGE_GROUPS).optional().describe("Published provision group; Welsh-medium and dual-language include transitional provision."),
@@ -26,16 +29,16 @@ export async function runFindSchools(input: z.infer<typeof findSchoolsInput>) {
       structuredContent: { result },
     };
   } catch (error) {
-    const code = error instanceof z.ZodError ? "invalid_input" : "malformed";
-    const message = code === "invalid_input" ? "Invalid school search parameters." : "The school directory could not be read.";
+    const code = error instanceof GeographyError ? error.code : error instanceof z.ZodError ? "invalid_input" : "malformed";
+    const message = error instanceof GeographyError ? error.message : code === "invalid_input" ? "Invalid school search parameters." : "The school directory could not be read.";
     logEvent("warn", "mcp_tool_call", {
       tool: "find_schools", outcome: "error", error_code: code,
       duration_ms: Math.round(performance.now() - startedAt),
     });
     return {
       isError: true,
-      content: [{ type: "text" as const, text: JSON.stringify({ error: code, message }) }],
-      structuredContent: { error: code, message },
+      content: [{ type: "text" as const, text: JSON.stringify({ error: code, message, ...(error instanceof GeographyError && error.candidates ? { candidates: error.candidates } : {}) }) }],
+      structuredContent: { error: code, message, ...(error instanceof GeographyError && error.candidates ? { candidates: error.candidates } : {}) },
     };
   }
 }
